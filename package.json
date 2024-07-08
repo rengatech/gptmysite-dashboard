@@ -3,7 +3,7 @@
   "version": "2.6.43",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 5200",
+    "start": "ng serve --aot",
     "build": "ng build -- --output-path=dist --base-href ./",
     "build2": "ng build --prod",
     "test": "ng test",
@@ -76,7 +76,7 @@
     "ngx-mat-timepicker": "^14.0.2",
     "ngx-moment": "^6.0.2",
     "ngx-skeleton-loader": "^6.0.0",
-    "npm": "^10.8.1",
+    "npm": "^8.19.1",
     "perfect-scrollbar": "1.1.0",
     "roboto-fontface": "^0.10.0",
     "rxjs": "^6.5.4",
