@@ -17,7 +17,7 @@ export class BrandService {
 
   _brand = {
     DASHBOARD: {
-      META_TITLE: "Tiledesk Design Studio",
+      META_TITLE: "GPT Design Studio",
       // FAVICON_URL: "https://tiledesk.com/wp-content/uploads/2022/07/tiledesk_v13-300x300.png",
       FAVICON_URL: "assets/img/logos/favicon.ico",
       CUSTOM_COMPANY_HOME_LOGO: false,
@@ -38,9 +38,11 @@ export class BrandService {
       display_templates_category: true,
       display_change_pwd: true,
       EXTREME_MEASURES: true,
-      // "widget_logo_URL":"https://tiledesk.com/tiledesk-logo-white.png",
-      // "widget_default_footer" :"<a tabindex='-1' target='_blank href='http://www.tiledesk.com/?utm_source=widget'><img src='https://panel.tiledesk.com/v3/dashboard/assets/img/logos/tiledesk-solo_logo_new_gray.svg'/><span> Powered by Tiledesk</span></a>",
-      // "widget_launcher_button_placeholder": "assets/img/logos/custom-launcher-button-placeholder_v2.svg",
+      widget_logo_URL: "https://tiledesk.com/tiledesk-logo-white.png",
+      widget_default_footer:
+        "<a tabindex='-1' target='_blank href='http://www.tiledesk.com/?utm_source=widget'><img src='https://panel.tiledesk.com/v3/dashboard/assets/img/logos/tiledesk-solo_logo_new_gray.svg'/><span> Powered by GPT</span></a>",
+      widget_launcher_button_placeholder:
+        "assets/img/logos/custom-launcher-button-placeholder_v2.svg",
       footer: {
         display_terms_and_conditions_link: true,
         display_star_us_on_github: true,
