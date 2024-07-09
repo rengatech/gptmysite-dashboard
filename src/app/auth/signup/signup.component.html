@@ -46,12 +46,14 @@
           <span style="display: block;"> Omni-channel live chat + AI-powered chatbots and conversational apps. </span> -->
           <div>
             <!-- style="color: #f0806f;" -->
-            <span class="material-icons"  [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }">
+            <span class="material-icons" [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }">
               arrow_circle_right
             </span>
           </div>
           <!-- color: #f0806f; -->
-          <div> Create your AI assistant with the <span [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }" style=" font-weight: 500;">Visual Conversation
+          <div> Create your AI assistant with the <span
+              [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }"
+              style=" font-weight: 500;">Visual Conversation
               Builder </span> </div>
 
         </div>
@@ -61,13 +63,14 @@
           <span style="display: block;"> Omni-channel live chat + AI-powered chatbots and conversational apps. </span> -->
           <div>
             <!-- style="color: #f0806f;" -->
-            <span class="material-icons"  [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }">
+            <span class="material-icons" [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }">
               arrow_circle_right
             </span>
           </div>
           <div>
             <!-- style="color: #f0806f; -->
-            <span [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }" style="font-weight: 500;"> Boost engagement by 4x </span> and be on all messaging
+            <span [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }"
+              style="font-weight: 500;"> Boost engagement by 4x </span> and be on all messaging
             channels
           </div>
 
@@ -78,13 +81,15 @@
           <span style="display: block;"> Omni-channel live chat + AI-powered chatbots and conversational apps. </span> -->
           <div>
             <!-- style="color: #f0806f;" -->
-            <span class="material-icons"  [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }">
+            <span class="material-icons" [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }">
               arrow_circle_right
             </span>
           </div>
           <div>
             <!-- color: #f0806f; -->
-            Turn leads into buying customers with <span [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }" style="font-weight: 500;"> WhatsApp automation
+            Turn leads into buying customers with <span
+              [ngStyle]="{'color': secondaryBrandColor ? secondaryBrandColor : '#f0806f' }" style="font-weight: 500;">
+              WhatsApp automation
             </span>
           </div>
 
@@ -216,10 +221,9 @@
         </div>
 
         <div class="signup-title" style="text-align:center">
-          <h2 *ngIf="!appSumoActivationEmail">
-            <!-- {{ 'CreateAFreeAccount' | translate}} -->
+          <!-- <h2 *ngIf="!appSumoActivationEmail">
             Sign up for free today
-          </h2>
+          </h2> -->
           <h2 *ngIf="appSumoActivationEmail">
             Welcome Sumo-ling!
           </h2>
@@ -331,11 +335,12 @@
 
             <!-- <div *ngIf="userForm.valid" class="notification is-success">Form is valid</div> -->
             <!-- SUBMIT -->
-            <button [ngStyle]="{'background-color': primaryBrandColor ? primaryBrandColor : '#f0806f' }" type="submit" class="btn signup-button" [disabled]="!userForm.valid || showSpinnerInLoginBtn">
+            <button [ngStyle]="{'background-color': primaryBrandColor ? primaryBrandColor : '#f0806f' }" type="submit"
+              class="btn signup-button" [disabled]="!userForm.valid || showSpinnerInLoginBtn">
               <span *ngIf="!showSpinnerInLoginBtn">
                 {{ "GetStarted" | translate}}
               </span>
-              <span *ngIf="showSpinnerInLoginBtn"> 
+              <span *ngIf="showSpinnerInLoginBtn">
                 <i class="fa fa-spinner fa-spin"></i>
               </span>
             </button>
@@ -371,7 +376,7 @@
             <div class="h-20"></div>
           </form>
           <ng-container *ngIf="hideGoogleAuthBtn">
-            <button *ngIf="!appSumoActivationEmail" type="button" class="google-button" (click)="signupWithGoogle()">
+            <!-- <button *ngIf="!appSumoActivationEmail" type="button" class="google-button" (click)="signupWithGoogle()">
               <div style="margin-right: 10px; background: rgb(255, 255, 255); padding: 10px; border-radius: 2px;">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 186.69 190.5"
@@ -394,7 +399,7 @@
               </div>
               <div style="padding: 10px 10px 10px 0px; font-weight: 500; width: calc(100% - 91px);">Sign up with Google
               </div>
-            </button>
+            </button> -->
           </ng-container>
 
         </div>

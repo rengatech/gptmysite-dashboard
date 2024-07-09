@@ -2,7 +2,7 @@
     <ng-container *ngSwitchCase="'step1'" [ngTemplateOutlet]="step1"></ng-container>
     <ng-container *ngSwitchCase="'step2'" [ngTemplateOutlet]="step2"></ng-container>
     <ng-container *ngSwitchCase="'step3'" [ngTemplateOutlet]="step3"></ng-container>
-   <!--  <ng-container *ngSwitchCase="'cds-sb-fulfillment'" [ngTemplateOutlet]="fulfillment"></ng-container>
+    <!--  <ng-container *ngSwitchCase="'cds-sb-fulfillment'" [ngTemplateOutlet]="fulfillment"></ng-container>
     <ng-container *ngSwitchCase="'cds-sb-training'" [ngTemplateOutlet]="training"></ng-container>
     <ng-container *ngSwitchCase="'cds-sb-rules'" [ngTemplateOutlet]="rules"></ng-container>
     <ng-container *ngSwitchDefault [ngTemplateOutlet]="intents"></ng-container> -->
@@ -27,7 +27,7 @@
                         alt="" style="height: 150px; width: auto; object-fit: cover;">
                 </div>
                 <div class="connect-wa-first-step-link-title">
-                    A guide on how to connect your WhatsApp Business number with Tiledesk
+                    A guide on how to connect your WhatsApp Business number with GPT
                 </div>
 
                 <div class="connect-wa-first-step-link">
@@ -38,7 +38,7 @@
                     </div>
                     <div>
                         <a href="https://gethelp.tiledesk.com/articles/connect-tiledesk-with-whatsapp-business/"
-                            target="_blank">Connect Tiledesk with WhatsApp Business</a>
+                            target="_blank">Connect GPT with WhatsApp Business</a>
                     </div>
                 </div>
 
@@ -143,7 +143,7 @@
             <div class="wa-step-modal-content">
                 <div class="wa-step-modal-enter-phone-number" style="margin-bottom: 12px;">
                     <input [(ngModel)]="phoneNumber" (ngModelChange)="onChangePhoneNumber($event)" id="phone-number"
-                    class="form-control" style="max-width: 450px;">
+                        class="form-control" style="max-width: 450px;">
                 </div>
             </div>
         </div>

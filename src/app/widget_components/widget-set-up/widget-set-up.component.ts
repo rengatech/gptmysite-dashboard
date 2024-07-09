@@ -2675,7 +2675,6 @@ export class WidgetSetUp
           // @ baloonImage LauncherLogo
           // -------------------------------------------
           if (project.widget.baloonImage) {
-            console.log(" === urllllllllll === ", project.widget.baloonImage);
             this.customLauncherURL = project.widget.baloonImage;
             this.hasOwnLauncherBtn = true;
             this.hasOwnLauncherLogo = false;

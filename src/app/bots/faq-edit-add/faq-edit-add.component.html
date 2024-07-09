@@ -1,6 +1,7 @@
 <!-- NEW FOR THIS TEMPLATE -->
 <!-- margin-top:6px; -->
-<div class="navbar-brand" style="z-index: 1050;position: relative; padding-left:30px" [ngStyle]="{'margin-top':isChromeVerGreaterThan100 === true ? '-64px' : '6px' }">
+<div class="navbar-brand" style="z-index: 1050;position: relative; padding-left:30px"
+  [ngStyle]="{'margin-top':isChromeVerGreaterThan100 === true ? '-64px' : '6px' }">
   <!-- goBack() -->
   <!-- goBackToFaqList() -->
   <i class="material-icons" style="vertical-align: middle !important; cursor: pointer;" (click)="goBack()">
@@ -35,24 +36,16 @@
                   <label class="control-label intentTitle">
                     {{ 'EnterIntentName' | translate}}
                   </label>
-                  <input 
-                    id="intent-name" 
-                    name="intent-name" 
-                    [(ngModel)]="intent_name" 
-                    class="input form-control" 
-                    type="text" 
-                    autocomplete="off"
-                    style="margin-bottom: 3px;" 
-                    placeholder=""
-                  >
+                  <input id="intent-name" name="intent-name" [(ngModel)]="intent_name" class="input form-control"
+                    type="text" autocomplete="off" style="margin-bottom: 3px;" placeholder="">
                 </div>
               </div>
             </div>
-            <!-- END Intent --> 
-            
+            <!-- END Intent -->
+
             <!-- START Question -->
             <div class="box-content">
-              
+
               <div class="row">
                 <div class="col-sm-12 col-md-12">
                   <h3 class="card_title__underlined">
@@ -64,26 +57,22 @@
                 <div class="col-sm-12 col-md-12">
                   <div class="section-subtitle"></div>
                 </div>
-              </div> 
-              
+              </div>
+
               <div class="form-group label-floating">
                 <label class="control-label">
                   {{ 'TypeAddYourQuestionHere' | translate}}
                 </label>
-                <textarea 
-                  [(ngModel)]="question" 
-                  class="textarea form-control" 
-                  rows="3" 
-                  style="resize: vertical; border-radius:5px"  
-                  placeholder=''>
+                <textarea [(ngModel)]="question" class="textarea form-control" rows="3"
+                  style="resize: vertical; border-radius:5px" placeholder=''>
                 </textarea>
               </div>
 
             </div>
-            <!-- END Question -->  
+            <!-- END Question -->
 
 
-            <!-- START Form -->    
+            <!-- START Form -->
             <div class="box-content">
               <div class="row">
                 <div class="col-sm-12 col-md-12">
@@ -95,25 +84,23 @@
                 </div>
                 <div class="col-sm-12 col-md-12">
                   <div class="section-subtitle">
-                  <span style="margin-top: 6px; display: block; color: #aaa;
-                  font-weight: 400;">  
-                    Tiledesk chatbot Forms are a way to collect slot values from the user in a structured way. 
-                    <span class="link-to-chatbot-form-doc" (click)="goToFormMoreInfo()">
-                      Learn more here
+                    <span style="margin-top: 6px; display: block; color: #aaa;
+                  font-weight: 400;">
+                      GPT chatbot Forms are a way to collect slot values from the user in a structured way.
+                      <span class="link-to-chatbot-form-doc" (click)="goToFormMoreInfo()">
+                        Learn more here
+                      </span>
                     </span>
-                  </span>  
                   </div>
                 </div>
-              </div> 
-              <appdashboard-tilebot-form
-              [intentForm]="intentForm"
-              (passJsonIntentForm)="passJsonIntentForm($event)"
-              ></appdashboard-tilebot-form>  
+              </div>
+              <appdashboard-tilebot-form [intentForm]="intentForm" (passJsonIntentForm)="passJsonIntentForm($event)">
+              </appdashboard-tilebot-form>
             </div>
-            <!-- END Form -->  
+            <!-- END Form -->
 
 
-            <!-- START Answer -->   
+            <!-- START Answer -->
             <div class="box-content">
               <div class="row">
                 <div class="col-sm-12 col-md-12">
@@ -132,12 +119,8 @@
                 <label class="control-label">
                   {{ "FaqEditAddPage.InfoAnswer" | translate }}
                 </label>
-                <textarea 
-                  [(ngModel)]="answer" 
-                  class="textarea form-control" 
-                  rows="3" 
-                  style="resize: vertical; border-radius:5px"
-                  placeholder=''>
+                <textarea [(ngModel)]="answer" class="textarea form-control" rows="3"
+                  style="resize: vertical; border-radius:5px" placeholder=''>
                 </textarea>
               </div>
             </div>
@@ -145,7 +128,7 @@
 
 
 
-            <!-- START Webhook -->   
+            <!-- START Webhook -->
             <div class="box-content">
               <div class="row">
                 <div class="col-sm-12 col-md-12">
@@ -162,14 +145,9 @@
               <div class="col-sm-12">
                 <div class="nw-onoffswitch-wrapper" style="clear: both;display: inline-block;">
                   <div class="nw-onoffswitch">
-                    <input 
-                      (change)="toggleFaqWebhook($event)" 
-                      type="checkbox" 
-                      name="webhook-createfaq-switch"
-                      class="nw-onoffswitch-checkbox" 
-                      id="webhook-createfaq-switch"
-                      [checked]="faq_webhook_is_enabled === true"
-                    >
+                    <input (change)="toggleFaqWebhook($event)" type="checkbox" name="webhook-createfaq-switch"
+                      class="nw-onoffswitch-checkbox" id="webhook-createfaq-switch"
+                      [checked]="faq_webhook_is_enabled === true">
                     <label class="nw-onoffswitch-label" for="webhook-createfaq-switch"></label>
                   </div>
                 </div>
@@ -214,20 +192,13 @@
                   <label class="control-label intentTitle">
                     {{ 'IntentName' | translate}}
                   </label>
-                  <input 
-                    id="intent-name" 
-                    name="intent-name" 
-                    [(ngModel)]="intent_name" 
-                    class="input form-control" 
-                    type="text" 
-                    autocomplete="off"
-                    style="margin-bottom: 3px;" 
-                    placeholder="">
+                  <input id="intent-name" name="intent-name" [(ngModel)]="intent_name" class="input form-control"
+                    type="text" autocomplete="off" style="margin-bottom: 3px;" placeholder="">
                 </div>
               </div>
             </div>
             <!-- END Intent -->
-                <!-- <div class="col-sm-12 col-md-12">
+            <!-- <div class="col-sm-12 col-md-12">
                   <h3 class="card_title__underlined">
                     <span class="card_title__underline">
                       Intent
@@ -262,25 +233,21 @@
                 <div class="col-sm-12 col-md-12">
                   <div class="section-subtitle"></div>
                 </div>
-              </div> 
-              
+              </div>
+
               <div class="form-group label-floating">
                 <label class="control-label">
                   {{ 'TypeAddYourQuestionHere' | translate}}
                 </label>
-                <textarea 
-                  [(ngModel)]="question_toUpdate" 
-                  class="textarea form-control" 
-                  rows="3" 
-                  style="resize: vertical; border-radius:5px"  
-                  placeholder=''>
+                <textarea [(ngModel)]="question_toUpdate" class="textarea form-control" rows="3"
+                  style="resize: vertical; border-radius:5px" placeholder=''>
                 </textarea>
               </div>
             </div>
 
 
 
-              <!-- <div class="row">
+            <!-- <div class="row">
                 <div class="col-sm-12 col-md-12">
                   <h3 class="card_title__underlined">
                     <span class="card_title__underline">
@@ -311,7 +278,7 @@
             <!-- END Question -->
 
 
-            <!-- START Form -->    
+            <!-- START Form -->
             <!-- <div class="col-sm-12" class="div-spacer" style="height:15px"></div> -->
             <div class="box-content">
               <div class="row">
@@ -325,13 +292,11 @@
                 <div class="col-sm-12 col-md-12">
                   <div class="section-subtitle"> </div>
                 </div>
-              </div> 
-              <appdashboard-tilebot-form
-              [intentForm]="intentForm"
-              (passJsonIntentForm)="passJsonIntentForm($event)"
-              ></appdashboard-tilebot-form>  
+              </div>
+              <appdashboard-tilebot-form [intentForm]="intentForm" (passJsonIntentForm)="passJsonIntentForm($event)">
+              </appdashboard-tilebot-form>
             </div>
-            <!-- END Form -->  
+            <!-- END Form -->
 
 
             <!-- START Answer -->
@@ -354,19 +319,15 @@
                 <label class="control-label">
                   {{ "FaqEditAddPage.InfoAnswer" | translate }}
                 </label>
-                <textarea 
-                  [(ngModel)]="answer_toUpdate" 
-                  class="textarea form-control" 
-                  rows="3" 
-                  style="resize: vertical; border-radius:5px"
-                  placeholder=''>
+                <textarea [(ngModel)]="answer_toUpdate" class="textarea form-control" rows="3"
+                  style="resize: vertical; border-radius:5px" placeholder=''>
                 </textarea>
               </div>
             </div>
 
 
 
-              <!-- <div class="row">
+            <!-- <div class="row">
                 <div class="col-sm-12 col-md-12">
                   <h3 class="card_title__underlined">
                     <span class="card_title__underline">
@@ -393,7 +354,7 @@
               </div>
             </div> -->
             <!-- END Answer -->
-          
+
 
             <!-- START Webhook -->
             <div class="box-content">
@@ -413,14 +374,9 @@
               <div class="col-sm-12">
                 <div class="nw-onoffswitch-wrapper" style="clear: both;display: inline-block;">
                   <div class="nw-onoffswitch">
-                    <input 
-                      (change)="toggleFaqWebhook($event)" 
-                      type="checkbox" 
-                      name="webhook-editfaq-switch"
-                      class="nw-onoffswitch-checkbox" 
-                      id="webhook-editfaq-switch"
-                      [checked]="faq_webhook_is_enabled === true"
-                    >
+                    <input (change)="toggleFaqWebhook($event)" type="checkbox" name="webhook-editfaq-switch"
+                      class="nw-onoffswitch-checkbox" id="webhook-editfaq-switch"
+                      [checked]="faq_webhook_is_enabled === true">
                     <label class="nw-onoffswitch-label" for="webhook-editfaq-switch"></label>
                   </div>
                 </div>
@@ -435,7 +391,7 @@
 
             </div>
 
-              <!-- <div class="row">
+            <!-- <div class="row">
                 <div class="col-sm-12 col-md-12">
                   <h3 class="card_title__underlined">
                     <span class="card_title__underline">
@@ -500,15 +456,15 @@
       <!-- ---------------------------------------------- -->
       <div class="col-md-5">
 
-                <!-- --------------------------------------------------- -->
-                <!-- @ Test it out -->
-                <!-- --------------------------------------------------- -->
-                <button type="button" class=" btn btn-light-blu pull-right" (click)="openTestSiteInPopupWindow()" style="height: 34px;
+        <!-- --------------------------------------------------- -->
+        <!-- @ Test it out -->
+        <!-- --------------------------------------------------- -->
+        <button type="button" class=" btn btn-light-blu pull-right" (click)="openTestSiteInPopupWindow()" style="height: 34px;
                 padding-left: 12px;
                 padding-right: 12px;
                 margin-right: 23px;">
-                  <span>Test it out</span>
-               </button>
+          <span>Test it out</span>
+        </button>
 
         <div class="card  card--no-border"
           style="padding-top: 0px;padding-bottom:5px;margin-bottom: 5px;margin-top: 0px;">
@@ -786,8 +742,7 @@
                     </path>
                   </svg>
                 </span>
-                <a class="faq-related-knowledge-base-right-sidebar-link"
-                  (click)="goToKBArticle_HandoffToHumanAgents()">
+                <a class="faq-related-knowledge-base-right-sidebar-link" (click)="goToKBArticle_HandoffToHumanAgents()">
                   {{ 'HandoffToHumanAgents' | translate }}
                 </a>
               </div>
