@@ -452,7 +452,6 @@ export class WidgetSetUp
   }
 
   ngOnInit() {
-    console.log(" ============== herer==============================");
     this.auth.checkRoleForCurrentProject();
     this.getProjectPlan();
     this.getProjectUserRole();
@@ -4579,7 +4578,6 @@ export class WidgetSetUp
       this.projectName +
       "&role=" +
       this.USER_ROLE;
-
     this.logger.log("[WIDGET-SET-UP] - TEST WIDGET URL ", url);
     window.open(url, "_blank");
   }

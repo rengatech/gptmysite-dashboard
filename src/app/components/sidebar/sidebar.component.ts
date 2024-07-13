@@ -1,42 +1,57 @@
-import { Component, OnInit, AfterViewInit, NgModule, ElementRef, ViewChild, HostListener, EventEmitter, Output, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  NgModule,
+  ElementRef,
+  ViewChild,
+  HostListener,
+  EventEmitter,
+  Output,
+  Input,
+} from "@angular/core";
 
-import { Router, NavigationEnd, Event as NavigationEvent } from '@angular/router';
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import {
+  Router,
+  NavigationEnd,
+  Event as NavigationEvent,
+} from "@angular/router";
+import { Location } from "@angular/common";
+import { ActivatedRoute } from "@angular/router";
 
-import { ProjectService } from '../../services/project.service';
-import { AuthService } from '../../core/auth.service';
-import { UsersService } from '../../services/users.service';
-import { Project } from '../../models/project-model';
+import { ProjectService } from "../../services/project.service";
+import { AuthService } from "../../core/auth.service";
+import { UsersService } from "../../services/users.service";
+import { Project } from "../../models/project-model";
 // import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 // import { SharedModule } from '../../shared/shared.module';
-import { LocalDbService } from '../../services/users-local-db.service';
-import { NotifyService } from '../../core/notify.service';
-import { UploadImageService } from '../../services/upload-image.service';
-import { UploadImageNativeService } from '../../services/upload-image-native.service';
-import { TranslateService } from '@ngx-translate/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { LocalDbService } from "../../services/users-local-db.service";
+import { NotifyService } from "../../core/notify.service";
+import { UploadImageService } from "../../services/upload-image.service";
+import { UploadImageNativeService } from "../../services/upload-image-native.service";
+import { TranslateService } from "@ngx-translate/core";
+import { Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
 
-import { AppConfigService } from '../../services/app-config.service';
+import { AppConfigService } from "../../services/app-config.service";
 
-import { DepartmentService } from '../../services/department.service';
+import { DepartmentService } from "../../services/department.service";
 
 // import { publicKey } from '../../utils/util';
 // import { public_Key } from '../../utils/util';
 // import { environment } from '../../../environments/environment';
 // import brand from 'assets/brand/brand.json';
-import { BrandService } from '../../services/brand.service';
-import { WsRequestsService } from './../../services/websocket/ws-requests.service';
-import { LoggerService } from './../../services/logger/logger.service';
-import { avatarPlaceholder, getColorBck } from '../../utils/util'
-import { DomSanitizer } from '@angular/platform-browser';
-import { FaqKbService } from 'app/services/faq-kb.service';
-import { KbSettings } from 'app/models/kbsettings-model';
-import { KnowledgeBaseService } from 'app/services/knowledge-base.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { UserModalComponent } from 'app/users/user-modal/user-modal.component';
-import { ProjectPlanService } from 'app/services/project-plan.service';
+import { BrandService } from "../../services/brand.service";
+import { WsRequestsService } from "./../../services/websocket/ws-requests.service";
+import { LoggerService } from "./../../services/logger/logger.service";
+import { avatarPlaceholder, getColorBck } from "../../utils/util";
+import { DomSanitizer } from "@angular/platform-browser";
+import { FaqKbService } from "app/services/faq-kb.service";
+import { KbSettings } from "app/models/kbsettings-model";
+import { KnowledgeBaseService } from "app/services/knowledge-base.service";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { UserModalComponent } from "app/users/user-modal/user-modal.component";
+import { ProjectPlanService } from "app/services/project-plan.service";
 
 declare const $: any;
 
@@ -67,12 +82,11 @@ declare interface RouteInfo {
 // ];
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  selector: "app-sidebar",
+  templateUrl: "./sidebar.component.html",
+  styleUrls: ["./sidebar.component.scss"],
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
-
   // tparams = brand;
 
   // hidechangelogrocket = brand.sidebar__hide_changelog_rocket;
@@ -85,11 +99,10 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   // public_Key = environment.t2y12PruGU9wUtEGzBJfolMIgK; // now get from appconfig
   public_Key: string;
 
-  @ViewChild('openchatbtn') private elementRef: ElementRef;
-  @ViewChild('homebtn') private homeBtnElement: ElementRef;
+  @ViewChild("openchatbtn") private elementRef: ElementRef;
+  @ViewChild("homebtn") private homeBtnElement: ElementRef;
 
-
-  countClickOnOpenUserDetailSidebar: number = 0
+  countClickOnOpenUserDetailSidebar: number = 0;
   menuItems: any[];
 
   checked_route: string;
@@ -106,9 +119,9 @@ export class SidebarComponent implements OnInit, AfterViewInit {
 
   // switch up and down the caret of menu item settings
   // trasform = 'none';
-  trasform = 'none';
-  trasform_projectname_caret = 'none';
-  transform_user_profile_caret = 'none';
+  trasform = "none";
+  trasform_projectname_caret = "none";
+  transform_user_profile_caret = "none";
 
   unservedRequestCount: number;
 
@@ -126,11 +139,11 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   user: any;
 
   ROUTES: RouteInfo[];
-  displayLogoutModal = 'none';
+  displayLogoutModal = "none";
 
-  USER_ROLE: string = 'agent';
+  USER_ROLE: string = "agent";
 
-  currentUserId: string
+  currentUserId: string;
 
   // CHAT_BASE_URL = environment.chat.CHAT_BASE_URL; // moved
   // CHAT_BASE_URL = environment.CHAT_BASE_URL; // now get from appconfig
@@ -208,12 +221,10 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   OLD_KB_ROUTE_IS_ACTIVE: boolean;
   KB_ROUTE_IS_ACTIVE: boolean;
 
-
-
   prjct_profile_name: string;
   prjct_trial_expired: boolean;
-  prjc_trial_days_left: number
-  prjc_trial_days_left_percentage: number
+  prjc_trial_days_left: number;
+  prjc_trial_days_left_percentage: number;
   isVisibleANA: boolean;
   isVisibleACT: boolean;
   isVisibleTRI: boolean;
@@ -232,9 +243,9 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   default_dept_id: string;
   browserLang: string;
   dsbrd_lang: string;
-  tlangparams: any
+  tlangparams: any;
   flag_url: string;
-  tooltip_text_for_availability_status: string
+  tooltip_text_for_availability_status: string;
   plan_subscription_is_active: boolean;
   plan_name: string;
   _prjct_profile_name: string;
@@ -245,8 +256,8 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   new_messages_count: number;
 
   NOTIFICATION_SOUND: string;
-  storedValuePrefix = 'dshbrd----'
-  hasPlayed = false
+  storedValuePrefix = "dshbrd----";
+  hasPlayed = false;
   currentUrl: string;
   audio: any;
   myChatbotCount: number;
@@ -277,17 +288,17 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     private sanitizer: DomSanitizer,
     private faqKbService: FaqKbService,
     public dialog: MatDialog,
-    private prjctPlanService: ProjectPlanService,
+    private prjctPlanService: ProjectPlanService
   ) {
-    this.logger.log('[SIDEBAR] !!!!! HELLO SIDEBAR')
+    this.logger.log("[SIDEBAR] !!!!! HELLO SIDEBAR");
 
     const brand = brandService.getBrand();
 
     this.tparams = brand;
     if (brand) {
-      this.companyLogoNoText = brand['COMPANY_LOGO_NO_TEXT'];
-      this.companySiteUrl = brand["COMPANY_SITE_URL"]
-      this.companyName = brand["COMPANY_NAME"]
+      this.companyLogoNoText = brand["COMPANY_LOGO_NO_TEXT"];
+      this.companySiteUrl = brand["COMPANY_SITE_URL"];
+      this.companyName = brand["COMPANY_NAME"];
     }
   }
 
@@ -318,7 +329,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     this.getNotificationSoundPreferences();
     this.getWsCurrentUserAvailability$();
     // this.getProjectPlan()
-    this.getBaseUrlAndThenProjectPlan()
+    this.getBaseUrlAndThenProjectPlan();
   }
 
   getBaseUrlAndThenProjectPlan() {
@@ -327,224 +338,303 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     // For test in local host
     // const href= "https://panel.tiledesk.com/v3/dashboard/#/project/63a075485f117f0013541e32/bots/templates/community"
 
-    this.logger.log('[SIDEBAR] href ', href)
+    this.logger.log("[SIDEBAR] href ", href);
 
-    const hrefArray = href.split('/#/');
-    const dshbrdBaseUrl = hrefArray[0]
+    const hrefArray = href.split("/#/");
+    const dshbrdBaseUrl = hrefArray[0];
 
-    this.logger.log('[SIDEBAR] dshbrdBaseUrl ', dshbrdBaseUrl)
-    this.logger.log('[SIDEBAR]  dshbrdBaseUrl includes tiledesk.com', dshbrdBaseUrl.includes('tiledesk.com'));
+    this.logger.log("[SIDEBAR] dshbrdBaseUrl ", dshbrdBaseUrl);
+    this.logger.log(
+      "[SIDEBAR]  dshbrdBaseUrl includes tiledesk.com",
+      dshbrdBaseUrl.includes("tiledesk.com")
+    );
 
-    if (dshbrdBaseUrl.includes('tiledesk.com')) {
+    if (dshbrdBaseUrl.includes("tiledesk.com")) {
       this.areVisibleChatbot = true;
     }
 
-    if (!dshbrdBaseUrl.includes('tiledesk.com')) {
-      this.getProjectPlan()
+    if (!dshbrdBaseUrl.includes("tiledesk.com")) {
+      this.getProjectPlan();
     }
   }
 
   getProjectPlan() {
     this.prjctPlanService.projectPlan$
-      .pipe(
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe((projectProfileData: any) => {
-        this.logger.log('[SIDEBAR] - getProjectPlan project Profile Data', projectProfileData)
-        if (projectProfileData) {
-          this.manageChatbotVisibility(projectProfileData)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (projectProfileData: any) => {
+          this.logger.log(
+            "[SIDEBAR] - getProjectPlan project Profile Data",
+            projectProfileData
+          );
+          if (projectProfileData) {
+            this.manageChatbotVisibility(projectProfileData);
+          }
+        },
+        (error) => {
+          this.logger.error("[SIDEBAR] - getProjectPlan - ERROR", error);
+        },
+        () => {
+          this.logger.log("[SIDEBAR] - getProjectPlan * COMPLETE *");
         }
-      }, error => {
-
-        this.logger.error('[SIDEBAR] - getProjectPlan - ERROR', error);
-      }, () => {
-        this.logger.log('[SIDEBAR] - getProjectPlan * COMPLETE *')
-      });
+      );
   }
 
   manageChatbotVisibility(projectProfileData) {
-    if (projectProfileData['customization']) {
-      this.logger.log('[SIDEBAR] USECASE EXIST customization > chatbot (1)', projectProfileData['customization']['chatbot'])
+    if (projectProfileData["customization"]) {
+      this.logger.log(
+        "[SIDEBAR] USECASE EXIST customization > chatbot (1)",
+        projectProfileData["customization"]["chatbot"]
+      );
     }
 
-    if (projectProfileData['customization'] && projectProfileData['customization']['chatbot'] !== undefined) {
-      this.logger.log('[SIDEBAR] USECASE A EXIST customization ', projectProfileData['customization'], ' & chatbot', projectProfileData['customization']['chatbot'])
+    if (
+      projectProfileData["customization"] &&
+      projectProfileData["customization"]["chatbot"] !== undefined
+    ) {
+      this.logger.log(
+        "[SIDEBAR] USECASE A EXIST customization ",
+        projectProfileData["customization"],
+        " & chatbot",
+        projectProfileData["customization"]["chatbot"]
+      );
 
-      if (projectProfileData['customization']['chatbot'] === true) {
+      if (projectProfileData["customization"]["chatbot"] === true) {
         this.areVisibleChatbot = true;
-        this.logger.log('[SIDEBAR] manageChatbotVisibility USECASE A areVisibleChatbot', this.areVisibleChatbot)
-      } else if (projectProfileData['customization']['chatbot'] === false) {
-
+        this.logger.log(
+          "[SIDEBAR] manageChatbotVisibility USECASE A areVisibleChatbot",
+          this.areVisibleChatbot
+        );
+      } else if (projectProfileData["customization"]["chatbot"] === false) {
         this.areVisibleChatbot = false;
-        this.logger.log('[SIDEBAR] manageChatbotVisibility USECASE A areVisibleChatbot', this.areVisibleChatbot)
+        this.logger.log(
+          "[SIDEBAR] manageChatbotVisibility USECASE A areVisibleChatbot",
+          this.areVisibleChatbot
+        );
       }
-
-    } else if (projectProfileData['customization'] && projectProfileData['customization']['chatbot'] === undefined) {
+    } else if (
+      projectProfileData["customization"] &&
+      projectProfileData["customization"]["chatbot"] === undefined
+    ) {
       //this.logger.log('[SIDEBAR] USECASE B EXIST customization ', projectProfileData['customization'], ' BUT chatbot IS', projectProfileData['customization']['chatbot'])
       this.areVisibleChatbot = true;
-      this.logger.log('[SIDEBAR] manageChatbotVisibility USECASE B EXIST customization ', projectProfileData['customization'], ' BUT chatbot IS', projectProfileData['customization']['chatbot'], ' areVisibleChatbot ', this.areVisibleChatbot)
-
-    } else if (projectProfileData['customization'] === undefined) {
+      this.logger.log(
+        "[SIDEBAR] manageChatbotVisibility USECASE B EXIST customization ",
+        projectProfileData["customization"],
+        " BUT chatbot IS",
+        projectProfileData["customization"]["chatbot"],
+        " areVisibleChatbot ",
+        this.areVisibleChatbot
+      );
+    } else if (projectProfileData["customization"] === undefined) {
       //this.logger.log('[SIDEBAR] USECASE C customization is  ', projectProfileData['customization'])
       this.areVisibleChatbot = true;
-      this.logger.log('[SIDEBAR] manageChatbotVisibility USECASE C customization is  ', projectProfileData['customization'], ' areVisibleChatbot ', this.areVisibleChatbot)
-
+      this.logger.log(
+        "[SIDEBAR] manageChatbotVisibility USECASE C customization is  ",
+        projectProfileData["customization"],
+        " areVisibleChatbot ",
+        this.areVisibleChatbot
+      );
     }
   }
 
-
-
-
   presentDialogResetBusy() {
-    this.logger.log('[SIDEBAR] presentDialogResetBusy ')
+    this.logger.log("[SIDEBAR] presentDialogResetBusy ");
     if (this.dialogRef) {
       this.dialogRef.close();
-      return
+      return;
     }
     this.dialogRef = this.dialog.open(UserModalComponent, {
-      width: '600px',
-      backdropClass: 'cdk-overlay-transparent-backdrop',
+      width: "600px",
+      backdropClass: "cdk-overlay-transparent-backdrop",
       hasBackdrop: true,
-      data: {
-
-      },
+      data: {},
     });
 
-    this.dialogRef.afterClosed().subscribe(result => {
+    this.dialogRef.afterClosed().subscribe((result) => {
       this.logger.log(`[SIDEBAR] Dialog result: ${result}`);
-      this.dialogRef = null
+      this.dialogRef = null;
     });
   }
 
   getNotificationSoundPreferences() {
     // NOTIFICATION_SOUND = 'enabled';
-    const storedNotificationSound = localStorage.getItem(this.storedValuePrefix + 'sound');
+    const storedNotificationSound = localStorage.getItem(
+      this.storedValuePrefix + "sound"
+    );
 
-    if (storedNotificationSound !== 'undefined' && storedNotificationSound !== null) {
-
+    if (
+      storedNotificationSound !== "undefined" &&
+      storedNotificationSound !== null
+    ) {
       this.NOTIFICATION_SOUND = storedNotificationSound;
-      this.logger.log('[SIDEBAR] NOTIFICATION_SOUND -  this.NOTIFICATION_SOUND', this.NOTIFICATION_SOUND)
+      this.logger.log(
+        "[SIDEBAR] NOTIFICATION_SOUND -  this.NOTIFICATION_SOUND",
+        this.NOTIFICATION_SOUND
+      );
     } else {
-      this.NOTIFICATION_SOUND = 'enabled';
-      this.logger.log('[SIDEBAR] NOTIFICATION_SOUND -  this.NOTIFICATION_SOUND', this.NOTIFICATION_SOUND)
+      this.NOTIFICATION_SOUND = "enabled";
+      this.logger.log(
+        "[SIDEBAR] NOTIFICATION_SOUND -  this.NOTIFICATION_SOUND",
+        this.NOTIFICATION_SOUND
+      );
     }
   }
 
   listenSoundPreference() {
     this.wsRequestsService.hasChangedSoundPreference$
-      .pipe(
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe((newSoundPreference) => {
-        this.logger.log('[SIDEBAR] - LISTEN TO SOUND PREFERNCE CHANGED ', newSoundPreference);
-        this.NOTIFICATION_SOUND = newSoundPreference;
-      }, error => {
-        this.logger.error('[SIDEBAR] - LISTEN TO SOUND PREFERNCE CHANGED * ERROR * ', error)
-      }, () => {
-        this.logger.log('[SIDEBAR] - LISTEN TO SOUND PREFERNCE CHANGED *** COMPLETE *** ')
-      });
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (newSoundPreference) => {
+          this.logger.log(
+            "[SIDEBAR] - LISTEN TO SOUND PREFERNCE CHANGED ",
+            newSoundPreference
+          );
+          this.NOTIFICATION_SOUND = newSoundPreference;
+        },
+        (error) => {
+          this.logger.error(
+            "[SIDEBAR] - LISTEN TO SOUND PREFERNCE CHANGED * ERROR * ",
+            error
+          );
+        },
+        () => {
+          this.logger.log(
+            "[SIDEBAR] - LISTEN TO SOUND PREFERNCE CHANGED *** COMPLETE *** "
+          );
+        }
+      );
   }
 
   listenToForegroundNotificationCount() {
     this.wsRequestsService.foregroundNotificationCount$
-      .pipe(
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe((foregroundNoticationCount) => {
-        this.logger.log('[SIDEBAR] - FOREGROUND NOTIFICATION COUNT ', foregroundNoticationCount);
-        this.new_messages_count = foregroundNoticationCount;
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (foregroundNoticationCount) => {
+          this.logger.log(
+            "[SIDEBAR] - FOREGROUND NOTIFICATION COUNT ",
+            foregroundNoticationCount
+          );
+          this.new_messages_count = foregroundNoticationCount;
 
-        if (this.NOTIFICATION_SOUND === 'enabled' && this.IS_REQUEST_FOR_PANEL_ROUTE === false && this.IS_UNSERVEDREQUEST_FOR_PANEL_ROUTE === false) {
-          // this.logger.log('[NAVBAR] NOTIFICATION_SOUND (showNotification) hasPlayed ', this.hasPlayed)
-          if (this.hasPlayed === false) {
-            // this.logger.log('[NAVBAR] NOTIFICATION_SOUND (showNotification) hasPlayed (HERE IN IF)', this.hasPlayed)
-            this.audio = new Audio();
+          if (
+            this.NOTIFICATION_SOUND === "enabled" &&
+            this.IS_REQUEST_FOR_PANEL_ROUTE === false &&
+            this.IS_UNSERVEDREQUEST_FOR_PANEL_ROUTE === false
+          ) {
+            // this.logger.log('[NAVBAR] NOTIFICATION_SOUND (showNotification) hasPlayed ', this.hasPlayed)
+            if (this.hasPlayed === false) {
+              // this.logger.log('[NAVBAR] NOTIFICATION_SOUND (showNotification) hasPlayed (HERE IN IF)', this.hasPlayed)
+              this.audio = new Audio();
 
-            this.audio.src = 'assets/pling.mp3';
-            // this.logger.log('sidebar audio src ',  this.audio.src )
-            this.audio.load();
+              this.audio.src = "assets/pling.mp3";
+              // this.logger.log('sidebar audio src ',  this.audio.src )
+              this.audio.load();
 
-            this.audio.play().then(() => {
+              this.audio
+                .play()
+                .then(() => {
+                  this.hasPlayed = true;
+                  this.logger.log(
+                    "[SIDEBAR] - SOUND HAS PLAYED  hasPlayed ",
+                    this.hasPlayed
+                  );
 
-              this.hasPlayed = true
-              this.logger.log('[SIDEBAR] - SOUND HAS PLAYED  hasPlayed ', this.hasPlayed)
-
-              setTimeout(() => {
-                this.hasPlayed = false;
-                this.logger.log('[SIDEBAR] - SOUND HAS PLAYED  hasPlayed ', this.hasPlayed)
-
-              }, 4000);
-            }).catch((error: any) => {
-              this.logger.log('[APP-COMP] ***soundMessage error*', error);
-            });
+                  setTimeout(() => {
+                    this.hasPlayed = false;
+                    this.logger.log(
+                      "[SIDEBAR] - SOUND HAS PLAYED  hasPlayed ",
+                      this.hasPlayed
+                    );
+                  }, 4000);
+                })
+                .catch((error: any) => {
+                  this.logger.log("[APP-COMP] ***soundMessage error*", error);
+                });
+            }
           }
+        },
+        (error) => {
+          this.logger.error(
+            "[SIDEBAR] - FOREGROUND NOTIFICATION COUNT * ERROR * ",
+            error
+          );
+        },
+        () => {
+          this.logger.log(
+            "[SIDEBAR] - FOREGROUND NOTIFICATION COUNT *** COMPLETE *** "
+          );
         }
-      }, error => {
-        this.logger.error('[SIDEBAR] - FOREGROUND NOTIFICATION COUNT * ERROR * ', error)
-      }, () => {
-        this.logger.log('[SIDEBAR] - FOREGROUND NOTIFICATION COUNT *** COMPLETE *** ')
-      });
+      );
   }
-
-
 
   getLoggedUser() {
     this.auth.user_bs.subscribe((user) => {
-      this.logger.log('[SIDEBAR] USER GET IN SIDEBAR ', user)
+      this.logger.log("[SIDEBAR] USER GET IN SIDEBAR ", user);
       this.user = user;
       if (user) {
-        this.createUserAvatar(user)
+        this.createUserAvatar(user);
         this.currentUserId = user._id;
-        this.logger.log('[SIDEBAR] Current USER ID ', this.currentUserId);
+        this.logger.log("[SIDEBAR] Current USER ID ", this.currentUserId);
 
-        const stored_preferred_lang = localStorage.getItem(this.user._id + '_lang')
+        const stored_preferred_lang = localStorage.getItem(
+          this.user._id + "_lang"
+        );
 
         if (stored_preferred_lang) {
           this.dsbrd_lang = stored_preferred_lang;
-          this.getLangTranslation(this.dsbrd_lang)
-          this.flag_url = "assets/img/language_flag/" + stored_preferred_lang + ".png"
+          this.getLangTranslation(this.dsbrd_lang);
+          this.flag_url =
+            "assets/img/language_flag/" + stored_preferred_lang + ".png";
 
-          this.logger.log('[SIDEBAR] flag_url (from stored_preferred_lang) ', this.flag_url)
+          this.logger.log(
+            "[SIDEBAR] flag_url (from stored_preferred_lang) ",
+            this.flag_url
+          );
 
-          this.logger.log('[SIDEBAR] stored_preferred_lang ', stored_preferred_lang)
+          this.logger.log(
+            "[SIDEBAR] stored_preferred_lang ",
+            stored_preferred_lang
+          );
         } else {
           this.browserLang = this.translate.getBrowserLang();
           this.dsbrd_lang = this.browserLang;
-          this.getLangTranslation(this.dsbrd_lang)
-          this.logger.log('[SIDEBAR] - browser_lang ', this.browserLang)
-          this.flag_url = "assets/img/language_flag/" + this.browserLang + ".png"
+          this.getLangTranslation(this.dsbrd_lang);
+          this.logger.log("[SIDEBAR] - browser_lang ", this.browserLang);
+          this.flag_url =
+            "assets/img/language_flag/" + this.browserLang + ".png";
 
-          this.logger.log('[SIDEBAR] flag_url (from browser_lang) ', this.flag_url)
+          this.logger.log(
+            "[SIDEBAR] flag_url (from browser_lang) ",
+            this.flag_url
+          );
         }
       }
     });
   }
 
-
-
   createUserAvatar(user) {
-    this.logger.log('[USERS] - createProjectUserAvatar ', user)
-    let fullname = ''
+    this.logger.log("[USERS] - createProjectUserAvatar ", user);
+    let fullname = "";
     if (user && user.firstname && user.lastname) {
-      fullname = user.firstname + ' ' + user.lastname
-      user['fullname_initial'] = avatarPlaceholder(fullname)
-      user['fillColour'] = getColorBck(fullname)
+      fullname = user.firstname + " " + user.lastname;
+      user["fullname_initial"] = avatarPlaceholder(fullname);
+      user["fillColour"] = getColorBck(fullname);
     } else if (user && user.firstname) {
-      fullname = user.firstname
-      user['fullname_initial'] = avatarPlaceholder(fullname)
-      user['fillColour'] = getColorBck(fullname)
+      fullname = user.firstname;
+      user["fullname_initial"] = avatarPlaceholder(fullname);
+      user["fillColour"] = getColorBck(fullname);
     } else {
-      user['fullname_initial'] = 'N/A'
-      user['fillColour'] = 'rgb(98, 100, 167)'
+      user["fullname_initial"] = "N/A";
+      user["fillColour"] = "rgb(98, 100, 167)";
     }
   }
 
   getLangTranslation(dsbrd_lang_code) {
-    this.translate.get(dsbrd_lang_code)
-      .subscribe((translation: any) => {
-        this.logger.log('[SIDEBAR] getLangTranslation', translation)
-        this.tlangparams = { language_name: translation }
-      });
+    this.translate.get(dsbrd_lang_code).subscribe((translation: any) => {
+      this.logger.log("[SIDEBAR] getLangTranslation", translation);
+      this.tlangparams = { language_name: translation };
+    });
   }
 
   getChatUrl() {
@@ -552,39 +642,48 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     // this.logger.log('[SIDEBAR] AppConfigService getAppConfig CHAT_BASE_URL', this.CHAT_BASE_URL);
   }
 
-
   brandLog() {
     // this.logger.log('BRAND_JSON - SIDEBAR ', brand);
-    this.logger.log('[SIDEBAR] BRAND_JSON - sidebarlogourl ', this.sidebarLogoWhite_Url);
-
+    this.logger.log(
+      "[SIDEBAR] BRAND_JSON - sidebarlogourl ",
+      this.sidebarLogoWhite_Url
+    );
   }
 
   getProfileImageStorage() {
-    if (this.appConfigService.getConfig().uploadEngine === 'firebase') {
-      this.UPLOAD_ENGINE_IS_FIREBASE = true
+    if (this.appConfigService.getConfig().uploadEngine === "firebase") {
+      this.UPLOAD_ENGINE_IS_FIREBASE = true;
       const firebase_conf = this.appConfigService.getConfig().firebase;
-      this.storageBucket = firebase_conf['storageBucket'];
-      this.logger.log('[SIDEBAR] IMAGE STORAGE ', this.storageBucket, 'usecase Firebase')
+      this.storageBucket = firebase_conf["storageBucket"];
+      this.logger.log(
+        "[SIDEBAR] IMAGE STORAGE ",
+        this.storageBucket,
+        "usecase Firebase"
+      );
     } else {
-      this.UPLOAD_ENGINE_IS_FIREBASE = false
+      this.UPLOAD_ENGINE_IS_FIREBASE = false;
       this.baseUrl = this.appConfigService.getConfig().SERVER_BASE_URL;
-      this.logger.log('[SIDEBAR] IMAGE STORAGE ', this.storageBucket, 'usecase Native')
+      this.logger.log(
+        "[SIDEBAR] IMAGE STORAGE ",
+        this.storageBucket,
+        "usecase Native"
+      );
     }
-
-
   }
 
   getOSCODE() {
-    this.public_Key = this.appConfigService.getConfig().t2y12PruGU9wUtEGzBJfolMIgK;
-    this.logger.log('[SIDEBAR] AppConfigService getAppConfig public_Key', this.public_Key);
+    this.public_Key =
+      this.appConfigService.getConfig().t2y12PruGU9wUtEGzBJfolMIgK;
+    this.logger.log(
+      "[SIDEBAR] AppConfigService getAppConfig public_Key",
+      this.public_Key
+    );
 
     let keys = this.public_Key.split("-");
-    this.logger.log('[SIDEBAR] PUBLIC-KEY - public_Key keys', keys)
+    this.logger.log("[SIDEBAR] PUBLIC-KEY - public_Key keys", keys);
 
-    keys.forEach(key => {
-
+    keys.forEach((key) => {
       if (key.includes("ANA")) {
-
         let ana = key.split(":");
 
         if (ana[1] === "F") {
@@ -700,9 +799,6 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           this.isVisibleINT = true;
         }
       }
-
-
-
     });
 
     if (!this.public_Key.includes("INT")) {
@@ -730,17 +826,16 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     if (!this.public_Key.includes("CNT")) {
       this.isVisibleCNT = false;
     }
-
-
-
   }
-
 
   getCurrentRoute() {
     this.router.events.subscribe((event: NavigationEvent) => {
       if (event instanceof NavigationEnd) {
-        this.logger.log('[SIDEBAR] NavigationEnd event.url', event.url.substring(event.url.lastIndexOf('/') + 1))
-        if (event.url.indexOf('/request-for-panel') !== -1) {
+        this.logger.log(
+          "[SIDEBAR] NavigationEnd event.url",
+          event.url.substring(event.url.lastIndexOf("/") + 1)
+        );
+        if (event.url.indexOf("/request-for-panel") !== -1) {
           this.IS_REQUEST_FOR_PANEL_ROUTE = true;
           // this.logger.log('[NAVBAR] NavigationEnd - IS_REQUEST_FOR_PANEL_ROUTE  ', this.IS_REQUEST_FOR_PANEL_ROUTE);
         } else {
@@ -748,7 +843,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[NAVBAR] NavigationEnd - IS_REQUEST_FOR_PANEL_ROUTE  ', this.IS_REQUEST_FOR_PANEL_ROUTE);
         }
 
-        if (event.url.indexOf('/unserved-request-for-panel') !== -1) {
+        if (event.url.indexOf("/unserved-request-for-panel") !== -1) {
           this.IS_UNSERVEDREQUEST_FOR_PANEL_ROUTE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - IS_UNSERVEDREQUEST_FOR_PANEL_ROUTE  ', this.IS_UNSERVEDREQUEST_FOR_PANEL_ROUTE);
         } else {
@@ -756,25 +851,26 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd- IS_UNSERVEDREQUEST_FOR_PANEL_ROUTE  ', this.IS_UNSERVEDREQUEST_FOR_PANEL_ROUTE);
         }
 
-        if (event.url.indexOf('/autologin') !== -1) {
+        if (event.url.indexOf("/autologin") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE activities-demo route IS ACTIVE  ', event.url);
           this.AUTOLOGIN_ROUTE_IS_ACTIVE = true;
-
         } else {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE activities-demo route IS NOT ACTIVE  ', event.url);
           this.AUTOLOGIN_ROUTE_IS_ACTIVE = false;
         }
 
-        if (event.url === '/projects') {
-          this.logger.log('[SIDEBAR] NavigationEnd - THE activities-demo route IS ACTIVE  ', event.url);
+        if (event.url === "/projects") {
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - THE activities-demo route IS ACTIVE  ",
+            event.url
+          );
           this.YOUR_PROJECT_ROUTE_IS_ACTIVE = true;
-
         } else {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE activities-demo route IS NOT ACTIVE  ', event.url);
           this.YOUR_PROJECT_ROUTE_IS_ACTIVE = false;
         }
 
-        if (event.url.indexOf('/activities') !== -1) {
+        if (event.url.indexOf("/activities") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE activities-demo route IS ACTIVE  ', event.url);
           this.ACTIVITIES_ROUTE_IS_ACTIVE = true;
         } else {
@@ -782,7 +878,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           this.ACTIVITIES_ROUTE_IS_ACTIVE = false;
         }
 
-        if (event.url.indexOf('/activities-demo') !== -1) {
+        if (event.url.indexOf("/activities-demo") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE activities-demo route IS ACTIVE  ', event.url);
           this.ACTIVITIES_DEMO_ROUTE_IS_ACTIVE = true;
         } else {
@@ -790,7 +886,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           this.ACTIVITIES_DEMO_ROUTE_IS_ACTIVE = false;
         }
 
-        if (event.url.indexOf('/analytics-demo') !== -1) {
+        if (event.url.indexOf("/analytics-demo") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE analytics-demo route IS ACTIVE  ', event.url);
           this.ANALYTICS_DEMO_ROUTE_IS_ACTIVE = true;
         } else {
@@ -798,7 +894,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           this.ANALYTICS_DEMO_ROUTE_IS_ACTIVE = false;
         }
 
-        if (event.url.indexOf('/widget') !== -1) {
+        if (event.url.indexOf("/widget") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE widget route IS ACTIVE  ', event.url);
           this.WIDGET_ROUTE_IS_ACTIVE = true;
         } else {
@@ -806,7 +902,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           this.WIDGET_ROUTE_IS_ACTIVE = false;
         }
 
-        if (event.url.indexOf('/analytics') !== -1) {
+        if (event.url.indexOf("/analytics") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE analytics route IS ACTIVE  ', event.url);
           this.ANALITYCS_ROUTE_IS_ACTIVE = true;
         } else {
@@ -814,7 +910,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           this.ANALITYCS_ROUTE_IS_ACTIVE = false;
         }
 
-        if (event.url.indexOf('/home') !== -1) {
+        if (event.url.indexOf("/home") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE home route IS ACTIVE  ', event.url);
           this.HOME_ROUTE_IS_ACTIVE = true;
         } else {
@@ -822,7 +918,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           this.HOME_ROUTE_IS_ACTIVE = false;
         }
 
-        if (event.url.indexOf('/notification-email') !== -1) {
+        if (event.url.indexOf("/notification-email") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE home route IS ACTIVE  ', event.url);
           this.NOTIFICATION_EMAIL_IS_ACTIVE = true;
           // this.smallSidebar(true)
@@ -832,7 +928,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.smallSidebar(false)
         }
 
-        if (event.url.indexOf('/app-store') !== -1) {
+        if (event.url.indexOf("/app-store") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE home route IS ACTIVE  ', event.url);
           this.APPS_ROUTE_IS_ACTIVE = true;
           // this.smallSidebar(true)
@@ -844,7 +940,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
         // ------------------------------------------------------------------------------------------------
         // the following are also route of settings
         // ------------------------------------------------------------------------------------------------
-        if (event.url.indexOf('/trigger') !== -1) {
+        if (event.url.indexOf("/trigger") !== -1) {
           // this.logger.log('[SIDEBAR] NavigationEnd - THE home route IS ACTIVE  ', event.url);
           this.TRIGGER_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - TRIGGER_ROUTE_IS_ACTIVE ', this.TRIGGER_ROUTE_IS_ACTIVE);
@@ -854,7 +950,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - TRIGGER_ROUTE_IS_ACTIVE ', this.TRIGGER_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/labels') !== -1) {
+        if (event.url.indexOf("/labels") !== -1) {
           this.TAG_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - TAG_ROUTE_IS_ACTIVE ', this.TAG_ROUTE_IS_ACTIVE);
         } else {
@@ -862,7 +958,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - TAG_ROUTE_IS_ACTIVE ', this.TAG_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/cannedresponses') !== -1) {
+        if (event.url.indexOf("/cannedresponses") !== -1) {
           this.CANNED_RESPONSES_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - CANNED_RESPONSES_ROUTE_IS_ACTIVE ', this.CANNED_RESPONSES_ROUTE_IS_ACTIVE);
         } else {
@@ -870,7 +966,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - CANNED_RESPONSES_ROUTE_IS_ACTIVE ', this.CANNED_RESPONSES_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/departments') !== -1) {
+        if (event.url.indexOf("/departments") !== -1) {
           this.DEPTS_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - DEPTS_ROUTE_IS_ACTIVE ', this.DEPTS_ROUTE_IS_ACTIVE);
         } else {
@@ -878,7 +974,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - DEPTS_ROUTE_IS_ACTIVE ', this.DEPTS_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/department/edit/') !== -1) {
+        if (event.url.indexOf("/department/edit/") !== -1) {
           this.EDIT_DEPT_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - EDIT_DEPT_ROUTE_IS_ACTIVE ', this.EDIT_DEPT_ROUTE_IS_ACTIVE);
         } else {
@@ -886,8 +982,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - EDIT_DEPT_ROUTE_IS_ACTIVE ', this.EDIT_DEPT_ROUTE_IS_ACTIVE);
         }
 
-
-        if (event.url.indexOf('/users') !== -1) {
+        if (event.url.indexOf("/users") !== -1) {
           this.TEAMMATES_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - TEAMMATES_ROUTE_IS_ACTIVE ', this.TEAMMATES_ROUTE_IS_ACTIVE);
         } else {
@@ -895,7 +990,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - TEAMMATES_ROUTE_IS_ACTIVE ', this.TEAMMATES_ROUTE_IS_ACTIVE);;
         }
 
-        if (event.url.indexOf('/groups') !== -1) {
+        if (event.url.indexOf("/groups") !== -1) {
           this.GROUPS_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - GROUPS_ROUTE_IS_ACTIVE ', this.GROUPS_ROUTE_IS_ACTIVE);
         } else {
@@ -903,7 +998,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - GROUPS_ROUTE_IS_ACTIVE ', this.GROUPS_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/group/create') !== -1) {
+        if (event.url.indexOf("/group/create") !== -1) {
           this.CREATE_GROUP_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - CREATE_GROUP_ROUTE_IS_ACTIVE ', this.CREATE_GROUP_ROUTE_IS_ACTIVE);
         } else {
@@ -911,7 +1006,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - CREATE_GROUP_ROUTE_IS_ACTIVE ', this.CREATE_GROUP_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/group/edit') !== -1) {
+        if (event.url.indexOf("/group/edit") !== -1) {
           this.EDIT_GROUP_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - EDIT_GROUP_ROUTE_IS_ACTIVE ', this.EDIT_GROUP_ROUTE_IS_ACTIVE);
         } else {
@@ -919,8 +1014,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - EDIT_GROUP_ROUTE_IS_ACTIVE ', this.EDIT_GROUP_ROUTE_IS_ACTIVE);
         }
 
-
-        if (event.url.indexOf('/widget-set-up') !== -1) {
+        if (event.url.indexOf("/widget-set-up") !== -1) {
           this.WIDGET_SETUP_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - WIDGET_SETUP_ROUTE_IS_ACTIVE ', this.WIDGET_SETUP_ROUTE_IS_ACTIVE);
         } else {
@@ -929,71 +1023,121 @@ export class SidebarComponent implements OnInit, AfterViewInit {
         }
 
         // Chatbot sidebar
-        if (event.url.indexOf('/bots/my-chatbots/all') !== -1) {
+        if (event.url.indexOf("/bots/my-chatbots/all") !== -1) {
           this.MY_BOTS_ALL_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - MY_BOTS_ALL_ROUTE_IS_ACTIVE ', this.MY_BOTS_ALL_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - MY_BOTS_ALL_ROUTE_IS_ACTIVE ",
+            this.MY_BOTS_ALL_ROUTE_IS_ACTIVE
+          );
         } else {
           this.MY_BOTS_ALL_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - MY_BOTS_ALL_ROUTE_IS_ACTIVE ', this.MY_BOTS_ALL_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - MY_BOTS_ALL_ROUTE_IS_ACTIVE ",
+            this.MY_BOTS_ALL_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/bots-demo') !== -1) {
+        if (event.url.indexOf("/bots-demo") !== -1) {
           this.BOTS_DEMO_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - BOTS_DEMO_ROUTE_IS_ACTIVE ', this.BOTS_DEMO_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - BOTS_DEMO_ROUTE_IS_ACTIVE ",
+            this.BOTS_DEMO_ROUTE_IS_ACTIVE
+          );
         } else {
           this.BOTS_DEMO_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - BOTS_DEMO_ROUTE_IS_ACTIVE ', this.BOTS_DEMO_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - BOTS_DEMO_ROUTE_IS_ACTIVE ",
+            this.BOTS_DEMO_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/bots/my-chatbots/increase-sales') !== -1) {
+        if (event.url.indexOf("/bots/my-chatbots/increase-sales") !== -1) {
           this.MY_BOTS_IS_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - MY_BOTS_IS_ROUTE_IS_ACTIVE ', this.MY_BOTS_IS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - MY_BOTS_IS_ROUTE_IS_ACTIVE ",
+            this.MY_BOTS_IS_ROUTE_IS_ACTIVE
+          );
         } else {
           this.MY_BOTS_IS_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - MY_BOTS_IS_ROUTE_IS_ACTIVE ', this.MY_BOTS_IS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - MY_BOTS_IS_ROUTE_IS_ACTIVE ",
+            this.MY_BOTS_IS_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/bots/my-chatbots/customer-satisfaction') !== -1) {
+        if (
+          event.url.indexOf("/bots/my-chatbots/customer-satisfaction") !== -1
+        ) {
           this.MY_BOTS_CS_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - MY_BOTS_CS_ROUTE_IS_ACTIVE ', this.MY_BOTS_CS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - MY_BOTS_CS_ROUTE_IS_ACTIVE ",
+            this.MY_BOTS_CS_ROUTE_IS_ACTIVE
+          );
         } else {
           this.MY_BOTS_CS_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - MY_BOTS_CS_ROUTE_IS_ACTIVE ', this.MY_BOTS_CS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - MY_BOTS_CS_ROUTE_IS_ACTIVE ",
+            this.MY_BOTS_CS_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/bots/templates/all') !== -1) {
+        if (event.url.indexOf("/bots/templates/all") !== -1) {
           this.TMPLT_ALL_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - TMPLT_ALL_ROUTE_IS_ACTIVE ', this.TMPLT_ALL_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - TMPLT_ALL_ROUTE_IS_ACTIVE ",
+            this.TMPLT_ALL_ROUTE_IS_ACTIVE
+          );
         } else {
           this.TMPLT_ALL_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - TMPLT_ALL_ROUTE_IS_ACTIVE ', this.TMPLT_ALL_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - TMPLT_ALL_ROUTE_IS_ACTIVE ",
+            this.TMPLT_ALL_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/bots/templates/community') !== -1) {
+        if (event.url.indexOf("/bots/templates/community") !== -1) {
           this.TMPLT_CMNT_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - TMPLT_CMNT_ROUTE_IS_ACTIVE ', this.TMPLT_CMNT_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - TMPLT_CMNT_ROUTE_IS_ACTIVE ",
+            this.TMPLT_CMNT_ROUTE_IS_ACTIVE
+          );
         } else {
           this.TMPLT_CMNT_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - TMPLT_CMNT_ROUTE_IS_ACTIVE ', this.TMPLT_CMNT_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - TMPLT_CMNT_ROUTE_IS_ACTIVE ",
+            this.TMPLT_CMNT_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/bots/templates/increase-sales') !== -1) {
+        if (event.url.indexOf("/bots/templates/increase-sales") !== -1) {
           this.TMPLT_IS_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - TMPLT_IS_ROUTE_IS_ACTIVE ', this.TMPLT_IS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - TMPLT_IS_ROUTE_IS_ACTIVE ",
+            this.TMPLT_IS_ROUTE_IS_ACTIVE
+          );
         } else {
           this.TMPLT_IS_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - TMPLT_IS_ROUTE_IS_ACTIVE ', this.TMPLT_IS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - TMPLT_IS_ROUTE_IS_ACTIVE ",
+            this.TMPLT_IS_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/bots/templates/customer-satisfaction') !== -1) {
+        if (event.url.indexOf("/bots/templates/customer-satisfaction") !== -1) {
           this.TMPLT_CS_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - TMPLT_CS_ROUTE_IS_ACTIVE ', this.TMPLT_CS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - TMPLT_CS_ROUTE_IS_ACTIVE ",
+            this.TMPLT_CS_ROUTE_IS_ACTIVE
+          );
         } else {
           this.TMPLT_CS_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - TMPLT_CS_ROUTE_IS_ACTIVE ', this.TMPLT_CS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - TMPLT_CS_ROUTE_IS_ACTIVE ",
+            this.TMPLT_CS_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/createfaq') !== -1) {
+        if (event.url.indexOf("/createfaq") !== -1) {
           this.CREATE_FAQ_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - CREATE_FAQ_ROUTE_IS_ACTIVE ', this.CREATE_FAQ_ROUTE_IS_ACTIVE);
         } else {
@@ -1001,7 +1145,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - CREATE_FAQ_ROUTE_IS_ACTIVE ', this.CREATE_FAQ_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/editfaq') !== -1) {
+        if (event.url.indexOf("/editfaq") !== -1) {
           this.EDIT_FAQ_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - EDIT_FAQ_ROUTE_IS_ACTIVE ', this.EDIT_FAQ_ROUTE_IS_ACTIVE);
         } else {
@@ -1009,7 +1153,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - EDIT_FAQ_ROUTE_IS_ACTIVE ', this.EDIT_FAQ_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/faq/test/') !== -1) {
+        if (event.url.indexOf("/faq/test/") !== -1) {
           this.BOT_TEST_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - BOT_TEST_ROUTE_IS_ACTIVE ', this.BOT_TEST_ROUTE_IS_ACTIVE);
         } else {
@@ -1017,8 +1161,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - BOT_TEST_ROUTE_IS_ACTIVE ', this.BOT_TEST_ROUTE_IS_ACTIVE);
         }
 
-
-        if (event.url.indexOf('/hours') !== -1) {
+        if (event.url.indexOf("/hours") !== -1) {
           this.OPERATING_HOURS_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - OPERATING_HOURS_ROUTE_IS_ACTIVE ', this.OPERATING_HOURS_ROUTE_IS_ACTIVE);
         } else {
@@ -1026,7 +1169,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - OPERATING_HOURS_ROUTE_IS_ACTIVE ', this.OPERATING_HOURS_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/project-settings/') !== -1) {
+        if (event.url.indexOf("/project-settings/") !== -1) {
           this.PROJECT_SETTINGS_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - PROJECT_SETTINGS_ROUTE_IS_ACTIVE ', this.PROJECT_SETTINGS_ROUTE_IS_ACTIVE);
         } else {
@@ -1034,7 +1177,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - SETTINGS_IS_ACTIVE ', this.PROJECT_SETTINGS_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/notification-email') !== -1) {
+        if (event.url.indexOf("/notification-email") !== -1) {
           this.ENTERPRISE_NOTIFICATION_EMAIL_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - ENTERPRISE_NOTIFICATION_EMAIL_ROUTE_IS_ACTIVE ', this.ENTERPRISE_NOTIFICATION_EMAIL_ROUTE_IS_ACTIVE);
         } else {
@@ -1042,7 +1185,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - ENTERPRISE_NOTIFICATION_EMAIL_ROUTE_IS_ACTIVE ', this.ENTERPRISE_NOTIFICATION_EMAIL_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/smtp-settings') !== -1) {
+        if (event.url.indexOf("/smtp-settings") !== -1) {
           this.ENTERPRISE_SMTP_SETTINGS_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - ENTERPRISE_SMTP_SETTINGS_ROUTE_IS_ACTIVE ', this.ENTERPRISE_SMTP_SETTINGS_ROUTE_IS_ACTIVE);
         } else {
@@ -1050,7 +1193,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - ENTERPRISE_SMTP_SETTINGS_ROUTE_IS_ACTIVE ', this.ENTERPRISE_SMTP_SETTINGS_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/webhook') !== -1) {
+        if (event.url.indexOf("/webhook") !== -1) {
           this.PRJCT_SETTINGS_WEBHOOK_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - PRJCT_SETTINGS_WEBHOOK_ROUTE_IS_ACTIVE ', this.PRJCT_SETTINGS_WEBHOOK_ROUTE_IS_ACTIVE);
         } else {
@@ -1058,7 +1201,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - PRJCT_SETTINGS_WEBHOOK_ROUTE_IS_ACTIVE ', this.PRJCT_SETTINGS_WEBHOOK_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/payments') !== -1) {
+        if (event.url.indexOf("/payments") !== -1) {
           this.PRJCT_SETTINGS_PAYMENTS_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - PRJCT_SETTINGS_PAYMENTS_ROUTE_IS_ACTIVE ', this.PRJCT_SETTINGS_PAYMENTS_ROUTE_IS_ACTIVE);
         } else {
@@ -1066,7 +1209,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - PRJCT_SETTINGS_PAYMENTS_ROUTE_IS_ACTIVE ', this.PRJCT_SETTINGS_PAYMENTS_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/user/add') !== -1) {
+        if (event.url.indexOf("/user/add") !== -1) {
           this.INVITE_TEAMMATE_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - INVITE_TEAMMATE_ROUTE_IS_ACTIVE ', this.INVITE_TEAMMATE_ROUTE_IS_ACTIVE);
         } else {
@@ -1074,7 +1217,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - INVITE_TEAMMATE_ROUTE_IS_ACTIVE ', this.INVITE_TEAMMATE_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/user/edit/') !== -1) {
+        if (event.url.indexOf("/user/edit/") !== -1) {
           this.EDIT_PROJECT_USER_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - EDIT_PROJECT_USER_ROUTE_IS_ACTIVE ', this.EDIT_PROJECT_USER_ROUTE_IS_ACTIVE);
         } else {
@@ -1082,7 +1225,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - EDIT_PROJECT_USER_ROUTE_IS_ACTIVE ', this.EDIT_PROJECT_USER_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/messages') !== -1) {
+        if (event.url.indexOf("/messages") !== -1) {
           this.CONV_DETAIL_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - CONV_DETAIL_ROUTE_IS_ACTIVE ', this.CONV_DETAIL_ROUTE_IS_ACTIVE);
         } else {
@@ -1090,7 +1233,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - CONV_DETAIL_ROUTE_IS_ACTIVE ', this.CONV_DETAIL_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/wsrequests-demo') !== -1) {
+        if (event.url.indexOf("/wsrequests-demo") !== -1) {
           this.CONV_DEMO_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - CONV_DEMO_ROUTE_IS_ACTIVE ', this.CONV_DEMO_ROUTE_IS_ACTIVE);
         } else {
@@ -1098,9 +1241,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - CONV_DEMO_ROUTE_IS_ACTIVE ', this.CONV_DEMO_ROUTE_IS_ACTIVE);
         }
 
-
-
-        if (event.url.indexOf('/contact/edit/') !== -1) {
+        if (event.url.indexOf("/contact/edit/") !== -1) {
           this.CONTACT_EDIT_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - CONTACT_EDIT_ROUTE_IS_ACTIVE ', this.CONTACT_EDIT_ROUTE_IS_ACTIVE);
         } else {
@@ -1108,7 +1249,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - CONTACT_EDIT_ROUTE_IS_ACTIVE ', this.CONTACT_EDIT_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/contact/') !== -1) {
+        if (event.url.indexOf("/contact/") !== -1) {
           this.CONTACT_CONVS_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - CONTACT_CONVS_ROUTE_IS_ACTIVE ', this.CONTACT_CONVS_ROUTE_IS_ACTIVE);
         } else {
@@ -1116,7 +1257,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - CONTACT_CONVS_ROUTE_IS_ACTIVE ', this.CONTACT_CONVS_ROUTE_IS_ACTIVE);
         }
 
-        if (event.url.indexOf('/contacts-demo') !== -1) {
+        if (event.url.indexOf("/contacts-demo") !== -1) {
           this.CONTACTS_DEMO_ROUTE_IS_ACTIVE = true;
           // this.logger.log('[SIDEBAR] NavigationEnd - CONTACTS_DEMO_ROUTE_IS_ACTIVE ', this.CONTACTS_DEMO_ROUTE_IS_ACTIVE);
         } else {
@@ -1124,78 +1265,111 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           // this.logger.log('[SIDEBAR] NavigationEnd - CONTACTS_DEMO_ROUTE_IS_ACTIVE ', this.CONTACTS_DEMO_ROUTE_IS_ACTIVE);
         }
 
-
-
-        if (event.url.indexOf('/integrations') !== -1) {
+        if (event.url.indexOf("/integrations") !== -1) {
           this.INTEGRATIONS_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - INTEGRATIONS_ROUTE_IS_ACTIVE ', this.INTEGRATIONS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - INTEGRATIONS_ROUTE_IS_ACTIVE ",
+            this.INTEGRATIONS_ROUTE_IS_ACTIVE
+          );
         } else {
           this.INTEGRATIONS_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - INTEGRATIONS_ROUTE_IS_ACTIVE ', this.INTEGRATIONS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - INTEGRATIONS_ROUTE_IS_ACTIVE ",
+            this.INTEGRATIONS_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/installation') !== -1) {
+        if (event.url.indexOf("/installation") !== -1) {
           this.INSTALLATION_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - INSTALLATION_ROUTE_IS_ACTIVE ', this.INSTALLATION_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - INSTALLATION_ROUTE_IS_ACTIVE ",
+            this.INSTALLATION_ROUTE_IS_ACTIVE
+          );
         } else {
           this.INSTALLATION_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - INSTALLATION_ROUTE_IS_ACTIVE ', this.INSTALLATION_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - INSTALLATION_ROUTE_IS_ACTIVE ",
+            this.INSTALLATION_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/email') !== -1) {
+        if (event.url.indexOf("/email") !== -1) {
           this.EMAIL_TICKETING_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - EMAIL_TICKETING_ROUTE_IS_ACTIVE ', this.EMAIL_TICKETING_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - EMAIL_TICKETING_ROUTE_IS_ACTIVE ",
+            this.EMAIL_TICKETING_ROUTE_IS_ACTIVE
+          );
         } else {
           this.EMAIL_TICKETING_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - EMAIL_TICKETING_ROUTE_IS_ACTIVE ', this.EMAIL_TICKETING_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - EMAIL_TICKETING_ROUTE_IS_ACTIVE ",
+            this.EMAIL_TICKETING_ROUTE_IS_ACTIVE
+          );
         }
 
-        if (event.url.indexOf('/automations') !== -1) {
+        if (event.url.indexOf("/automations") !== -1) {
           this.AUTOMATIONS_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - AUTOMATIONS_ROUTE_IS_ACTIVE ', this.AUTOMATIONS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - AUTOMATIONS_ROUTE_IS_ACTIVE ",
+            this.AUTOMATIONS_ROUTE_IS_ACTIVE
+          );
         } else {
           this.AUTOMATIONS_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - AUTOMATIONS_ROUTE_IS_ACTIVE ', this.AUTOMATIONS_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - AUTOMATIONS_ROUTE_IS_ACTIVE ",
+            this.AUTOMATIONS_ROUTE_IS_ACTIVE
+          );
         }
-
-
 
         // if (event.url.indexOf('/knowledge-bases-pre') ) {
-        if (event.url.substring(event.url.lastIndexOf('/') + 1) === 'knowledge-bases-pre') {
+        if (
+          event.url.substring(event.url.lastIndexOf("/") + 1) ===
+          "knowledge-bases-pre"
+        ) {
           this.OLD_KB_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - OLD_KB_ROUTE_IS_ACTIVE ', this.OLD_KB_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - OLD_KB_ROUTE_IS_ACTIVE ",
+            this.OLD_KB_ROUTE_IS_ACTIVE
+          );
         } else {
           this.OLD_KB_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - OLD_KB_ROUTE_IS_ACTIVE ', this.OLD_KB_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - OLD_KB_ROUTE_IS_ACTIVE ",
+            this.OLD_KB_ROUTE_IS_ACTIVE
+          );
         }
-
 
         // if (event.url.match('/knowledge-bases')) {
-        if (event.url.substring(event.url.lastIndexOf('/') + 1) === 'knowledge-bases') {
+        if (
+          event.url.substring(event.url.lastIndexOf("/") + 1) ===
+          "knowledge-bases"
+        ) {
           this.KB_ROUTE_IS_ACTIVE = true;
-          this.logger.log('[SIDEBAR] NavigationEnd - KB_ROUTE_IS_ACTIVE ', this.KB_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - KB_ROUTE_IS_ACTIVE ",
+            this.KB_ROUTE_IS_ACTIVE
+          );
         } else {
           this.KB_ROUTE_IS_ACTIVE = false;
-          this.logger.log('[SIDEBAR] NavigationEnd - KB_ROUTE_IS_ACTIVE ', this.KB_ROUTE_IS_ACTIVE);
+          this.logger.log(
+            "[SIDEBAR] NavigationEnd - KB_ROUTE_IS_ACTIVE ",
+            this.KB_ROUTE_IS_ACTIVE
+          );
         }
-
-
-
       }
     });
   }
 
-
   subscribeToMyAvailibilityCount() {
-    this.projectService.myAvailabilityCount
-      .subscribe((num: number) => {
-        this.logger.log('[SIDEBAR] subscribeToMyAvailibilityCount ', num)
-        this.availabilityCount = num;
-      })
+    this.projectService.myAvailabilityCount.subscribe((num: number) => {
+      this.logger.log("[SIDEBAR] subscribeToMyAvailibilityCount ", num);
+      this.availabilityCount = num;
+    });
   }
 
   translateChangeAvailabilitySuccessMsg() {
-    this.translate.get('ChangeAvailabilitySuccessNoticationMsg')
+    this.translate
+      .get("ChangeAvailabilitySuccessNoticationMsg")
       .subscribe((text: string) => {
         this.changeAvailabilitySuccessNoticationMsg = text;
         // this.logger.log('+ + + change Availability Success Notication Msg', text)
@@ -1203,41 +1377,53 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   }
 
   translateChangeAvailabilityErrorMsg() {
-    this.translate.get('ChangeAvailabilityErrorNoticationMsg')
+    this.translate
+      .get("ChangeAvailabilityErrorNoticationMsg")
       .subscribe((text: string) => {
         this.changeAvailabilityErrorNoticationMsg = text;
         // this.logger.log('+ + + change Availability Error Notication Msg', text)
       });
   }
 
-
   listenHasDeleteUserProfileImage() {
-    this.getLoggedUser()
-    if (this.appConfigService.getConfig().uploadEngine === 'firebase') {
-      this.uploadImageService.hasDeletedUserPhoto.subscribe((hasDeletedImage) => {
-        this.logger.log('[SIDEBAR] - hasDeletedImage ? ', hasDeletedImage, '(usecase Firebase)');
-        this.userImageHasBeenUploaded = false
-        this.userProfileImageExist = false
-      });
+    this.getLoggedUser();
+    if (this.appConfigService.getConfig().uploadEngine === "firebase") {
+      this.uploadImageService.hasDeletedUserPhoto.subscribe(
+        (hasDeletedImage) => {
+          this.logger.log(
+            "[SIDEBAR] - hasDeletedImage ? ",
+            hasDeletedImage,
+            "(usecase Firebase)"
+          );
+          this.userImageHasBeenUploaded = false;
+          this.userProfileImageExist = false;
+        }
+      );
     } else {
-      this.uploadImageNativeService.hasDeletedUserPhoto.subscribe((hasDeletedImage) => {
-        this.logger.log('[SIDEBAR] - hasDeletedImage ? ', hasDeletedImage, '(usecase Native)');
-        this.userImageHasBeenUploaded = false
-        this.userProfileImageExist = false
-      });
+      this.uploadImageNativeService.hasDeletedUserPhoto.subscribe(
+        (hasDeletedImage) => {
+          this.logger.log(
+            "[SIDEBAR] - hasDeletedImage ? ",
+            hasDeletedImage,
+            "(usecase Native)"
+          );
+          this.userImageHasBeenUploaded = false;
+          this.userProfileImageExist = false;
+        }
+      );
     }
-
   }
-
 
   checkUserImageExist() {
     this.usersService.userProfileImageExist.subscribe((image_exist) => {
-      this.logger.log('[SIDEBAR] - USER PROFILE EXIST ? ', image_exist);
+      this.logger.log("[SIDEBAR] - USER PROFILE EXIST ? ", image_exist);
       this.userProfileImageExist = image_exist;
 
-      if (this.appConfigService.getConfig().uploadEngine === 'firebase') {
+      if (this.appConfigService.getConfig().uploadEngine === "firebase") {
         if (this.storageBucket && this.userProfileImageExist === true) {
-          this.logger.log('[SIDEBAR] - USER PROFILE EXIST - BUILD userProfileImageurl');
+          this.logger.log(
+            "[SIDEBAR] - USER PROFILE EXIST - BUILD userProfileImageurl"
+          );
           // this.setImageProfileUrl(this.storageBucket)
         }
       } else {
@@ -1248,31 +1434,40 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     });
   }
 
-
-
   checkUserImageUploadIsComplete() {
-    if (this.appConfigService.getConfig().uploadEngine === 'firebase') {
+    if (this.appConfigService.getConfig().uploadEngine === "firebase") {
       this.uploadImageService.userImageWasUploaded.subscribe((image_exist) => {
-        this.logger.log('[SIDEBAR] - IMAGE UPLOADING IS COMPLETE ? ', image_exist, '(usecase Firebase)');
+        this.logger.log(
+          "[SIDEBAR] - IMAGE UPLOADING IS COMPLETE ? ",
+          image_exist,
+          "(usecase Firebase)"
+        );
         this.userImageHasBeenUploaded = image_exist;
-        this.timeStamp = (new Date()).getTime();
+        this.timeStamp = new Date().getTime();
         // if (this.storageBucket && this.userImageHasBeenUploaded === true) {
         //   this.logger.log('[SIDEBAR] - IMAGE UPLOADING IS COMPLETE - BUILD userProfileImageurl ');
         //   this.setImageProfileUrl(this.storageBucket)
         // }
       });
     } else {
-
       // NATIVE
-      this.uploadImageNativeService.userImageWasUploaded_Native.subscribe((image_exist) => {
-        this.logger.log('[SIDEBAR] USER PROFILE IMAGE - IMAGE UPLOADING IS COMPLETE ? ', image_exist, '(usecase Native)');
+      this.uploadImageNativeService.userImageWasUploaded_Native.subscribe(
+        (image_exist) => {
+          this.logger.log(
+            "[SIDEBAR] USER PROFILE IMAGE - IMAGE UPLOADING IS COMPLETE ? ",
+            image_exist,
+            "(usecase Native)"
+          );
 
-        this.userImageHasBeenUploaded = image_exist;
-        this.uploadImageNativeService.userImageDownloadUrl_Native.subscribe((imageUrl) => {
-          this.userProfileImageurl = imageUrl
-          this.timeStamp = (new Date()).getTime();
-        })
-      })
+          this.userImageHasBeenUploaded = image_exist;
+          this.uploadImageNativeService.userImageDownloadUrl_Native.subscribe(
+            (imageUrl) => {
+              this.userProfileImageurl = imageUrl;
+              this.timeStamp = new Date().getTime();
+            }
+          );
+        }
+      );
     }
   }
 
@@ -1295,12 +1490,9 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   //   return this.sanitizer.bypassSecurityTrustUrl(this.userProfileImageurl)
   // }
 
-
-
-
   getProjectUserId() {
     this.usersService.project_user_id_bs.subscribe((projectUser_id) => {
-      this.logger.log('[SIDEBAR] - PROJECT-USER-ID ', projectUser_id);
+      this.logger.log("[SIDEBAR] - PROJECT-USER-ID ", projectUser_id);
 
       // if (this.projectUser_id) {
       //     this.logger.log('[SIDEBAR] - PROJECT-USER-ID (THIS)  ', this.projectUser_id);
@@ -1332,21 +1524,19 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     this.usersService.user_is_busy$.subscribe((user_isbusy) => {
       this.IS_BUSY = user_isbusy;
       // THE VALUE OS  IS_BUSY IS THEN UPDATED WITH THE VALUE RETURNED FROM THE WEBSOCKET getWsCurrentUserIsBusy$()
-      // WHEN, FOR EXAMPLE IN PROJECT-SETTINGS > ADVANCED THE NUM OF MAX CHAT IS 3 AND THE 
+      // WHEN, FOR EXAMPLE IN PROJECT-SETTINGS > ADVANCED THE NUM OF MAX CHAT IS 3 AND THE
       // this.logger.log('[SIDEBAR] - USER IS BUSY (from db)', this.IS_BUSY);
     });
   }
-
 
   // changeAvailabilityState(IS_AVAILABLE, profilestatus) {
   //     this.logger.log('[SIDEBAR] - CHANGE STATUS - USER IS AVAILABLE ? ', IS_AVAILABLE);
   //     this.logger.log('[SIDEBAR]- CHANGE STATUS - PROJECT USER ID: ', this.projectUser_id);
 
-
   //     // this.usersService.updateProjectUser(this.projectUser_id, IS_AVAILABLE).subscribe((projectUser: any) => {
   //     // DONE - WORKS NK-TO-TEST - da implementare quando viene implementato il servizio - serve per cambiare lo stato di disponibilità dell'utente corrente
-  //     // anche in USER & GROUP bisogna cambiare per la riga dell'utente corrente   
-  //     this.usersService.updateCurrentUserAvailability(this.projectId, IS_AVAILABLE).subscribe((projectUser: any) => { // non 
+  //     // anche in USER & GROUP bisogna cambiare per la riga dell'utente corrente
+  //     this.usersService.updateCurrentUserAvailability(this.projectId, IS_AVAILABLE).subscribe((projectUser: any) => { // non
 
   //         this.logger.log('[SIDEBAR] PROJECT-USER UPDATED ', projectUser)
 
@@ -1366,7 +1556,6 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   //         // this.notify.showNotification('status successfully updated', 2, 'done');
   //         this.notify.showWidgetStyleUpdateNotification(this.changeAvailabilitySuccessNoticationMsg, 2, 'done');
 
-
   //         // this.getUserAvailability()
   //         this.getProjectUser();
   //     });
@@ -1375,67 +1564,94 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   // IF THE AVAILABILITY STATUS IS CHANGED from THE USER.COMP AVAILABLE / UNAVAILABLE TOGGLE BTN
   // RE-RUN getAllUsersOfCurrentProject TO UPDATE AVAILABLE / UNAVAILABLE BTN ON THE TOP OF THE SIDEBAR
   hasChangedAvailabilityStatusInUsersComp() {
-    this.usersService.has_changed_availability_in_users.subscribe((has_changed_availability) => {
-      //    this.logger.log('[SIDEBAR] SUBSCRIBES TO HAS CHANGED AVAILABILITY FROM THE USERS COMP', has_changed_availability)
+    this.usersService.has_changed_availability_in_users.subscribe(
+      (has_changed_availability) => {
+        //    this.logger.log('[SIDEBAR] SUBSCRIBES TO HAS CHANGED AVAILABILITY FROM THE USERS COMP', has_changed_availability)
 
-      if (this.project) {
-        this.getProjectUser()
+        if (this.project) {
+          this.getProjectUser();
+        }
+        // this.getWsCurrentUserAvailability$()
       }
-      // this.getWsCurrentUserAvailability$()
-    })
+    );
   }
-
-
-
 
   // *** NOTE: THE SAME CALLBACK IS RUNNED IN THE HOME.COMP ***
   getProjectUser() {
     //    this.logger.log('[SIDEBAR]  !!! SIDEBAR CALL GET-PROJECT-USER')
-    this.usersService.getProjectUserByUserId(this.currentUserId).subscribe((projectUser: any) => {
-      this.logger.log('[SIDEBAR] PROJECT-USER GET BY USER-ID  ', projectUser);
-      this.logger.log('[SIDEBAR] PROJECT-USER GET BY USER-ID - PROJECT-ID ', this.projectId);
-      this.logger.log('[SIDEBAR] PROJECT-USER GET BY USER-ID - CURRENT-USER-ID ', this.user._id);
-      // this.logger.log('[SIDEBAR] PROJECT-USER GET BY USER-ID - PROJECT USER ', projectUser);
-      this.logger.log('[SIDEBAR] PROJECT-USER GET BY USER-ID - PROJECT USER LENGTH', projectUser.length);
-      if ((projectUser) && (projectUser.length !== 0)) {
-        // this.logger.log('[SIDEBAR] PROJECT-USER ID ', projectUser[0]._id)
-        // this.logger.log('[SIDEBAR] USER IS AVAILABLE ', projectUser[0].user_available)
-        // this.logger.log('[SIDEBAR] USER IS BUSY (from db)', projectUser[0].isBusy)
-        // this.user_is_available_bs = projectUser.user_available;
+    this.usersService.getProjectUserByUserId(this.currentUserId).subscribe(
+      (projectUser: any) => {
+        this.logger.log("[SIDEBAR] PROJECT-USER GET BY USER-ID  ", projectUser);
+        this.logger.log(
+          "[SIDEBAR] PROJECT-USER GET BY USER-ID - PROJECT-ID ",
+          this.projectId
+        );
+        this.logger.log(
+          "[SIDEBAR] PROJECT-USER GET BY USER-ID - CURRENT-USER-ID ",
+          this.user._id
+        );
+        // this.logger.log('[SIDEBAR] PROJECT-USER GET BY USER-ID - PROJECT USER ', projectUser);
+        this.logger.log(
+          "[SIDEBAR] PROJECT-USER GET BY USER-ID - PROJECT USER LENGTH",
+          projectUser.length
+        );
+        if (projectUser && projectUser.length !== 0) {
+          // this.logger.log('[SIDEBAR] PROJECT-USER ID ', projectUser[0]._id)
+          // this.logger.log('[SIDEBAR] USER IS AVAILABLE ', projectUser[0].user_available)
+          // this.logger.log('[SIDEBAR] USER IS BUSY (from db)', projectUser[0].isBusy)
+          // this.user_is_available_bs = projectUser.user_available;
 
-        // NOTE_nk: comment this this.subsTo_WsCurrentUser(projectUser[0]._id)
-        this.subsTo_WsCurrentUser(projectUser[0]._id)
+          // NOTE_nk: comment this this.subsTo_WsCurrentUser(projectUser[0]._id)
+          this.subsTo_WsCurrentUser(projectUser[0]._id);
 
-        if (projectUser[0].user_available !== undefined) {
-          this.usersService.user_availability(projectUser[0]._id, projectUser[0].user_available, projectUser[0].isBusy, projectUser[0])
+          if (projectUser[0].user_available !== undefined) {
+            this.usersService.user_availability(
+              projectUser[0]._id,
+              projectUser[0].user_available,
+              projectUser[0].isBusy,
+              projectUser[0]
+            );
+          }
+
+          // ADDED 21 AGO
+          if (projectUser[0].role !== undefined) {
+            this.logger.log(
+              "[SIDEBAR] GET PROJECT USER ROLE FOR THE PROJECT ",
+              this.projectId,
+              " »» ",
+              projectUser[0].role
+            );
+
+            // ASSIGN THE projectUser[0].role VALUE TO USER_ROLE
+            this.USER_ROLE = projectUser[0].role;
+
+            // SEND THE ROLE TO USER SERVICE THAT PUBLISH
+            this.usersService.user_role(projectUser[0].role);
+          }
+        } else {
+          // this could be the case in which the current user was deleted as a member of the current project
+          this.logger.log("[SIDEBAR] PROJECT-USER UNDEFINED ");
         }
-
-        // ADDED 21 AGO
-        if (projectUser[0].role !== undefined) {
-          this.logger.log('[SIDEBAR] GET PROJECT USER ROLE FOR THE PROJECT ', this.projectId, ' »» ', projectUser[0].role);
-
-          // ASSIGN THE projectUser[0].role VALUE TO USER_ROLE
-          this.USER_ROLE = projectUser[0].role;
-
-          // SEND THE ROLE TO USER SERVICE THAT PUBLISH
-          this.usersService.user_role(projectUser[0].role);
-
-        }
-      } else {
-        // this could be the case in which the current user was deleted as a member of the current project
-        this.logger.log('[SIDEBAR] PROJECT-USER UNDEFINED ')
+      },
+      (error) => {
+        this.logger.error(
+          "[SIDEBAR] PROJECT-USER GET BY PROJECT-ID & CURRENT-USER-ID  ",
+          error
+        );
+      },
+      () => {
+        this.logger.log(
+          "[SIDEBAR] PROJECT-USER GET BY PROJECT ID & CURRENT-USER-ID  * COMPLETE *"
+        );
       }
-
-    }, (error) => {
-      this.logger.error('[SIDEBAR] PROJECT-USER GET BY PROJECT-ID & CURRENT-USER-ID  ', error);
-    }, () => {
-      this.logger.log('[SIDEBAR] PROJECT-USER GET BY PROJECT ID & CURRENT-USER-ID  * COMPLETE *');
-    });
+    );
   }
 
-
   subsTo_WsCurrentUser(currentuserprjctuserid) {
-    this.logger.log('[SIDEBAR] - SUBSCRIBE TO WS CURRENT-USER AVAILABILITY  prjct user id of current user ', currentuserprjctuserid);
+    this.logger.log(
+      "[SIDEBAR] - SUBSCRIBE TO WS CURRENT-USER AVAILABILITY  prjct user id of current user ",
+      currentuserprjctuserid
+    );
     // this.usersService.subscriptionToWsCurrentUser(currentuserprjctuserid);
     this.wsRequestsService.subscriptionToWsCurrentUser(currentuserprjctuserid);
 
@@ -1443,65 +1659,83 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     this.getWsCurrentUserIsBusy$();
   }
 
-
-
   getWsCurrentUserAvailability$() {
     // this.usersService.currentUserWsAvailability$
     this.wsRequestsService.currentUserWsAvailability$
-      .pipe(
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe((data) => {
-        // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - data ', data);
-        if (data !== null) {
-          if (data['user_available'] === false && data['profileStatus'] === "inactive") {
-            this.IS_AVAILABLE = false;
-            this.IS_INACTIVE = true;
-            // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - data - IS_INACTIVE ' , this.IS_INACTIVE) 
-          } else if (data['user_available'] === false && (data['profileStatus'] === '' || !data['profileStatus'])) {
-            this.IS_AVAILABLE = false;
-            this.IS_INACTIVE = false;
-            // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - data - IS_AVAILABLE ' , this.IS_AVAILABLE) 
-          } else if (data['user_available'] === true && (data['profileStatus'] === '' || !data['profileStatus'])) {
-            this.IS_AVAILABLE = true;
-            this.IS_INACTIVE = false;
-            // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - data - IS_AVAILABLE ' , this.IS_AVAILABLE) 
-          }
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (data) => {
+          // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - data ', data);
+          if (data !== null) {
+            if (
+              data["user_available"] === false &&
+              data["profileStatus"] === "inactive"
+            ) {
+              this.IS_AVAILABLE = false;
+              this.IS_INACTIVE = true;
+              // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - data - IS_INACTIVE ' , this.IS_INACTIVE)
+            } else if (
+              data["user_available"] === false &&
+              (data["profileStatus"] === "" || !data["profileStatus"])
+            ) {
+              this.IS_AVAILABLE = false;
+              this.IS_INACTIVE = false;
+              // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - data - IS_AVAILABLE ' , this.IS_AVAILABLE)
+            } else if (
+              data["user_available"] === true &&
+              (data["profileStatus"] === "" || !data["profileStatus"])
+            ) {
+              this.IS_AVAILABLE = true;
+              this.IS_INACTIVE = false;
+              // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - data - IS_AVAILABLE ' , this.IS_AVAILABLE)
+            }
 
-          // if (this.IS_AVAILABLE === true) {
-          //     this.tooltip_text_for_availability_status = this.translate.instant('CHANGE_TO_YOUR_STATUS_TO_UNAVAILABLE')
-          // } else {
-          //     this.tooltip_text_for_availability_status = this.translate.instant('CHANGE_TO_YOUR_STATUS_TO_AVAILABLE')
-          // }
+            // if (this.IS_AVAILABLE === true) {
+            //     this.tooltip_text_for_availability_status = this.translate.instant('CHANGE_TO_YOUR_STATUS_TO_UNAVAILABLE')
+            // } else {
+            //     this.tooltip_text_for_availability_status = this.translate.instant('CHANGE_TO_YOUR_STATUS_TO_AVAILABLE')
+            // }
+          }
+        },
+        (error) => {
+          this.logger.error(
+            "[SIDEBAR] - GET WS CURRENT-USER AVAILABILITY * error * ",
+            error
+          );
+        },
+        () => {
+          this.logger.log(
+            "[SIDEBAR] - GET WS CURRENT-USER AVAILABILITY *** complete *** "
+          );
         }
-      }, error => {
-        this.logger.error('[SIDEBAR] - GET WS CURRENT-USER AVAILABILITY * error * ', error)
-      }, () => {
-        this.logger.log('[SIDEBAR] - GET WS CURRENT-USER AVAILABILITY *** complete *** ')
-      });
+      );
   }
 
   getWsCurrentUserIsBusy$() {
     // this.usersService.currentUserWsIsBusy$
     this.wsRequestsService.currentUserWsIsBusy$
-      .pipe(
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe((currentuser_isbusy) => {
-        // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - currentuser_isbusy? ', currentuser_isbusy);
-        if (currentuser_isbusy !== null) {
-          this.IS_BUSY = currentuser_isbusy;
-          // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER (from ws)- this.IS_BUSY? ', this.IS_BUSY);
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (currentuser_isbusy) => {
+          // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER - currentuser_isbusy? ', currentuser_isbusy);
+          if (currentuser_isbusy !== null) {
+            this.IS_BUSY = currentuser_isbusy;
+            // this.logger.log('[SIDEBAR] - GET WS CURRENT-USER (from ws)- this.IS_BUSY? ', this.IS_BUSY);
+          }
+        },
+        (error) => {
+          this.logger.error(
+            "[SIDEBAR] - GET WS CURRENT-USER IS BUSY * error * ",
+            error
+          );
+        },
+        () => {
+          this.logger.log(
+            "[SIDEBAR] - GET WS CURRENT-USER IS BUSY *** complete *** "
+          );
         }
-      }, error => {
-        this.logger.error('[SIDEBAR] - GET WS CURRENT-USER IS BUSY * error * ', error)
-      }, () => {
-        this.logger.log('[SIDEBAR] - GET WS CURRENT-USER IS BUSY *** complete *** ')
-      });
-
-
+      );
   }
-
 
   // NO MORE USED - SUBSTITUDED WITH changeAvailabilityState
   // availale_unavailable_status(hasClickedChangeStatus: boolean) {
@@ -1521,85 +1755,94 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   //     }
   // }
 
-
   // GET CURRENT PROJECT - IF IS DEFINED THE CURRENT PROJECT GET THE PROJECTUSER
   getCurrentProjectProjectUsersProjectBots() {
     // this.logger.log('[SIDEBAR] - CALLING GET CURRENT PROJECT  ', this.project)
     this.auth.project_bs.subscribe((project) => {
-
-
       if (project) {
-        this.project = project
+        this.project = project;
 
-        this.projectId = this.project._id
-        this.logger.log('[SIDEBAR] project $ubscription  ', this.project)
+        this.projectId = this.project._id;
+        this.logger.log("[SIDEBAR] project $ubscription  ", this.project);
 
         this.projectService.getProjects().subscribe((projects: any) => {
-          this.logger.log('[SIDEBAR] getProjects projects ', projects)
+          this.logger.log("[SIDEBAR] getProjects projects ", projects);
           if (projects) {
-            this.currentProjectUser = projects.find(prj => prj.id_project.id === this.projectId);
-            this.logger.log('[SIDEBAR] currentProjectUser ', this.currentProjectUser)
+            this.currentProjectUser = projects.find(
+              (prj) => prj.id_project.id === this.projectId
+            );
+            this.logger.log(
+              "[SIDEBAR] currentProjectUser ",
+              this.currentProjectUser
+            );
           }
         });
-
 
         this.getProjectUserRole();
 
         this.getProjectUser();
         // this.getFaqKbByProjectId()
-        this.getKnowledgeBaseSettings()
+        this.getKnowledgeBaseSettings();
       }
     });
   }
 
-
   getKnowledgeBaseSettings() {
-    this.kbService.getKbSettingsPrev().subscribe((kbSettings: KbSettings) => {
-      this.logger.log("[SIDEBAR] get kbSettings RES ", kbSettings);
-      if (kbSettings && kbSettings.kbs) {
-        if (kbSettings.kbs.length === 0) {
-          this.kbService.areNewwKb(true)
-        } else if (kbSettings.kbs.length > 0) {
-          this.kbService.areNewwKb(false)
+    this.kbService.getKbSettingsPrev().subscribe(
+      (kbSettings: KbSettings) => {
+        this.logger.log("[SIDEBAR] get kbSettings RES ", kbSettings);
+        if (kbSettings && kbSettings.kbs) {
+          if (kbSettings.kbs.length === 0) {
+            this.kbService.areNewwKb(true);
+          } else if (kbSettings.kbs.length > 0) {
+            this.kbService.areNewwKb(false);
+          }
+        } else {
+          this.kbService.areNewwKb(true);
         }
-
-      } else {
-        this.kbService.areNewwKb(true)
+      },
+      (error) => {
+        this.logger.error("[SIDEBAR] get kbSettings ERROR ", error);
+      },
+      () => {
+        this.logger.log("SIDEBAR] get kbSettings * COMPLETE *");
       }
-
-    }, (error) => {
-      this.logger.error("[SIDEBAR] get kbSettings ERROR ", error);
-    }, () => {
-      this.logger.log("SIDEBAR] get kbSettings * COMPLETE *");
-
-    })
+    );
   }
 
   getFaqKbByProjectId() {
-    this.faqKbService.getFaqKbByProjectId().subscribe((faqKb: any) => {
-      if (faqKb) {
-        this.myChatbotCount = faqKb.length
-        this.logger.log('[SIDEBAR] - GET BOTS BY PROJECT ID - myChatbotCount', this.myChatbotCount);
+    this.faqKbService.getFaqKbByProjectId().subscribe(
+      (faqKb: any) => {
+        if (faqKb) {
+          this.myChatbotCount = faqKb.length;
+          this.logger.log(
+            "[SIDEBAR] - GET BOTS BY PROJECT ID - myChatbotCount",
+            this.myChatbotCount
+          );
+        }
+      },
+      (error) => {
+        this.logger.error("[SIDEBAR] GET BOTS ERROR ", error);
+      },
+      () => {
+        this.logger.log("[SIDEBAR] GET BOTS COMPLETE");
       }
-    }, (error) => {
-      this.logger.error('[SIDEBAR] GET BOTS ERROR ', error);
-
-    }, () => {
-      this.logger.log('[SIDEBAR] GET BOTS COMPLETE');
-    });
+    );
   }
 
   getProjectUserRole() {
     this.usersService.project_user_role_bs.subscribe((user_role) => {
       this.USER_ROLE = user_role;
-      this.logger.log('[SIDEBAR] - 1. SUBSCRIBE PROJECT_USER_ROLE_BS ', this.USER_ROLE);
+      this.logger.log(
+        "[SIDEBAR] - 1. SUBSCRIBE PROJECT_USER_ROLE_BS ",
+        this.USER_ROLE
+      );
       if (this.USER_ROLE) {
         // this.logger.log('[SIDEBAR] - PROJECT USER ROLE get from $ subsription', this.USER_ROLE);
-        if (this.USER_ROLE === 'agent') {
+        if (this.USER_ROLE === "agent") {
           this.SHOW_SETTINGS_SUBMENU = false;
         }
       }
-
     });
     // }
   }
@@ -1608,18 +1851,19 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     // const percentageRounded = Math.ceil(x / 5) * 5;
     // this.logger.log('SIDEBAR project trial days left % rounded', percentageRounded);
     // return Math.ceil(x / 5) * 5;
-    return x % 5 < 3 ? (x % 5 === 0 ? x : Math.floor(x / 5) * 5) : Math.ceil(x / 5) * 5
+    return x % 5 < 3
+      ? x % 5 === 0
+        ? x
+        : Math.floor(x / 5) * 5
+      : Math.ceil(x / 5) * 5;
   }
 
-  ngAfterViewInit() {
-
-  }
-
+  ngAfterViewInit() {}
 
   isMobileMenu() {
     // this.logger.log('SIDEBAR_IS_SMALL', this.SIDEBAR_IS_SMALL)
     if ($(window).width() > 991) {
-      this.IS_MOBILE_MENU = false
+      this.IS_MOBILE_MENU = false;
       // this.logger.log('[SIDEBAR] - IS MOBILE MENU ', this.IS_MOBILE_MENU);
       // USED FOR THE SMALL SIDEBAR
       // const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
@@ -1639,7 +1883,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       return false;
     }
 
-    this.IS_MOBILE_MENU = true
+    this.IS_MOBILE_MENU = true;
 
     // USED FOR THE SMALL SIDEBAR
     // const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
@@ -1651,24 +1895,27 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     // // this.logger.log('[SIDEBAR] - IS MOBILE MENU ', this.IS_MOBILE_MENU);
 
     return true;
-  };
+  }
 
   isMac(): boolean {
-    this.logger.log('[SIDEBAR] NAVIGATOR PLATFORM', navigator.platform)
+    this.logger.log("[SIDEBAR] NAVIGATOR PLATFORM", navigator.platform);
     let bool = false;
-    if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
+    if (
+      navigator.platform.toUpperCase().indexOf("MAC") >= 0 ||
+      navigator.platform.toUpperCase().indexOf("IPAD") >= 0
+    ) {
       bool = true;
     }
     return bool;
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener("window:resize", ["$event"])
   onResize(event: any) {
     // this.logger.log('SIDEBAR - WINDOW WIDTH ON RESIZE', event.target.innerWidth);
     if (event.target.innerWidth > 991) {
-      this.IS_MOBILE_MENU = false
+      this.IS_MOBILE_MENU = false;
     } else {
-      this.IS_MOBILE_MENU = true
+      this.IS_MOBILE_MENU = true;
     }
   }
 
@@ -1701,44 +1948,46 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   //     }
   // }
 
-
-
-
   onScroll(event: any): void {
     // this.logger.log('[SIDEBAR] RICHIAMO ON SCROLL ');
-    this.elSidebarWrapper = <HTMLElement>document.querySelector('.sidebar-wrapper');
-    this.scrollpos = this.elSidebarWrapper.scrollTop
+    this.elSidebarWrapper = <HTMLElement>(
+      document.querySelector(".sidebar-wrapper")
+    );
+    this.scrollpos = this.elSidebarWrapper.scrollTop;
     // this.logger.log('[SIDEBAR] SCROLL POSITION', this.scrollpos)
   }
 
   stopScroll() {
     // const el = <HTMLElement>document.querySelector('.sidebar-wrapper');
-    this.logger.log('[SIDEBAR] SCROLL TO', this.scrollpos);
-    this.logger.log('[SIDEBAR] SCROLL TO elSidebarWrapper ', this.elSidebarWrapper)
+    this.logger.log("[SIDEBAR] SCROLL TO", this.scrollpos);
+    this.logger.log(
+      "[SIDEBAR] SCROLL TO elSidebarWrapper ",
+      this.elSidebarWrapper
+    );
 
     // const oh = <HTMLElement>document.querySelector('.oh');
     // this.logger.log('[SIDEBAR] SCROLL TO operating hours ', oh)
     // oh.scrollIntoView();
 
     if (this.elSidebarWrapper) {
-
       this.elSidebarWrapper.scrollTop = this.scrollpos;
       // this.elSidebarWrapper.scrollTo(0,242)
     }
   }
 
   onEvent($event) {
-    this.logger.log('[SIDEBAR] SCROLL event ', $event);
+    this.logger.log("[SIDEBAR] SCROLL event ", $event);
     event.stopPropagation();
   }
 
-
   goToHome() {
-    this.router.navigate(['/project/' + this.projectId + '/home']);
+    this.router.navigate(["/project/" + this.projectId + "/home"]);
   }
 
   goToAllMyChatbot() {
-    this.router.navigate(['/project/' + this.projectId + '/bots/my-chatbots/all']);
+    this.router.navigate([
+      "/project/" + this.projectId + "/bots/my-chatbots/all",
+    ]);
     // if (this.areVisibleChatbot) {
     //   this.router.navigate(['/project/' + this.projectId + '/bots/my-chatbots/all']);
     // } else {
@@ -1747,24 +1996,22 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   }
 
   goToWidgetSetUpOrToCannedResponses() {
-    if (this.USER_ROLE !== 'agent') {
-      this.goToWidgetSetUp()
-    } else if (this.USER_ROLE === 'agent') {
-      this.goToCannedResponses()
+    if (this.USER_ROLE !== "agent") {
+      this.goToWidgetSetUp();
+    } else if (this.USER_ROLE === "agent") {
+      this.goToCannedResponses();
     }
-
   }
   goToWidgetSetUp() {
-    this.router.navigate(['project/' + this.project._id + '/widget-set-up'])
+    this.router.navigate(["project/" + this.project._id + "/widget-set-up"]);
   }
 
   goToCannedResponses() {
-    this.router.navigate(['project/' + this.projectId + '/cannedresponses']);
+    this.router.navigate(["project/" + this.projectId + "/cannedresponses"]);
   }
   // goToOperatingHours() {
   //     this.router.navigate(['/project/' + this.projectId + '/hours']);
   // }
-
 
   // goToBlogChangelog() {
   //     const url = 'https://www.tiledesk.com/category/changelog/';
@@ -1775,74 +2022,89 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   // }
 
   goToProjects() {
-    this.logger.log('[SIDEBAR] IS MOBILE -  HAS CLICCKED GO TO PROJECT')
-    this.router.navigate(['/projects']);
+    this.logger.log("[SIDEBAR] IS MOBILE -  HAS CLICCKED GO TO PROJECT");
+    this.router.navigate(["/projects"]);
 
     // (in AUTH SERVICE ) RESET PROJECT_BS AND REMOVE ITEM PROJECT FROM STORAGE WHEN THE USER GO TO PROJECTS PAGE
-    this.auth.hasClickedGoToProjects()
-    this.logger.log('[SIDEBAR] IS MOBILE project AFTER GOTO PROJECTS ', this.project)
+    this.auth.hasClickedGoToProjects();
+    this.logger.log(
+      "[SIDEBAR] IS MOBILE project AFTER GOTO PROJECTS ",
+      this.project
+    );
   }
 
   has_clicked_settings(SHOW_SETTINGS_SUBMENU: boolean) {
     this.SHOW_SETTINGS_SUBMENU = SHOW_SETTINGS_SUBMENU;
-    this.logger.log('[SIDEBAR] HAS CLICKED SETTINGS - SHOW_SETTINGS_SUBMENU ', this.SHOW_SETTINGS_SUBMENU);
+    this.logger.log(
+      "[SIDEBAR] HAS CLICKED SETTINGS - SHOW_SETTINGS_SUBMENU ",
+      this.SHOW_SETTINGS_SUBMENU
+    );
 
     // SAVE IN 'show_settings_submenu' KEY OF LOCAL STORAGE THE VALUE OF this.SHOW_SETTINGS_SUBMENU
     // (IS USED TO DISPLAY / HIDE THE SUBMENU WHEN THE PAGE IS REFRESHED)
-    localStorage.setItem('show_settings_submenu', `${this.SHOW_SETTINGS_SUBMENU}`);
+    localStorage.setItem(
+      "show_settings_submenu",
+      `${this.SHOW_SETTINGS_SUBMENU}`
+    );
 
     if (this.SHOW_SETTINGS_SUBMENU === true) {
-      this.trasform = 'rotate(180deg)';
+      this.trasform = "rotate(180deg)";
     } else {
-      this.trasform = 'none';
+      this.trasform = "none";
     }
   }
 
   // USED FOR SIDEBAR IN MOBILE MODE (TOGGLE THE CARET OF THE 'PROJECT NAME' DROPDOWN-MENU)
   has_cliked_hidden_project(SHOW_PRJCT_SUB) {
-    this.logger.log('[SIDEBAR] HAS CLICKED PROJECT NAME ON MOBILE - SHOW SUBMENU ', this.SHOW_PRJCT_SUB);
+    this.logger.log(
+      "[SIDEBAR] HAS CLICKED PROJECT NAME ON MOBILE - SHOW SUBMENU ",
+      this.SHOW_PRJCT_SUB
+    );
     if (this.SHOW_PRJCT_SUB === true) {
-      this.trasform_projectname_caret = 'rotate(180deg)';
+      this.trasform_projectname_caret = "rotate(180deg)";
     } else {
-      this.trasform_projectname_caret = 'none';
+      this.trasform_projectname_caret = "none";
     }
   }
 
   // USED FOR SIDEBAR IN MOBILE MODE (TOGGLE THE CARET OF THE 'NAME OF THE CURRENT USER' DROPDOWN-MENU)
   has_cliked_hidden_profile(SHOW_PROFILE_SUB) {
-    this.logger.log('[SIDEBAR] HAS CLICKED NAME OF THE CURRENT USER ON MOBILE - SHOW SUBMENU ', this.SHOW_PRJCT_SUB);
+    this.logger.log(
+      "[SIDEBAR] HAS CLICKED NAME OF THE CURRENT USER ON MOBILE - SHOW SUBMENU ",
+      this.SHOW_PRJCT_SUB
+    );
     if (this.SHOW_PROFILE_SUB === true) {
-      this.transform_user_profile_caret = 'rotate(180deg)';
+      this.transform_user_profile_caret = "rotate(180deg)";
     } else {
-      this.transform_user_profile_caret = 'none';
+      this.transform_user_profile_caret = "none";
     }
   }
 
-
-
   openLogoutModal() {
-    this.logger.log('[SIDEBAR] - calling openLogoutModal - PROJRCT ID ', this.projectId);
-    this.displayLogoutModal = 'block';
+    this.logger.log(
+      "[SIDEBAR] - calling openLogoutModal - PROJRCT ID ",
+      this.projectId
+    );
+    this.displayLogoutModal = "block";
     this.auth.hasOpenedLogoutModal(true);
   }
 
   onCloseModal() {
-    this.displayLogoutModal = 'none';
+    this.displayLogoutModal = "none";
   }
 
   onCloseLogoutModalHandled() {
-    this.displayLogoutModal = 'none';
+    this.displayLogoutModal = "none";
   }
 
   onLogoutModalHandled() {
     this.logout();
-    this.displayLogoutModal = 'none';
+    this.displayLogoutModal = "none";
   }
 
   logout() {
     this.auth.showExpiredSessionPopup(false);
-    this.auth.signOut('sidebar');
-
+    this.auth.signOut("sidebar");
   }
 
   removeChatBtnFocus() {
@@ -1853,18 +2115,20 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   openChat() {
     this.elementRef.nativeElement.blur();
     this.notify.publishHasClickedChat(true);
-    this.logger.log('SIDEBAR openChat project ', this.project)
+    this.logger.log("SIDEBAR openChat project ", this.project);
 
-    // --- new 
+    // --- new
     if (this.project) {
-      this.project['role'] = this.USER_ROLE
-      localStorage.setItem('last_project', JSON.stringify(this.currentProjectUser))
+      this.project["role"] = this.USER_ROLE;
+      localStorage.setItem(
+        "last_project",
+        JSON.stringify(this.currentProjectUser)
+      );
     }
     // let baseUrl = this.CHAT_BASE_URL + '#/conversation-detail/'
     // let url = baseUrl
     // const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
     // myWindow.focus();
-
 
     // --- already commented ---
     // const chatTabCount = localStorage.getItem('tabCount');
@@ -1884,7 +2148,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     // }
   }
 
-  @HostListener('document:mousedown', ['$event'])
+  @HostListener("document:mousedown", ["$event"])
   onMouseDown(event) {
     // this.logger.log('mousedown event', event)
     // this.logger.log('mousedown event.target.id', event.target.id)
@@ -1893,18 +2157,25 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     // --------------------------------------------------------------------
     // event.which === 1  left button - event.which === 3 right button
     // --------------------------------------------------------------------
-    if ((event.target.id.startsWith('openchat') && event.which === 3) || (event.target.id.startsWith('openchat') && event.which === 1)) {
-      this.logger.log('SIDEBAR openChat HAS CLIKED ON OPEN CHAT WITH THE RIGHT BTN')
-      this.project['role'] = this.USER_ROLE
-      localStorage.setItem('last_project', JSON.stringify(this.currentProjectUser))
+    if (
+      (event.target.id.startsWith("openchat") && event.which === 3) ||
+      (event.target.id.startsWith("openchat") && event.which === 1)
+    ) {
+      this.logger.log(
+        "SIDEBAR openChat HAS CLIKED ON OPEN CHAT WITH THE RIGHT BTN"
+      );
+      this.project["role"] = this.USER_ROLE;
+      localStorage.setItem(
+        "last_project",
+        JSON.stringify(this.currentProjectUser)
+      );
     }
-
   }
 
   openWindow(winName: any, winURL: any) {
     const myWindows = new Array();
     if (myWindows[winName] && !myWindows[winName].closed) {
-      alert('window already exists');
+      alert("window already exists");
     } else {
       myWindows[winName] = window.open(winURL, winName);
     }
@@ -1916,50 +2187,52 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       myWindows[winName].focus();
     } else {
       // alert('cannot focus closed or nonexistant window');
-      this.logger.log('[SIDEBAR] - cannot focus closed or nonexistant window');
+      this.logger.log("[SIDEBAR] - cannot focus closed or nonexistant window");
     }
   }
-
-
-
-
 
   // SE IMPLEMENTATO NELL 'AFTER VIEW INIT' RITORNA ERRORE:
   // Cannot read property 'nativeElement' of undefined
   // PER ORA LO COMMENTO NELL 'AFTER VIEW INIT'
   checkForUnathorizedRoute() {
     this.router.events.subscribe((val) => {
-      if (this.location.path() !== '') {
+      if (this.location.path() !== "") {
         this.checked_route = this.location.path();
-        this.logger.log('[SIDEBAR] CHECKED ROUTE ', this.checked_route)
-        if (this.checked_route.indexOf('/unauthorized') !== -1) {
-
-          // RESOLVE THE BUG 'HOME button remains focused WHEN AN USER WITH AGENT ROLE TRY TO ACCESS TO AN UNATHORIZED PAGE 
+        this.logger.log("[SIDEBAR] CHECKED ROUTE ", this.checked_route);
+        if (this.checked_route.indexOf("/unauthorized") !== -1) {
+          // RESOLVE THE BUG 'HOME button remains focused WHEN AN USER WITH AGENT ROLE TRY TO ACCESS TO AN UNATHORIZED PAGE
           // IS REDIRECTED TO THE unauthorized page
           this.homeBtnElement.nativeElement.blur();
         }
       }
-    })
+    });
   }
 
   mouseOver(_isOverAvar: boolean) {
-    this.isOverAvar = _isOverAvar
+    this.isOverAvar = _isOverAvar;
     // this.logger.log('[SIDEBAR] Mouse Over Avatar Container ', _isOverAvar)
   }
-
 
   isOdd(countClickOnOpenUserDetailSidebar) {
     return countClickOnOpenUserDetailSidebar % 2;
   }
 
   openUserDetailSidePanel() {
-    this.countClickOnOpenUserDetailSidebar++
-    this.logger.log('[SIDEBAR] countClickOnOpenUserDetailSidebar', this.countClickOnOpenUserDetailSidebar)
+    this.countClickOnOpenUserDetailSidebar++;
+    this.logger.log(
+      "[SIDEBAR] countClickOnOpenUserDetailSidebar",
+      this.countClickOnOpenUserDetailSidebar
+    );
     // const countClickOnOpenUserDetailSidebarIsAnOddNum = this.isOdd(this.countClickOnOpenUserDetailSidebar)
     // this.logger.log('[SIDEBAR] countClickOnOpenUserDetailSidebarIsAnOddNum', countClickOnOpenUserDetailSidebarIsAnOddNum)
 
-    const elSidebarUserDtls = <HTMLElement>document.querySelector('#user-details');
-    this.logger.log('[SIDEBAR] OPEN USER DTLS SIDE PANEL elSidebarUserDtls ', elSidebarUserDtls)
+    const elSidebarUserDtls = <HTMLElement>(
+      document.querySelector("#user-details")
+    );
+    this.logger.log(
+      "[SIDEBAR] OPEN USER DTLS SIDE PANEL elSidebarUserDtls ",
+      elSidebarUserDtls
+    );
 
     if (elSidebarUserDtls && this.countClickOnOpenUserDetailSidebar === 1) {
       elSidebarUserDtls.classList.add("active");
@@ -1967,11 +2240,17 @@ export class SidebarComponent implements OnInit, AfterViewInit {
 
     if (elSidebarUserDtls && this.countClickOnOpenUserDetailSidebar > 1) {
       // this.logger.log('[SIDEBAR] this.countClickOnOpenUserDetailSidebar HERE', this.countClickOnOpenUserDetailSidebar)
-      if (elSidebarUserDtls.classList.contains('active')) {
-        this.logger.log('[SIDEBAR] elSidebarUserDtls contains class ACTIVE', elSidebarUserDtls)
+      if (elSidebarUserDtls.classList.contains("active")) {
+        this.logger.log(
+          "[SIDEBAR] elSidebarUserDtls contains class ACTIVE",
+          elSidebarUserDtls
+        );
         elSidebarUserDtls.classList.remove("active");
-      } else if (!elSidebarUserDtls.classList.contains('active')) {
-        this.logger.log('[SIDEBAR] elSidebarUserDtls NOT contains class ACTIVE', elSidebarUserDtls)
+      } else if (!elSidebarUserDtls.classList.contains("active")) {
+        this.logger.log(
+          "[SIDEBAR] elSidebarUserDtls NOT contains class ACTIVE",
+          elSidebarUserDtls
+        );
         elSidebarUserDtls.classList.add("active");
       }
     }
@@ -2017,12 +2296,4 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   // goToActivities() {
   //     this.router.navigate(['project/' + this.projectId + '/activities']);
   // }
-
-
-
-
-
-
-
-
 }

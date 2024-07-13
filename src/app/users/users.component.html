@@ -14,10 +14,10 @@
 
 <div class="main-content" style="padding-top:0px; padding-left: 5px;padding-right: 5px;">
   <div class="container-fluid" style="padding-left: 5px;padding-right: 5px;">
-   
+
     <div class="page-title--sidebar-settings"
       [ngClass]="{'page-title--sidebar-settings_opened':IS_OPEN_SETTINGS_SIDEBAR, 'page-title--sidebar-settings_closed':!IS_OPEN_SETTINGS_SIDEBAR }">
-        {{ 'UsersAndGroups' | translate }}
+      {{ 'UsersAndGroups' | translate }}
     </div>
 
     <!-- *** this row to prevent that the two columns in the below row being displayed on two lines -->
@@ -37,7 +37,7 @@
           </li>
         </ul>
 
-        <div *ngIf="hideHelpLink" class="link-to-teammates-roles-docs">
+        <!-- <div *ngIf="hideHelpLink" class="link-to-teammates-roles-docs">
           <div class="row">
             <div class="col-md-12">
               <span>
@@ -54,7 +54,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
 
@@ -167,7 +167,7 @@
                   <!-- {{ pageName }} -->
                 </div>
 
-                <div class="invite-teammate-btn-wpr"  *ngIf="displayInviteTeammateBtn">
+                <div class="invite-teammate-btn-wpr" *ngIf="displayInviteTeammateBtn">
                   <button *ngIf="USER_ROLE !== 'agent'" class="btn btn-primary pull-right"
                     style="padding: 8px 16px;margin:0px;" (click)="goToAddUser()"
                     [disabled]="projectUsersLength + countOfPendingInvites >= seatsLimit">
@@ -219,11 +219,9 @@
                           'is-user-offline' : projectUser?.user_available === false && (projectUser?.profileStatus === '' || !projectUser?.profileStatus), 
                           'is-user-inactive': projectUser?.user_available === false && projectUser?.profileStatus === 'inactive'}">
                         </div>
-                        
+
                         <div *ngIf="projectUser?.isBusy" class="user-is-busy" matTooltipClass="custom-mat-tooltip"
-                          matTooltip=" {{ 'Busy' | translate }}"
-                          #tooltip="matTooltip" 
-                          matTooltipPosition='above'
+                          matTooltip=" {{ 'Busy' | translate }}" #tooltip="matTooltip" matTooltipPosition='above'
                           matTooltipHideDelay="100">
 
                           <img src="assets/img/clock_hands.svg" class="img-fluid" style="width:16px;" />
@@ -232,15 +230,15 @@
                       </div>
 
                       <div class="cl-card-img-wpr">
-                        <div class="photo-profile-container" style="position: relative;"> 
-                
+                        <div class="photo-profile-container" style="position: relative;">
+
                           <!-- --------------------------------------------------- -->
                           <!-- USECASE uploadEngine Firebase  class="user-img-in-teammates-list" -->
                           <!-- --------------------------------------------------- -->
                           <!-- projectUser?.hasImage &&  onerror="this.src='assets/img/no_image_user.png'"-->
                           <img id="img-{{projectUser?.id_user?._id}}" *ngIf="UPLOAD_ENGINE_IS_FIREBASE"
                             src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{projectUser?.id_user?._id}}%2Fphoto.jpg?alt=media"
-                            onerror="this.src='assets/img/no_image_user_2.png'"/>
+                            onerror="this.src='assets/img/no_image_user_2.png'" />
 
                           <!-- --------------------------------------------------- -->
                           <!-- USECASE uploadEngine Native class="user-img-in-teammates-list" -->
@@ -248,13 +246,13 @@
                           <!-- projectUser?.hasImage &&  onerror="this.src='assets/img/no_image_user.png'"-->
                           <img id="img-{{projectUser?.id_user?._id}}" *ngIf=" !UPLOAD_ENGINE_IS_FIREBASE"
                             src="{{baseUrl}}images?path=uploads%2Fusers%2F{{projectUser?.id_user?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                            onerror="this.src='assets/img/no_image_user_2.png'"/>
-                          
+                            onerror="this.src='assets/img/no_image_user_2.png'" />
+
                           <!-- --------------------------------------------------- -->
                           <!-- USECASE No profile Image -->
                           <!-- --------------------------------------------------- -->
                           <!-- *ngIf="projectUser?.hasImage === false" [ngStyle]="{'display': displayAvatarNoProfileFoto }" -->
-                          <div  class="avatar-no-profile-photo"
+                          <div class="avatar-no-profile-photo"
                             [ngStyle]="{'background':  'linear-gradient(rgb(255,255,255) -125%,' + projectUser?.id_user?.fillColour + ')'}">
                             <span class="altenative-projetuser-avatar">
                               {{ projectUser?.id_user?.fullname_initial }}
@@ -336,7 +334,7 @@
                             {{ projectUser?.role | translate}}
                           </div>
                         </div>
-                       
+
                         <!-- ---------------------------------------------- -->
                         <!-- Assigned conversations (real time) -->
                         <!-- ---------------------------------------------- -->
@@ -353,25 +351,20 @@
                       <div class="cl-card-action-wpr">
                         <div class="cl-card-action-group">
                           <div *ngIf="isVisibleAnalytics" class="cl-card-action-btn-wpr">
-                            <button id="btn-{{projectUser?.id_user?._id}}"
-                               mat-icon-button
+                            <button id="btn-{{projectUser?.id_user?._id}}" mat-icon-button
                               (click)="$event.stopPropagation();opeUserMsgsStats(projectUser?.id_user)"
                               matTooltipClass="custom-mat-tooltip"
-                              matTooltip="{{ 'BotsAddEditPage.Messages' | translate}}" 
-                              #tooltip="matTooltip"
+                              matTooltip="{{ 'BotsAddEditPage.Messages' | translate}}" #tooltip="matTooltip"
                               matTooltipPosition='below' matTooltipHideDelay="100">
                               <mat-icon>leaderboard</mat-icon>
                             </button>
                           </div>
 
                           <div class="cl-card-action-btn-wpr" (click)="$event.stopPropagation()">
-                            <button id="chat-with-{{projectUser?.id_user?._id}}" 
-                              mat-icon-button
-                              matTooltipClass="custom-mat-tooltip" 
+                            <button id="chat-with-{{projectUser?.id_user?._id}}" mat-icon-button
+                              matTooltipClass="custom-mat-tooltip"
                               matTooltip="{{ 'ChatWith' | translate }}  {{projectUser?.id_user?.firstname}} {{projectUser?.id_user?.lastname }}"
-                              #tooltip="matTooltip" 
-                              matTooltipPosition='below' 
-                              matTooltipHideDelay="100"
+                              #tooltip="matTooltip" matTooltipPosition='below' matTooltipHideDelay="100"
                               (click)="chatWithAgent(projectUser?.id_user?._id, projectUser?.id_user?.firstname, projectUser?.id_user?.lastname)">
                               <mat-icon>
                                 chat
@@ -383,20 +376,15 @@
                           <!-- More Actions (Pending Invitations) -->
                           <!-- -------------------------------------------- -->
                           <div class="cl-card-action-btn-wpr" (click)="$event.stopPropagation()">
-                            <button mat-icon-button 
-                              [matMenuTriggerFor]="moreactions" 
-                              matTooltipClass="custom-mat-tooltip"
-                              matTooltip="{{'Actions' | translate}}" 
-                              #tooltip="matTooltip" matTooltipPosition='below'
-                              matTooltipHideDelay="100">
+                            <button mat-icon-button [matMenuTriggerFor]="moreactions"
+                              matTooltipClass="custom-mat-tooltip" matTooltip="{{'Actions' | translate}}"
+                              #tooltip="matTooltip" matTooltipPosition='below' matTooltipHideDelay="100">
                               <mat-icon>more_vert</mat-icon>
                             </button>
 
                             <mat-menu #moreactions="matMenu">
 
-                              <button class="mat-menu-btn" 
-                                mat-menu-item 
-                                (click)='goToEditUser(projectUser?._id)'>
+                              <button class="mat-menu-btn" mat-menu-item (click)='goToEditUser(projectUser?._id)'>
                                 <mat-icon>edit</mat-icon>
                                 <span>{{ 'UsersPage.tootipEditUser' | translate }}</span>
                               </button>
@@ -429,8 +417,8 @@
                     <div class="cl-card-first-column">
 
                       <div class="cl-card-img-wpr">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                          <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                           <path
                             d="M224 0a128 128 0 1 1 0 256A128 128 0 1 1 224 0zM178.3 304h91.4c20.6 0 40.4 3.5 58.8 9.9C323 331 320 349.1 320 368c0 59.5 29.5 112.1 74.8 144H29.7C13.3 512 0 498.7 0 482.3C0 383.8 79.8 304 178.3 304zM352 368a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-80c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H512V304c0-8.8-7.2-16-16-16z" />
                         </svg>
@@ -460,7 +448,7 @@
 
                       <div class="cl-card-stats-wpr">
 
-                        <div class="cl-card-item-stats" >
+                        <div class="cl-card-item-stats">
                           <div class="cl-card-item-stats-title" style="white-space: nowrap;">
                             {{ "UsersPage.DateOfSending" | translate }}
                           </div>
@@ -492,27 +480,20 @@
                         <div class="cl-card-action-group">
 
                           <div class="cl-card-action-btn-wpr">
-                            <button id="btn-{{invites?._id}}"
-                                mat-icon-button
-                                (click)="$event.stopPropagation();resendInvite(invites?._id)"
-                                matTooltipClass="custom-mat-tooltip"
-                                matTooltip="{{ 'UsersPage.ResendInvite' | translate}}" 
-                                #tooltip="matTooltip"
-                                matTooltipPosition='below' 
-                                matTooltipHideDelay="100">
+                            <button id="btn-{{invites?._id}}" mat-icon-button
+                              (click)="$event.stopPropagation();resendInvite(invites?._id)"
+                              matTooltipClass="custom-mat-tooltip"
+                              matTooltip="{{ 'UsersPage.ResendInvite' | translate}}" #tooltip="matTooltip"
+                              matTooltipPosition='below' matTooltipHideDelay="100">
                               <mat-icon>mail</mat-icon>
                             </button>
                           </div>
 
                           <div class="cl-card-action-btn-wpr">
-                            <button id="btn-copy-{{invites?._id}}"
-                               mat-icon-button
+                            <button id="btn-copy-{{invites?._id}}" mat-icon-button
                               (click)="$event.stopPropagation();copyInviteURL(invites?._id)"
-                              matTooltipClass="custom-mat-tooltip"
-                              matTooltip="{{'CopyInviteURL' | translate}}" 
-                              #tooltip="matTooltip"
-                              matTooltipPosition='below'
-                              matTooltipHideDelay="100">
+                              matTooltipClass="custom-mat-tooltip" matTooltip="{{'CopyInviteURL' | translate}}"
+                              #tooltip="matTooltip" matTooltipPosition='below' matTooltipHideDelay="100">
                               <mat-icon>content_copy</mat-icon>
                             </button>
                           </div>
@@ -521,20 +502,16 @@
                           <!-- More Actions (Pending Invitations) -->
                           <!-- -------------------------------------------- -->
                           <div class="cl-card-action-btn-wpr" (click)="$event.stopPropagation()">
-                            <button mat-icon-button [matMenuTriggerFor]="moreactionspi" 
-                              matTooltipClass="custom-mat-tooltip"
-                              matTooltip="{{Actions | translate}}" 
-                              #tooltip="matTooltip" 
-                              matTooltipPosition='below'
-                              matTooltipHideDelay="100">
+                            <button mat-icon-button [matMenuTriggerFor]="moreactionspi"
+                              matTooltipClass="custom-mat-tooltip" matTooltip="{{Actions | translate}}"
+                              #tooltip="matTooltip" matTooltipPosition='below' matTooltipHideDelay="100">
                               <mat-icon>more_vert</mat-icon>
                             </button>
 
                             <mat-menu #moreactionspi="matMenu">
                               <button class="mat-menu-btn"
                                 *ngIf="projectUser?.role !== 'owner' && CURRENT_USER_ID !== projectUser?.id_user?._id"
-                                mat-menu-item
-                                (click)='openCancelInvitationModal(invites?._id, invites?.email )'>
+                                mat-menu-item (click)='openCancelInvitationModal(invites?._id, invites?.email )'>
                                 <mat-icon>delete</mat-icon>
 
                                 <span>{{ 'UsersPage.modalCancelInvite' | translate }}</span>
@@ -810,12 +787,9 @@
                         <!-- *ngIf="projectUser?.role !== 'owner' && CURRENT_USER_ID !== projectUser?.id_user?._id" -->
                         <span style="position: relative;top: 15px;">
                           <button type="button" rel="tooltip" title="" class="btn btn-primary btn-simple btn-xs"
-                            (click)='goToEditUser(projectUser?._id)' 
-                            matTooltipClass="custom-mat-tooltip"
-                            matTooltip="{{ 'UsersPage.tootipEditUser' | translate }}" 
-                            #tooltip="matTooltip"
-                            matTooltipPosition='above'
-                            matTooltipHideDelay="100">
+                            (click)='goToEditUser(projectUser?._id)' matTooltipClass="custom-mat-tooltip"
+                            matTooltip="{{ 'UsersPage.tootipEditUser' | translate }}" #tooltip="matTooltip"
+                            matTooltipPosition='above' matTooltipHideDelay="100">
                             <i class="material-icons">edit</i>
                             <!-- <span class="White__Tooltiptext" style="text-transform:capitalize">
                               {{ 'UsersPage.tootipEditUser' | translate }} 
