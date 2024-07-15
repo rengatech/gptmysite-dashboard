@@ -31,7 +31,7 @@
             <!-- All -->
             My Chatbots
           </p>
-    
+
           <span class="sidebar-item-s">{{ myChatbotOtherCount }}</span>
         </a>
       </li>
@@ -50,7 +50,7 @@
         </a>
       </li> -->
 
-     
+
       <!-- <li class="sidebar-item-wpr" [ngClass]="{'active-item': BOTS_MYCHATBOT_CUSTOMER_SATISFACTION_ROUTE_IS_ACTIVE}"
         (click)="goToBotCustomerSatisfactionBots()">
         <a class="sidebar-item">
@@ -83,10 +83,10 @@
             school
           </i>
           <p class="custom_paragraph" style="position: relative; top: 1px;">
-              <!-- {{'ManageYourContents' | translate}} -->
+            <!-- {{'ManageYourContents' | translate}} -->
             <!-- Manage your Contents -->
             Knowledge Bases
-           
+
           </p>
           <span class="sidebar-item-s">{{ kbCount }}</span>
         </a>
@@ -118,22 +118,23 @@
           <i class="material-icons settings-sidebar-icons" style="margin-left: 0px !important;">
             auto_awesome_motion
           </i>
-         
+
           <p class="custom_paragraph" style="position: relative; top: 1px;">
             All
           </p>
-          
+
           <span class="sidebar-item-s">{{ allTemplatesCount }}</span>
         </a>
 
       </li>
 
+      <!--  hide side bar community -->
 
-      <li *ngIf="displayChatbotsCommunity" class="sidebar-item-wpr" [ngClass]="{'active-item': BOTS_COMMUNITY_TEMPLATES_ROUTE_IS_ACTIVE}"
-        (click)="goToBotCommunityTemplates()">
+      <!-- <li *ngIf="displayChatbotsCommunity" class="sidebar-item-wpr"
+        [ngClass]="{'active-item': BOTS_COMMUNITY_TEMPLATES_ROUTE_IS_ACTIVE}" (click)="goToBotCommunityTemplates()">
 
-        <a class="sidebar-item">
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="16px" viewBox="0 0 24 24"
+        <a class="sidebar-item"> -->
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="16px" viewBox="0 0 24 24"
             width="16px" fill="#647491" style="margin-right: 8px;">
             <g>
               <rect fill="none" height="24" width="24" />
@@ -150,18 +151,19 @@
               </g>
             </g>
           </svg> -->
-          <i class="material-icons settings-sidebar-icons" style="margin-left: 0px !important;">
+      <!-- <i class="material-icons settings-sidebar-icons" style="margin-left: 0px !important;">
             diversity_3
-          </i>
-          <p class="custom_paragraph" style="position: relative; top: 1px;">
+          </i> -->
+      <!-- <p class="custom_paragraph" style="position: relative; top: 1px;">
             Community
-          </p>
-          
-          <span class="sidebar-item-s">{{ allCommunityTemplatesCount }}</span>
+          </p> -->
+
+      <!-- <span class="sidebar-item-s">{{ allCommunityTemplatesCount }}</span>
         </a>
 
-      </li>
-      <li *ngIf="displayTemplatesCategory" class="sidebar-item-wpr" [ngClass]="{'active-item': BOTS_INCREASE_SALES_TEMPALTES_ROUTE_IS_ACTIVE}"
+      </li> -->
+      <li *ngIf="displayTemplatesCategory" class="sidebar-item-wpr"
+        [ngClass]="{'active-item': BOTS_INCREASE_SALES_TEMPALTES_ROUTE_IS_ACTIVE}"
         (click)="goToBotIncreaseSalesTemplates()">
         <a class="sidebar-item">
           <!-- <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="16px" fill="#647491"
@@ -181,7 +183,8 @@
 
       </li>
 
-      <li *ngIf="displayTemplatesCategory" class="sidebar-item-wpr" [ngClass]="{'active-item': BOTS_CUSTOMER_SATISFACTION_TEMPALTES_ROUTE_IS_ACTIVE}"
+      <li *ngIf="displayTemplatesCategory" class="sidebar-item-wpr"
+        [ngClass]="{'active-item': BOTS_CUSTOMER_SATISFACTION_TEMPALTES_ROUTE_IS_ACTIVE}"
         (click)="goToBotCustomerSatisfactionTemplates()">
         <a class="sidebar-item">
           <!-- <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="16px" viewBox="0 0 24 24"
