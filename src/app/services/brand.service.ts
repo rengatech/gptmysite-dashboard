@@ -38,7 +38,8 @@ export class BrandService {
       display_templates_category: true,
       display_change_pwd: true,
       EXTREME_MEASURES: true,
-      widget_logo_URL: "https://tiledesk.com/tiledesk-logo-white.png",
+      widget_logo_URL: "https://i.ibb.co/Kbf4Rfg/logo-short.png",
+
       widget_default_footer:
         "<a tabindex='-1' target='_blank href='http://www.tiledesk.com/?utm_source=widget'><img src='https://panel.tiledesk.com/v3/dashboard/assets/img/logos/tiledesk-solo_logo_new_gray.svg'/><span> Powered by GPT</span></a>",
       widget_launcher_button_placeholder:
@@ -71,7 +72,7 @@ export class BrandService {
       },
     },
     WIDGET: {
-      LOGO_CHAT: "https://tiledesk.com/tiledesk-logo-white.png",
+      LOGO_CHAT: "https://i.ibb.co/Kbf4Rfg/logo-short.png",
       POWERED_BY:
         "<a tabindex='-1' target='_blank href='http://www.tiledesk.com/?utm_source=widget'><img src='https://panel.tiledesk.com/v3/dashboard/assets/img/logos/tiledesk-solo_logo_new_gray.svg'/><span> Powered by GPT</span></a>",
     },
