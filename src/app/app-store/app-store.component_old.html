@@ -292,12 +292,8 @@
                   <div class="row">
                     <div class="col-xs-4"> </div>
                     <div class="col-xs-4" style="padding-right: 2px; padding-left: 3px;" (click)="goToEditApp(app._id)">
-                      <div class="edit-app-btn" role="button" 
-                        matTooltipClass="custom-mat-tooltip" 
-                        matTooltip="Edit App"
-                        #tooltip="matTooltip" 
-                        matTooltipPosition='below' 
-                        matTooltipHideDelay="100">
+                      <div class="edit-app-btn" role="button" matTooltipClass="custom-mat-tooltip" matTooltip="Edit App"
+                        #tooltip="matTooltip" matTooltipPosition='below' matTooltipHideDelay="100">
                         <span class="material-icons app-card-icon">
                           mode_edit
                         </span>
@@ -326,7 +322,7 @@
                                           (app?.title !== 'Help Center')}">
               {{ app.title}}
             </h5>
-    
+
             <div class="available-from-b-plan-badge b-plan-badge-color"
               *ngIf="(app?.title === 'Zapier') || (app?.title === 'WhatsApp Business') || (app?.title === 'Facebook Messenger') || (app?.title === 'Help Center')">
               {{ 'AvailableFromThePlan' | translate: tPlanParams }}
@@ -441,7 +437,7 @@
                   <a style="color: white;">
                     <!-- {{'Manage' | translate}} -->
                     <!-- Configure -->
-                   {{'OnboardPage.Configure' | translate}}
+                    {{'OnboardPage.Configure' | translate}}
                   </a>
                 </div>
 
@@ -517,11 +513,11 @@
 
             <div class="row" style="display: block;">
 
-              <div class="col-xs-6 app-store-left-col-btn" (click)="openExternalBotIntegrationTutorial()">
+              <!-- <div class="col-xs-6 app-store-left-col-btn" (click)="openExternalBotIntegrationTutorial()">
                 <a style="cursor: pointer;">
                   {{'LearnMore' | translate}}
                 </a>
-              </div>
+              </div> -->
 
 
 

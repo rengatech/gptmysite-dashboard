@@ -1,5 +1,5 @@
 <div id="user-details">
-   
+
     <div class="user-details-dshbrd-lang" (click)="goToUserProfileLanguageSection()">
 
         <span class="user-details-dshbrd-lang-code" style="text-transform: uppercase;color: #647491;">
@@ -51,9 +51,10 @@
 
 
     </div>
-    
+
     <!--   (click)="presentDialogResetBusy()" -->
-    <div class="user-details-user-isbusy" (mouseover)="onMouseOverBusyIcon()" (mouseout)="onMouseOutBusyIcon()" *ngIf="IS_BUSY === true">
+    <div class="user-details-user-isbusy" (mouseover)="onMouseOverBusyIcon()" (mouseout)="onMouseOutBusyIcon()"
+        *ngIf="IS_BUSY === true">
         <span class="material-icons user-details-user-isbusy-icon">
             access_time
         </span>
@@ -97,13 +98,8 @@
         </mat-slide-toggle> -->
 
         <ng-select style="text-align: left;" (change)="changeAvailabilityState(selectedStatus)"
-            [(ngModel)]="selectedStatus" 
-            class="teammate-status-in-drawer" 
-            [items]="teammateStatus" 
-            bindLabel="name"
-            bindValue="id" 
-            [clearable]="false" 
-            [searchable]="false">
+            [(ngModel)]="selectedStatus" class="teammate-status-in-drawer" [items]="teammateStatus" bindLabel="name"
+            bindValue="id" [clearable]="false" [searchable]="false">
             <ng-template ng-label-tmp let-item="item">
                 <img style="width: 15px;height: 15px; position: relative; top: -1px;" height="15" width="15"
                     [src]="item.avatar" />
@@ -153,7 +149,7 @@
         </span>
     </section>
 
-    <section *ngIf="hideHelpLink" class="user-details-help-center">
+    <!-- <section *ngIf="hideHelpLink" class="user-details-help-center">
         <span class="material-icons user-details-help-center-icon">
             support
         </span>
@@ -161,7 +157,7 @@
         <span class="user-details-help-center" (click)="goToHelpCenter()">
             Help center
         </span>
-    </section>
+    </section> -->
 
     <!-- <hr class="second-divider" style="margin-top: 20px;border: 0;
     border-top: 1px solid rgba(255, 255,255, 0.2);"> -->

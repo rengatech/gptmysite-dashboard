@@ -249,8 +249,8 @@ export class WidgetSetUp
     Phone: "Phone",
     "Invalid email address": "Invalid email address",
     "Your message for the support team": "Your message for the support team",
-    "Before proceeding in the conversation please agree to our <a href='https://tiledesk.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://tiledesk.com/privacy.html' target='_blank'>Privacy Policy</a>":
-      "Before proceeding in the conversation please agree to our <a href='https://tiledesk.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://tiledesk.com/privacy.html' target='_blank'>Privacy Policy</a>",
+    "Before proceeding in the conversation please agree to our <a href='https://gpt.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://gpt.com/privacy.html' target='_blank'>Privacy Policy</a>":
+      "Before proceeding in the conversation please agree to our <a href='https://gpt.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://gpt.com/privacy.html' target='_blank'>Privacy Policy</a>",
     "I agree": "I agree",
     "This field is required": "This field is required",
   };
