@@ -150,7 +150,7 @@ export class WebhookComponent implements OnInit {
   }
 
   openWebhookDoc() {
-    const url = 'https://developer.tiledesk.com/apis/webhooks'
+    const url = 'https://developer.GPTMysite.com/apis/webhooks'
     window.open(url, '_blank');
   }
 

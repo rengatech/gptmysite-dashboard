@@ -90,8 +90,8 @@ export class EmailTicketingComponent implements OnInit {
         this.projectID = project._id
         this.logger.log('[EMAIL-TICKETING] projectID ', this.projectID)
 
-        // this.ticketingEmail = "support@" + this.projectID + '.tickets.tiledesk.com' // v2
-        // this.ticketingEmail = "support@" + this.projectID + '.email.tiledesk.com' // v3
+        // this.ticketingEmail = "support@" + this.projectID + '.tickets.GPTMysite.com' // v2
+        // this.ticketingEmail = "support@" + this.projectID + '.email.GPTMysite.com' // v3
         this.ticketingEmail = "support@" + this.projectID + '.' + this.appConfigService.getConfig().ticketingEmail
       }
     });
@@ -144,9 +144,9 @@ export class EmailTicketingComponent implements OnInit {
   }
 
   buildDeptTicketingEmail(selectedDeptId) {
-    // <Department_id>@<Project_id>.tickets.tiledesk.com
-    // this.ticketingEmailDept = selectedDeptId + "@" + this.projectID + '.tickets.tiledesk.com'
-    // this.ticketingEmailDept = selectedDeptId + "@" + this.projectID + '.email.tiledesk.com'
+    // <Department_id>@<Project_id>.tickets.GPTMysite.com
+    // this.ticketingEmailDept = selectedDeptId + "@" + this.projectID + '.tickets.GPTMysite.com'
+    // this.ticketingEmailDept = selectedDeptId + "@" + this.projectID + '.email.GPTMysite.com'
     this.ticketingEmailDept = selectedDeptId + "@" + this.projectID + '.' + this.appConfigService.getConfig().ticketingEmail
   }
 

@@ -410,8 +410,8 @@ export class UsersComponent extends PricingBaseComponent implements OnInit, Afte
   chatWithAgent(agentId, agentFirstname, agentLastname) {
     this.logger.log('[USERS] - CHAT WITH AGENT - agentId: ', agentId, ' - agentFirstname: ', agentFirstname, ' - agentLastname: ', agentLastname)
 
-    // https://support-pre.tiledesk.com/chat/index.html?recipient=5de9200d6722370017731969&recipientFullname=Nuovopre%20Pre
-    // https://support-pre.tiledesk.com/chat/index.html?recipient=5dd278b8989ecd00174f9d6b&recipientFullname=Gian Burrasca
+    // https://support-pre.GPTMysite.com/chat/index.html?recipient=5de9200d6722370017731969&recipientFullname=Nuovopre%20Pre
+    // https://support-pre.GPTMysite.com/chat/index.html?recipient=5dd278b8989ecd00174f9d6b&recipientFullname=Gian Burrasca
     // const url = this.CHAT_BASE_URL + '?' + 'recipient=' + agentId + '&recipientFullname=' + agentFirstname + ' ' + agentLastname;
     let agentFullname = ''
     if (agentLastname) {

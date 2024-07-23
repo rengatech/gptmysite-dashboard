@@ -101,14 +101,14 @@ export class WidgetService {
   // -----------------------------------------------------------------------------------------------------
   // curl -v -X GET -H 'Content-Type:application/json'  http://localhost:3000/5df898a830dbc3c62d3ef16c/labels/it
   // Get a label by lang code
-  // https://tiledesk-server-pre.herokuapp.com/5df26badde7e1c001743b63c/labels2/EN
+  // https://GPTMysite-server-pre.herokuapp.com/5df26badde7e1c001743b63c/labels2/EN
 
 
   // -------------------------------------------------------------------
   // Get all default labels
   // -------------------------------------------------------------------
   public getAllDefaultLabels(): Observable<[any]> {
-    // https://tiledesk-server-pre.herokuapp.com/5fa12801d41fef0034f646e8/labels/default/EN
+    // https://GPTMysite-server-pre.herokuapp.com/5fa12801d41fef0034f646e8/labels/default/EN
 
     const url = this.SERVER_BASE_PATH + this.projectID + '/labels/default'
 
@@ -131,7 +131,7 @@ export class WidgetService {
   // Get EN default labels
   // -------------------------------------------------------------------
   public getEnDefaultLabels(): Observable<[any]> {
-    // https://tiledesk-server-pre.herokuapp.com/5fa12801d41fef0034f646e8/labels/default/EN
+    // https://GPTMysite-server-pre.herokuapp.com/5fa12801d41fef0034f646e8/labels/default/EN
 
     const url = this.SERVER_BASE_PATH + this.projectID + '/labels/default/EN'
 
@@ -155,7 +155,7 @@ export class WidgetService {
   // -------------------------------------------------------------------
   public getLabels(): Observable<[any]> {
     // const url = this.SERVER_BASE_PATH + this.projectID + '/labels/it'
-    // https://tiledesk-server-pre.herokuapp.com/5df2240cecd41b00173a06bb/labels2
+    // https://GPTMysite-server-pre.herokuapp.com/5df2240cecd41b00173a06bb/labels2
 
     const url = this.SERVER_BASE_PATH + this.projectID + '/labels'
 

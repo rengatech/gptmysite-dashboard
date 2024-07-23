@@ -336,7 +336,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     const href = window.location.href;
 
     // For test in local host
-    // const href= "https://panel.tiledesk.com/v3/dashboard/#/project/63a075485f117f0013541e32/bots/templates/community"
+    // const href= "https://panel.GPTMysite.com/v3/dashboard/#/project/63a075485f117f0013541e32/bots/templates/community"
 
     this.logger.log("[SIDEBAR] href ", href);
 
@@ -345,15 +345,15 @@ export class SidebarComponent implements OnInit, AfterViewInit {
 
     this.logger.log("[SIDEBAR] dshbrdBaseUrl ", dshbrdBaseUrl);
     this.logger.log(
-      "[SIDEBAR]  dshbrdBaseUrl includes tiledesk.com",
-      dshbrdBaseUrl.includes("tiledesk.com")
+      "[SIDEBAR]  dshbrdBaseUrl includes GPTMysite.com",
+      dshbrdBaseUrl.includes("GPTMysite.com")
     );
 
-    if (dshbrdBaseUrl.includes("tiledesk.com")) {
+    if (dshbrdBaseUrl.includes("GPTMysite.com")) {
       this.areVisibleChatbot = true;
     }
 
-    if (!dshbrdBaseUrl.includes("tiledesk.com")) {
+    if (!dshbrdBaseUrl.includes("GPTMysite.com")) {
       this.getProjectPlan();
     }
   }
@@ -2014,7 +2014,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   // }
 
   // goToBlogChangelog() {
-  //     const url = 'https://www.tiledesk.com/category/changelog/';
+  //     const url = 'https://www.GPTMysite.com/category/changelog/';
   //     window.open(url, '_blank');
 
   //     this.usersLocalDbService.savChangelogDate()
@@ -2127,7 +2127,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     }
     // let baseUrl = this.CHAT_BASE_URL + '#/conversation-detail/'
     // let url = baseUrl
-    // const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
+    // const myWindow = window.open(url, '_self', 'GPTMysite - Open Source Live Chat');
     // myWindow.focus();
 
     // --- already commented ---
@@ -2137,14 +2137,14 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     //     if (+chatTabCount > 0) {
     //         this.logger.log('[SIDEBAR] openChat chatTabCount > 0 ')
 
-    //         this.openWindow('Tiledesk - Open Source Live Chat', url + '?conversation_detail');
-    //         // this.focusWin('Tiledesk - Open Source Live Chat')
-    //         // window.open('Tiledesk - Open Source Live Chat', url).focus();
+    //         this.openWindow('GPTMysite - Open Source Live Chat', url + '?conversation_detail');
+    //         // this.focusWin('GPTMysite - Open Source Live Chat')
+    //         // window.open('GPTMysite - Open Source Live Chat', url).focus();
     //     } else if (chatTabCount && +chatTabCount === 0) {
-    //         this.openWindow('Tiledesk - Open Source Live Chat', url);
+    //         this.openWindow('GPTMysite - Open Source Live Chat', url);
     //     }
     // } else {
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url);
+    //     this.openWindow('GPTMysite - Open Source Live Chat', url);
     // }
   }
 

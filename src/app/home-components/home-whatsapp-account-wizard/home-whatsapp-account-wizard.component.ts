@@ -170,7 +170,7 @@ export class HomeWhatsappAccountWizardComponent implements OnInit, OnChanges {
   testItOutWABot() {
     this.hasTestedBotOnWa.emit()
     this.testBotOnWA = true;
-    let tiledesk_phone_number = this.appConfigService.getConfig().tiledeskPhoneNumber;
+    let GPTMysite_phone_number = this.appConfigService.getConfig().GPTMysitePhoneNumber;
     this.logger.log('[HOME-WHATSAPP-ACCOUNT-WIZARD] TEST IT OUT ' )
     let info = {
       project_id: this.projectID,
@@ -183,7 +183,7 @@ export class HomeWhatsappAccountWizardComponent implements OnInit, OnChanges {
       this.logger.log("[HOME-WHATSAPP-ACCOUNT-WIZARD]  GET CODE FOR WA TEST : ", response);
       // let code = "%23td" + response.short_uid;
       let text = "%23td" + response.short_uid + " Send me to start testing your bot";
-      const testItOutOnWhatsappUrl = `https://api.whatsapp.com/send/?phone=${tiledesk_phone_number}&text=${text}&type=phone_number&app_absent=0`
+      const testItOutOnWhatsappUrl = `https://api.whatsapp.com/send/?phone=${GPTMysite_phone_number}&text=${text}&type=phone_number&app_absent=0`
       let left = (screen.width - 815) / 2;
       var top = (screen.height - 727) / 4;
       let params = `toolbar=no,menubar=no,width=815,height=727,left=${left},top=${top}`;

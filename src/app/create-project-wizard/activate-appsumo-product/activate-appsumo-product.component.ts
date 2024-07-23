@@ -38,7 +38,7 @@ export class ActivateAppsumoProductComponent extends WidgetSetUpBaseComponent im
   public appSumoInvoiceItemKey
   public planFeatures: any;
   public highlightedFeatures: any;
-  public tiledeskProjectProfileName: string;
+  public GPTMysiteProjectProfileName: string;
   public appSumoPlanSeatsNum:number;
   public langName: string;
   public langCode: string;
@@ -66,7 +66,7 @@ export class ActivateAppsumoProductComponent extends WidgetSetUpBaseComponent im
     this.tparams = brand;
     this.company_name = brand['BRAND_NAME'];
     this.company_site_url = brand['COMPANY_SITE_URL'];
-    this.contactSalesEmail = "sales@tiledesk.com"
+    this.contactSalesEmail = "sales@GPTMysite.com"
   }
 
   ngOnInit(): void {
@@ -152,24 +152,24 @@ export class ActivateAppsumoProductComponent extends WidgetSetUpBaseComponent im
       // this.logger.log('[ACTIVATE-APPSUMO-PRODUCT] GET ROUTE PARAMS > appSumoPlanIdSegmentOne', appSumoPlanIdSegmentOne);
       // this.appSumoLicenseName = appSumoPlanIdSegmentOne[0] + ' ' + appSumoPlanIdSegmentOne[1]
       this.appSumoLicenseName = APP_SUMO_PLAN_NAME[this.appSumoPlanId]
-      if (this.appSumoPlanId === 'tiledesk_tier1' || this.appSumoPlanId === 'tiledesk_tier2') {
-        this.tiledeskProjectProfileName = PLAN_NAME.A
+      if (this.appSumoPlanId === 'GPTMysite_tier1' || this.appSumoPlanId === 'GPTMysite_tier2') {
+        this.GPTMysiteProjectProfileName = PLAN_NAME.A
         this.planFeatures = featuresPlanA;
-        if (this.appSumoPlanId === 'tiledesk_tier1') {
+        if (this.appSumoPlanId === 'GPTMysite_tier1') {
           this.highlightedFeatures = appSumoHighlightedFeaturesPlanATier1;
           this.appSumoPlanSeatsNum = APPSUMO_PLAN_SEATS[this.appSumoPlanId]
-        } else if (this.appSumoPlanId === 'tiledesk_tier2') {
+        } else if (this.appSumoPlanId === 'GPTMysite_tier2') {
           this.highlightedFeatures = appSumoHighlightedFeaturesPlanATier2;
           this.appSumoPlanSeatsNum = APPSUMO_PLAN_SEATS[this.appSumoPlanId]
         }
       }
-      else if (this.appSumoPlanId === 'tiledesk_tier3' || this.appSumoPlanId === 'tiledesk_tier4') {
-        this.tiledeskProjectProfileName = PLAN_NAME.B
+      else if (this.appSumoPlanId === 'GPTMysite_tier3' || this.appSumoPlanId === 'GPTMysite_tier4') {
+        this.GPTMysiteProjectProfileName = PLAN_NAME.B
         this.planFeatures = featuresPlanA;
-        if (this.appSumoPlanId === 'tiledesk_tier3') {
+        if (this.appSumoPlanId === 'GPTMysite_tier3') {
           this.highlightedFeatures = appSumoHighlightedFeaturesPlanATier3;
           this.appSumoPlanSeatsNum = APPSUMO_PLAN_SEATS[this.appSumoPlanId]
-        } else if (this.appSumoPlanId === 'tiledesk_tier4') {
+        } else if (this.appSumoPlanId === 'GPTMysite_tier4') {
           this.highlightedFeatures = appSumoHighlightedFeaturesPlanATier4;
           this.appSumoPlanSeatsNum = APPSUMO_PLAN_SEATS[this.appSumoPlanId]
         }
@@ -323,7 +323,7 @@ export class ActivateAppsumoProductComponent extends WidgetSetUpBaseComponent im
   updateProject() {
     this.projectService.updateAppSumoProject(
       this.new_project._id, 
-      this.tiledeskProjectProfileName,
+      this.GPTMysiteProjectProfileName,
       this.appSumoPlanSeatsNum,
       this.appSumoActivationEmail, 
       this.appSumoProductKey, 
@@ -399,12 +399,12 @@ export class ActivateAppsumoProductComponent extends WidgetSetUpBaseComponent im
   }
 
   contactUs() {
-    // if (window && window['tiledesk']) {
-    //   window['tiledesk'].open();
+    // if (window && window['GPTMysite']) {
+    //   window['GPTMysite'].open();
     // }
     // window.open('mailto:' + this.contactUsEmail, 'mail')
     if (this.USER_ROLE === 'owner') {
-      window.open(`mailto:sales@tiledesk.com?subject=Support request for AppSumo license id project ${this.new_project._id}` );
+      window.open(`mailto:sales@GPTMysite.com?subject=Support request for AppSumo license id project ${this.new_project._id}` );
     } else {
       this.presentModalOnlyOwnerCanManageTheAccountPlan()
     }

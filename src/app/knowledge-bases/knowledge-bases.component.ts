@@ -2380,7 +2380,7 @@ export class KnowledgeBasesComponent extends PricingBaseComponent implements OnI
 
   contactSalesForChatGptKey() {
     this.closeSecretsModal()
-    window.open(`mailto:support@tiledesk.com?subject=I don't have a GPT-Key`);
+    window.open(`mailto:support@GPTMysite.com?subject=I don't have a GPT-Key`);
   }
 
 

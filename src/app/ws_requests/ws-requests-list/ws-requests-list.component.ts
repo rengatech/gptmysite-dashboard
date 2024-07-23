@@ -329,8 +329,8 @@ export class WsRequestsListComponent
 
   openChat() {
     // const url = this.CHAT_BASE_URL;
-    // this.openWindow('Tiledesk - Open Source Live Chat', url)
-    // this.focusWin('Tiledesk - Open Source Live Chat')
+    // this.openWindow('GPTMysite - Open Source Live Chat', url)
+    // this.focusWin('GPTMysite - Open Source Live Chat')
     // --- new
     localStorage.setItem(
       "last_project",
@@ -2493,13 +2493,13 @@ export class WsRequestsListComponent
 
   testWidgetPage() {
     this.testwidgetbtnRef.nativeElement.blur();
-    // const url = 'http://support.tiledesk.com/testsite/?projectid=' + this.projectId;
+    // const url = 'http://support.GPTMysite.com/testsite/?projectid=' + this.projectId;
     // + '&projectname=' + this.projectName
-    // const url = 'http://testwidget.tiledesk.com/testsitenw3?projectname=' + this.projectName + ' &projectid=' + this.projectId
+    // const url = 'http://testwidget.GPTMysite.com/testsitenw3?projectname=' + this.projectName + ' &projectid=' + this.projectId
     // '&isOpen=true'
     const url =
       this.TESTSITE_BASE_URL +
-      "?tiledesk_projectid=" +
+      "?GPTMysite_projectid=" +
       this.projectId +
       "&project_name=" +
       this.projectName +

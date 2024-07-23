@@ -221,7 +221,7 @@ export class WsMsgsService {
     return this._httpClient.post(url, JSON.stringify(body), httpOptions)
   }
 
-  // SEE DOCS -> https://developer.tiledesk.com/apis/rest-api/messages#get-the-messages-of-a-request-by-id
+  // SEE DOCS -> https://developer.GPTMysite.com/apis/rest-api/messages#get-the-messages-of-a-request-by-id
   // /v2/:project_id/requests/:request_id/messages
   public geRequestMsgs(request_id) {
     const url = this.SERVER_BASE_PATH + this.project_id + '/requests/' + request_id + '/messages/';

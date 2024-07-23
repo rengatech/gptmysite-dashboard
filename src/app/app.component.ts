@@ -586,7 +586,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       const notification = new Notification(recipient_fullname, {
         body: notificationBody,
         dir: "auto",
-        icon: "https://console.tiledesk.com/chat/assets/img/icon.png",
+        icon: "https://console.GPTMysite.com/chat/assets/img/icon.png",
       });
       const self = this;
       notification.onclick = () => {
@@ -617,10 +617,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       this.doRecipient_fullname_bckgrnd(recipient_fullname);
     // this.logger.log('recipient_fullname initial', requester_avatar_initial);
     // this.logger.log('recipient_fullname bckgnd', requester_avatar_bckgrnd);
-    // https://support-pre.tiledesk.com/chat-ionic5/#/conversation-detail/support-group-62728d1ca76e050040cee42e-025be323bc914f9f9f727ca0b7364eb7/Chicco/active
+    // https://support-pre.GPTMysite.com/chat-ionic5/#/conversation-detail/support-group-62728d1ca76e050040cee42e-025be323bc914f9f9f727ca0b7364eb7/Chicco/active
     // this.logger.log('snd test foreground notification');
     const link =
-      "https://console.tiledesk.com/v2/chat/#/conversation-detail/support-group-6228d9d792d1ed0019240d2b-7f4cc830069f48458b8fd7070f4a7f48/Bot/active";
+      "https://console.GPTMysite.com/v2/chat/#/conversation-detail/support-group-6228d9d792d1ed0019240d2b-7f4cc830069f48458b8fd7070f4a7f48/Bot/active";
     // this.logger.log('snd test foreground notification link ', link);
     this.notify.showForegroungPushNotification(
       "Milani Salame",
@@ -710,7 +710,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       // this.logger.log('AppConfigService % »»» WebSocketJs WF - APP-COMPONENT - WS URL ', this.appConfigService.getConfig().wsUrl);
 
       if (user && user.token) {
-        // const WS_URL = 'ws://tiledesk-server-pre.herokuapp.com?token=' + user.token
+        // const WS_URL = 'ws://GPTMysite-server-pre.herokuapp.com?token=' + user.token
         const WS_URL =
           this.appConfigService.getConfig().wsUrl + "?token=" + user.token;
 
@@ -838,12 +838,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
           // window.addEventListener("load", () => {
           this.logger.log("[APP-COMP] - HIDE WIDGET - PAGE LOAD");
           try {
-            if (window && window["tiledesk_widget_hide"]) {
+            if (window && window["GPTMysite_widget_hide"]) {
               this.logger.log("[APP-COMP] - HIDE WIDGET - HERE 1");
-              window["tiledesk_widget_hide"]();
+              window["GPTMysite_widget_hide"]();
             }
           } catch (e) {
-            this.logger.error("tiledesk_widget_hide ERROR", e);
+            this.logger.error("GPTMysite_widget_hide ERROR", e);
           }
         } else {
           this.HIDE_FOREGROUND_NOTIFICATION = false;
@@ -866,9 +866,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     //         if ((this.route.indexOf('/unserved-request-for-panel') !== -1) || (this.route.indexOf('/projects-for-panel') !== -1) || (this.route.indexOf('/request-for-panel') !== -1)){
     //             this.logger.log('hideWidgetInComponentDisplayedInChat HERE 1')
     //             // try {
-    //             //     if (window && window['tiledeskSettings'] && window['tiledeskSettings'].angularcomponent && window['tiledeskSettings'].angularcomponent.g) {
+    //             //     if (window && window['GPTMysiteSettings'] && window['GPTMysiteSettings'].angularcomponent && window['GPTMysiteSettings'].angularcomponent.g) {
     //             //         this.logger.log('hideWidgetInComponentDisplayedInChat HERE 2')
-    //             //         window['tiledeskSettings'].angularcomponent.g.setParameter('isShown', false)
+    //             //         window['GPTMysiteSettings'].angularcomponent.g.setParameter('isShown', false)
     //             //     }
     //             // } catch (e) {
     //             //     this.logger.log('hideWidgetInComponentDisplayedInChat ERROR' ,e)
@@ -876,18 +876,18 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
     //             // let wContext: any = window;
     //             // // this.logger.log('windowContext 0', wContext);
-    //             // if (window.frameElement && window.frameElement.getAttribute('tiledesk_context') === 'parent') {
+    //             // if (window.frameElement && window.frameElement.getAttribute('GPTMysite_context') === 'parent') {
     //             //     wContext = window.parent;
     //             //     this.logger.log('hideWidgetInComponentDisplayedInChat HERE 1', wContext)
 
     //             // }
     //             // window.addEventListener("load", () => {
     //                 try {
-    //                     if (window && window['tiledesk_widget_hide']) {
-    //                         window['tiledesk_widget_hide']();
+    //                     if (window && window['GPTMysite_widget_hide']) {
+    //                         window['GPTMysite_widget_hide']();
     //                     }
     //                 } catch (e) {
-    //                     this.logger.log('tiledesk_widget_hide ERROR', e)
+    //                     this.logger.log('GPTMysite_widget_hide ERROR', e)
     //                 }
     //             }
     //         //    )};
@@ -1023,15 +1023,15 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.runOnRouteChange();
     // this.setPrechatFormInWidgetSettings();
     const elemFooter = <HTMLElement>document.querySelector("footer");
-    // const eleWidget = <HTMLElement>document.querySelector('#tiledesk-container');
+    // const eleWidget = <HTMLElement>document.querySelector('#GPTMysite-container');
     // this.logger.log('APP.COMP - elem FOOTER ', elemFooter);
     // setTimeout(() => {
     // this.logger.log('[APP-COMPONENT] window', window)
-    // var tiledeskiframe = document.getElementById('tiledeskiframe') as HTMLIFrameElement;
-    // this.logger.log('[APP-COMPONENT] tiledeskiframe', tiledeskiframe)
-    // if (tiledeskiframe) {
-    //     if (window && window['tiledesk'] && window['tiledesk']['angularcomponent']) {
-    //         window['tiledesk'].angularcomponent.component.g.preChatForm = false
+    // var GPTMysiteiframe = document.getElementById('GPTMysiteiframe') as HTMLIFrameElement;
+    // this.logger.log('[APP-COMPONENT] GPTMysiteiframe', GPTMysiteiframe)
+    // if (GPTMysiteiframe) {
+    //     if (window && window['GPTMysite'] && window['GPTMysite']['angularcomponent']) {
+    //         window['GPTMysite'].angularcomponent.component.g.preChatForm = false
     //     }
     // }
     // }, 3000);
@@ -1122,19 +1122,19 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   //                 this.isPageWithNav = false;
 
-  //                 if (window && window['tiledeskSettings']) {
-  //                     window['tiledeskSettings']['preChatForm'] = true
+  //                 if (window && window['GPTMysiteSettings']) {
+  //                     window['GPTMysiteSettings']['preChatForm'] = true
   //                 }
   //             } else {
 
   //                 this.isPageWithNav = true;
-  //                 if (window && window['tiledeskSettings']) {
-  //                     if (window['tiledeskSettings']['preChatForm']) {
-  //                         delete window['tiledeskSettings']['preChatForm'];
+  //                 if (window && window['GPTMysiteSettings']) {
+  //                     if (window['GPTMysiteSettings']['preChatForm']) {
+  //                         delete window['GPTMysiteSettings']['preChatForm'];
   //                     }
   //                 }
   //             }
-  //             // this.logger.log('APP.COMP currentUrl ', this.route, 'tiledeskSettings ', window['tiledeskSettings']);
+  //             // this.logger.log('APP.COMP currentUrl ', this.route, 'GPTMysiteSettings ', window['GPTMysiteSettings']);
   //         }
   //     });
   // }

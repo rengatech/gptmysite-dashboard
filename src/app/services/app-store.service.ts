@@ -13,8 +13,8 @@ export class AppStoreService {
   TOKEN: string;
   TOKEN_NO_JWT_SUBSTRING: string;
   userID: string;
-  // APPS_URL = "https://tiledesk-apps.herokuapp.com/api/apps?sort=score";
-  // APPS_BASE_URL = "https://tiledesk-apps.herokuapp.com/"
+  // APPS_URL = "https://GPTMysite-apps.herokuapp.com/api/apps?sort=score";
+  // APPS_BASE_URL = "https://GPTMysite-apps.herokuapp.com/"
   APPS_URL: string;
   APPS_BASE_URL: string;
   constructor(

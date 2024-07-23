@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BrandService } from 'app/services/brand.service';
-import { URL_install_tiledesk_on_magento } from 'app/utils/util';
+import { URL_install_GPTMysite_on_magento } from 'app/utils/util';
 
 @Component({
   selector: 'appdashboard-magento-installation',
@@ -8,7 +8,7 @@ import { URL_install_tiledesk_on_magento } from 'app/utils/util';
   styleUrls: ['./magento-installation.component.scss']
 })
 export class MagentoInstallationComponent implements OnInit {
-  URL_install_tiledesk_on_magento = URL_install_tiledesk_on_magento;
+  URL_install_GPTMysite_on_magento = URL_install_GPTMysite_on_magento;
   public hideHelpLink: boolean;
   constructor(
     public brandService: BrandService

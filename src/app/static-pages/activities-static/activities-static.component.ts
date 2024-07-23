@@ -205,9 +205,9 @@ export class ActivitiesStaticComponent extends PricingBaseComponent implements O
     }
     
     // else if (this.projectProfileData && this.projectProfileData.extra3) {
-    //   if (this.projectProfileData.extra3 === 'tiledesk_tier1' || this.projectProfileData.extra3 === 'tiledesk_tier2') {
+    //   if (this.projectProfileData.extra3 === 'GPTMysite_tier1' || this.projectProfileData.extra3 === 'GPTMysite_tier2') {
     //     this.router.navigate(['project/' + this.projectId + '/project-settings/payments']);
-    //   } else if (this.projectProfileData.extra3 === 'tiledesk_tier3' || this.projectProfileData.extra3 === 'tiledesk_tier4') {
+    //   } else if (this.projectProfileData.extra3 === 'GPTMysite_tier3' || this.projectProfileData.extra3 === 'GPTMysite_tier4') {
         
     //   }
     // }

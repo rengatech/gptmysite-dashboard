@@ -246,25 +246,25 @@ export class WsRequestsUnservedForPanelComponent extends WsSharedComponent imple
         //   console.log("[WS-REQUESTS-UNSERVED-X-PANEL] currentUserID ", this.currentUserID);
         // }
       }
-      // && window['tiledesk_widget_hide']
+      // && window['GPTMysite_widget_hide']
       if (event && event.data && event.data.action && event.data.calledBy) {
         if (event.data.action === "hidewidget" && event.data.calledBy === "unassigned-convs") {
           try {
-            if (window &&  window['Tiledesk'] ) {
+            if (window &&  window['GPTMysite'] ) {
               this.logger.log('[WS-REQUESTS-UNSERVED-X-PANEL] - HIDE WIDGET - HERE 1')
               // setTimeout(() => {
-                // window['Tiledesk']('hide');
-                // window['tiledesk_widget_hide']();
+                // window['GPTMysite']('hide');
+                // window['GPTMysite_widget_hide']();
               // }, 1500);
-              window['Tiledesk']('onLoadParams', (event_data) => {
+              window['GPTMysite']('onLoadParams', (event_data) => {
                 this.logger.log("[WS-REQUESTS-UNSERVED-X-PANEL] onLoadParams Initialized!");
                
-                window['Tiledesk']('setParameter', { key: 'autoStart', value: false })
-                window['tiledesk_widget_hide']();
-                this.logger.log('[WS-REQUESTS-UNSERVED-X-PANEL]  window[Tiledesk]' ,  window['Tiledesk'] )
+                window['GPTMysite']('setParameter', { key: 'autoStart', value: false })
+                window['GPTMysite_widget_hide']();
+                this.logger.log('[WS-REQUESTS-UNSERVED-X-PANEL]  window[GPTMysite]' ,  window['GPTMysite'] )
                 // customAuth((token) => {
                 //     if (token) {
-                //         window.tiledesk.signInWithCustomToken(token);
+                //         window.GPTMysite.signInWithCustomToken(token);
                 //     }
                 //     else {
                 //         console.log("No user found.");
@@ -274,7 +274,7 @@ export class WsRequestsUnservedForPanelComponent extends WsSharedComponent imple
 
             }
           } catch (e) {
-            this.logger.error('[WS-REQUESTS-UNSERVED-X-PANEL] tiledesk_widget_hide ERROR', e)
+            this.logger.error('[WS-REQUESTS-UNSERVED-X-PANEL] GPTMysite_widget_hide ERROR', e)
           }
         }
       }

@@ -777,7 +777,7 @@ export class NavbarComponent extends PricingBaseComponent implements OnInit, Aft
           (this.route === '/forgotpsw') ||
           (this.route.indexOf('/configure-widget') !== -1) ||
           (this.route.indexOf('/install-widget') !== -1) ||
-          (this.route.indexOf('/install-tiledesk') !== -1) ||
+          (this.route.indexOf('/install-GPTMysite') !== -1) ||
           (this.route.indexOf('/handle-invitation') !== -1) ||
           (this.route.indexOf('/signup-on-invitation') !== -1) ||
           (this.route.indexOf('/create-new-project') !== -1) ||
@@ -1149,7 +1149,7 @@ export class NavbarComponent extends PricingBaseComponent implements OnInit, Aft
     const simulateVisitorBtnElem = <HTMLElement>document.querySelector('.simulate-visitor-btn');
     simulateVisitorBtnElem.blur();
     // + '&isOpen=true'
-    const url = this.TESTSITE_BASE_URL + '?tiledesk_projectid=' + this.projectId + '&project_name=' + this.projectName + '&role=' + this.USER_ROLE
+    const url = this.TESTSITE_BASE_URL + '?GPTMysite_projectid=' + this.projectId + '&project_name=' + this.projectName + '&role=' + this.USER_ROLE
     window.open(url, '_blank');
   }
 
@@ -1635,12 +1635,12 @@ export class NavbarComponent extends PricingBaseComponent implements OnInit, Aft
     }
 
     try {
-      if (window && window['tiledesk_widget_hide']) {
+      if (window && window['GPTMysite_widget_hide']) {
         this.logger.log('[NAV] - HIDE WIDGET - HERE 1')
-        window['tiledesk_widget_hide']();
+        window['GPTMysite_widget_hide']();
       }
     } catch (e) {
-      this.logger.error('tiledesk_widget_hide ERROR', e)
+      this.logger.error('GPTMysite_widget_hide ERROR', e)
     }
   };
   sidebarClose() {
@@ -1653,12 +1653,12 @@ export class NavbarComponent extends PricingBaseComponent implements OnInit, Aft
     body.classList.remove('nav-open');
 
     try {
-      if (window && window['tiledesk_widget_show']) {
+      if (window && window['GPTMysite_widget_show']) {
         this.logger.log('[NAV] - SHOW WIDGET - HERE 1')
-        window['tiledesk_widget_show']();
+        window['GPTMysite_widget_show']();
       }
     } catch (e) {
-      this.logger.error('tiledesk_widget_show ERROR', e)
+      this.logger.error('GPTMysite_widget_show ERROR', e)
     }
 
   };

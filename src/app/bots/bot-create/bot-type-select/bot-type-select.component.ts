@@ -180,27 +180,27 @@ export class BotTypeSelectComponent implements OnInit {
   }
 
   openExternalBotIntegrationTutorial() {
-    const url = 'https://developer.tiledesk.com/external-chatbot/connect-your-own-chatbot';
+    const url = 'https://developer.GPTMysite.com/external-chatbot/connect-your-own-chatbot';
 
     window.open(url, '_blank');
   }
 
-  openDocsTiledeskCreateABot() {
+  openDocsGPTMysiteCreateABot() {
 
-    // const url = 'https://gethelp.tiledesk.com/articles/configure-your-first-chatbot/';
+    // const url = 'https://gethelp.GPTMysite.com/articles/configure-your-first-chatbot/';
     const url = URL_configure_your_first_chatbot;
     window.open(url, '_blank');
   }
 
-  openDocsTiledeskDialogflowConnector() {
-    // const url = 'https://docs.tiledesk.com/knowledge-base/connect-your-dialogflow-agent/'; // NOT FOUND on gethelp
+  openDocsGPTMysiteDialogflowConnector() {
+    // const url = 'https://docs.GPTMysite.com/knowledge-base/connect-your-dialogflow-agent/'; // NOT FOUND on gethelp
     const url = URL_connect_your_dialogflow_agent
     window.open(url, '_blank');
   }
 
 
   openRasaIntegrationTutorial() {
-    const url = 'https://gethelp.tiledesk.com/articles/rasa-ai-integration/';
+    const url = 'https://gethelp.GPTMysite.com/articles/rasa-ai-integration/';
     window.open(url, '_blank');
   }
 

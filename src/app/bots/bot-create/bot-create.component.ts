@@ -871,8 +871,8 @@ export class BotCreateComponent extends PricingBaseComponent implements OnInit {
         // this.router.navigate(['project/' + this.project._id + '/cds/', this.newBot_Id, 'intent', '0']);
         goToCDSVersion(this.router, this.newBot, this.project._id, this.appConfigService.getConfig().cdsBaseUrl)
 
-      } else if (this.botType === 'tiledesk-ai') {
-        bot_type = 'tiledesk-ai'
+      } else if (this.botType === 'GPTMysite-ai') {
+        bot_type = 'GPTMysite-ai'
         // this.router.navigate(['project/' + this.project._id + '/tilebot/intents/' + this.newBot_Id + "/" + bot_type]);
         // this.router.navigate(['project/' + this.project._id + '/cds/', this.newBot_Id, 'intent', '0']);
         goToCDSVersion(this.router, this.newBot, this.project._id, this.appConfigService.getConfig().cdsBaseUrl)
@@ -950,8 +950,8 @@ export class BotCreateComponent extends PricingBaseComponent implements OnInit {
   }
 
   // launchWidget() {
-  //   if (window && window['tiledesk']) {
-  //     window['tiledesk'].open();
+  //   if (window && window['GPTMysite']) {
+  //     window['GPTMysite'].open();
   //   }
   // }
   hasClickedChangeFile() {
@@ -1100,19 +1100,19 @@ export class BotCreateComponent extends PricingBaseComponent implements OnInit {
   }
 
   // openDialogGenerateCredentialTutorial() {
-  //   const url = 'https://developer.tiledesk.com/apis/tutorials/generate-dialgoflow-google-credentials-file';
+  //   const url = 'https://developer.GPTMysite.com/apis/tutorials/generate-dialgoflow-google-credentials-file';
   //   window.open(url, '_blank');
   // }
 
   // -----------------------------------------------------------------------
   // Dialogflow bot doc link
   // -----------------------------------------------------------------------
-  openDeveloperTiledeskGenerateDFCredentialFile() {
-    const url = 'https://developer.tiledesk.com/external-chatbot/build-your-own-dialogflow-connnector/generate-dialgoflow-google-credentials-file';
+  openDeveloperGPTMysiteGenerateDFCredentialFile() {
+    const url = 'https://developer.GPTMysite.com/external-chatbot/build-your-own-dialogflow-connnector/generate-dialgoflow-google-credentials-file';
     window.open(url, '_blank');
   }
 
-  openDocsTiledeskDialogflowConnector() {
+  openDocsGPTMysiteDialogflowConnector() {
 
     const url = URL_microlanguage_for_dialogflow_images_videos
     window.open(url, '_blank');
@@ -1120,7 +1120,7 @@ export class BotCreateComponent extends PricingBaseComponent implements OnInit {
 
   openDocsDialogFlowHandoffToHumanAgent() {
 
-    // const url = 'https://gethelp.tiledesk.com/articles/dialogflow-connector-handoff-to-human-agent-example/';
+    // const url = 'https://gethelp.GPTMysite.com/articles/dialogflow-connector-handoff-to-human-agent-example/';
     const url = URL_dialogflow_connector_handoff_to_human_agent_example
 
     window.open(url, '_blank');
@@ -1138,8 +1138,8 @@ export class BotCreateComponent extends PricingBaseComponent implements OnInit {
   // External bot doc link
   // -----------------------------------------------------------------------
   openExternalBotIntegrationTutorial() {
-    // const url = 'https://developer.tiledesk.com/apis/tutorials/connect-your-own-chatbot';
-    const url = 'https://developer.tiledesk.com/external-chatbot/connect-your-own-chatbot';
+    // const url = 'https://developer.GPTMysite.com/apis/tutorials/connect-your-own-chatbot';
+    const url = 'https://developer.GPTMysite.com/external-chatbot/connect-your-own-chatbot';
     window.open(url, '_blank');
   }
 
@@ -1151,7 +1151,7 @@ export class BotCreateComponent extends PricingBaseComponent implements OnInit {
   // Resolution bot doc link
   // -----------------------------------------------------------------------
   openResolutionBotDocsStylingYourChatbotReplies() {
-    // const url = 'https://gethelp.tiledesk.com/articles/styling-your-chatbot-replies/';
+    // const url = 'https://gethelp.GPTMysite.com/articles/styling-your-chatbot-replies/';
     const url = URL_styling_your_chatbot_replies;
     window.open(url, '_blank');
   }
@@ -1162,14 +1162,14 @@ export class BotCreateComponent extends PricingBaseComponent implements OnInit {
   }
 
   openDocsResolutionBotHandoffToHumanAgent() {
-    // const url = 'https://gethelp.tiledesk.com/articles/handoff-to-human-agents/';
+    // const url = 'https://gethelp.GPTMysite.com/articles/handoff-to-human-agents/';
     const url = URL_handoff_to_human_agents;
     window.open(url, '_blank');
   }
 
   openDocsResolutionBotConfigureYourFirstChatbot() {
-    // const url = 'https://docs.tiledesk.com/knowledge-base/create-a-bot/'; (replaced by configure-your-first-chatbot/ )
-    // const url = 'https://gethelp.tiledesk.com/articles/configure-your-first-chatbot/';
+    // const url = 'https://docs.GPTMysite.com/knowledge-base/create-a-bot/'; (replaced by configure-your-first-chatbot/ )
+    // const url = 'https://gethelp.GPTMysite.com/articles/configure-your-first-chatbot/';
     const url = URL_configure_your_first_chatbot;
     window.open(url, '_blank');
   }

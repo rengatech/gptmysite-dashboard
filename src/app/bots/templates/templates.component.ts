@@ -559,7 +559,7 @@ export class TemplatesComponent extends PricingBaseComponent implements OnInit {
   }
 
   goToExternalCommunity() {
-   const url = "https://tiledesk.com/community/"
+   const url = "https://GPTMysite.com/community/"
    window.open(url, '_blank');
   }
 

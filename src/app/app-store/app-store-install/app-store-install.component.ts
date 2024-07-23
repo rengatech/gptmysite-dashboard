@@ -122,8 +122,8 @@ export class AppStoreInstallComponent implements OnInit {
             if (user && this.appurl !== undefined) {
               this.TOKEN = user.token
 
-              // use case 1 -> https://cms.tiledesk.com/
-              // use case 2 -> https://cms.tiledesk.com/?version=v3
+              // use case 1 -> https://cms.GPTMysite.com/
+              // use case 2 -> https://cms.GPTMysite.com/?version=v3
 
               let qsCharacterSeparator = ""
               const appurlHasQueryParams = this.hasQueryParams(this.appurl)

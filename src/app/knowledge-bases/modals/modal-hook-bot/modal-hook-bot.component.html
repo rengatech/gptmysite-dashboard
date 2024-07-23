@@ -26,19 +26,19 @@
                 </div>
                 <pre class="widget--script">
                     <span>&lt;script type=&quot;application/javascript&quot;&gt;</span>
-                    <span>   window.tiledeskSettings=</span>
+                    <span>   window.GPTMysiteSettings=</span>
                     <span>   {{'{'}}</span>
                     <span>	 projectid: &quot;{{ projectId }}&quot;</span>
                     <span>   {{'};'}}</span>
                     <span>   (function(d, s, id) {{'{'}}</span>
                     <span>      var w=window; var d=document; var i=function(){{'{'}}i.c(arguments);{{'};'}} </span>
-                    <span>      i.q=[]; i.c=function(args){{'{'}}i.q.push(args);{{'};'}} w.Tiledesk=i; </span>
+                    <span>      i.q=[]; i.c=function(args){{'{'}}i.q.push(args);{{'};'}} w.GPTMysite=i; </span>
                     <span>      var js, fjs=d.getElementsByTagName(s)[0];  </span>
                     <span>      if (d.getElementById(id)) return; </span>
                     <span>      js=d.createElement(s); </span>
                     <span>      js.id=id; js.async=true; js.src=&quot;{{WIDGET_URL}}&quot;;</span>
                     <span>      fjs.parentNode.insertBefore(js, fjs);</span>
-                    <span>   {{'}'}}(document,&#39;script&#39;,&#39;tiledesk-jssdk&#39;));</span>
+                    <span>   {{'}'}}(document,&#39;script&#39;,&#39;GPTMysite-jssdk&#39;));</span>
                     <span>&lt;/script&gt;</span>	
                 </pre>
             
@@ -55,19 +55,19 @@
 
     <textarea  name="exampleClipboard" class="textarea" readonly rows="20" value="" type="text" style="opacity: .01;height:0; position:absolute; z-index: -1;">
         &lt;script type=&quot;application/javascript&quot;&gt;
-            window.tiledeskSettings= 
+            window.GPTMysiteSettings= 
             {
                 projectid: &quot;{{ projectId }}&quot;
             };
             (function(d, s, id) { 
                 var w=window; var d=document; var i=function(){i.c(arguments);};
-                i.q=[]; i.c=function(args){i.q.push(args);}; w.Tiledesk=i;                
+                i.q=[]; i.c=function(args){i.q.push(args);}; w.GPTMysite=i;                
                 var js, fjs=d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js=d.createElement(s); 
                 js.id=id; js.async=true; js.src=&quot;{{WIDGET_URL}}&quot;;
                 fjs.parentNode.insertBefore(js, fjs);
-            }(document,&#39;script&#39;,&#39;tiledesk-jssdk&#39;));
+            }(document,&#39;script&#39;,&#39;GPTMysite-jssdk&#39;));
         &lt;/script&gt;
       </textarea>
 

@@ -553,13 +553,13 @@ export class UserProfileComponent extends PricingBaseComponent implements OnInit
         this.logger.log('[USER-PROFILE] downloadurl ', downloadurl)
         this.userProfileImageurl = ''
 
-        if (environment.production && environment.production === true && this.appConfigService.getConfig().baseImageUrl === "https://api.tiledesk.com/v2/") {
+        if (environment.production && environment.production === true && this.appConfigService.getConfig().baseImageUrl === "https://api.GPTMysite.com/v2/") {
           // this.logger.log('upload env prod? ', environment.production)
-          this.userProfileImageurl = "https://rtm.tiledesk.com/images?path=uploads%2Fusers%2F" + this.userId + "%2Fimages%2Fphoto.jpg"
-          // this.userProfileImageurl = "https://rtm.tiledesk.com/images?path=uploads%2Fusers%2F" + this.userId + "%2Fimages%2Fthumbnails_200_200-photo.jpg"
+          this.userProfileImageurl = "https://rtm.GPTMysite.com/images?path=uploads%2Fusers%2F" + this.userId + "%2Fimages%2Fphoto.jpg"
+          // this.userProfileImageurl = "https://rtm.GPTMysite.com/images?path=uploads%2Fusers%2F" + this.userId + "%2Fimages%2Fthumbnails_200_200-photo.jpg"
 
           this.logger.log('[USER-PROFILE] userProfileImageurl ', this.userProfileImageurl)
-        } else if (environment.production && environment.production === true && this.appConfigService.getConfig().baseImageUrl !== "https://api.tiledesk.com/v2/") {
+        } else if (environment.production && environment.production === true && this.appConfigService.getConfig().baseImageUrl !== "https://api.GPTMysite.com/v2/") {
           this.userProfileImageurl = downloadurl;
         } else if (!environment.production) {
           // this.logger.log('upload env prod? ', environment.production)
@@ -644,7 +644,7 @@ export class UserProfileComponent extends PricingBaseComponent implements OnInit
     // this.userProfileImageurl = ''
     // if (environment.production && environment.production === true) {
     //   // this.logger.log('setImageProfileUrl_Native env prod ', environment.production)
-    //   this.userProfileImageurl = "https://rtm.tiledesk.com/images?path=uploads%2Fusers%2F" + this.userId + "%2Fimages%2Fphoto.jpg"
+    //   this.userProfileImageurl = "https://rtm.GPTMysite.com/images?path=uploads%2Fusers%2F" + this.userId + "%2Fimages%2Fphoto.jpg"
 
     // } else if (!environment.production) {
     //   this.userProfileImageurl = baseUrl + 'images?path=uploads%2Fusers%2F' + this.userId + '%2Fimages%2Fthumbnails_200_200-photo.jpg';

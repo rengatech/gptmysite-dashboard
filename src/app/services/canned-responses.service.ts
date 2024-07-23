@@ -49,7 +49,7 @@ export class CannedResponsesService {
   // @ Read - Get canned responses
   // -------------------------------------------------------------------------------------
   public getCannedResponses(): Observable<[any]> {
-    // https://tiledesk-server-pre.herokuapp.com/5e20a68e7c2e640017f2f40f/canned/  // example
+    // https://GPTMysite-server-pre.herokuapp.com/5e20a68e7c2e640017f2f40f/canned/  // example
     const url = this.SERVER_BASE_PATH + this.projectId + '/canned/'
     this.logger.log('[CANNED-RES.SERV] - GET CANNED-RES URL', url);
 

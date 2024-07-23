@@ -155,8 +155,8 @@ export class CnpTemplatesComponent implements OnInit, AfterViewInit, OnChanges {
     this.logger.log('[CNP-TEMPLATES] ACTUAL WIDTH ', window.innerWidth);
 
     if (window.innerWidth < 452) {
-      if (window && window['Tiledesk']) {
-        window['Tiledesk']('hide')
+      if (window && window['GPTMysite']) {
+        window['GPTMysite']('hide')
       }
     }
     if (window.innerWidth < 371) {
@@ -170,8 +170,8 @@ export class CnpTemplatesComponent implements OnInit, AfterViewInit, OnChanges {
   onResize(event: any) {
     this.logger.log('[CNP-TEMPLATES] NEW WIDTH ', window.innerWidth);
     if (window.innerWidth < 452) {
-      if (window && window['Tiledesk']) {
-        window['Tiledesk']('hide')
+      if (window && window['GPTMysite']) {
+        window['GPTMysite']('hide')
       }
     }
 

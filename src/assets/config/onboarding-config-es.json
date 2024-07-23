@@ -36,7 +36,7 @@
           ]
         },
         {
-          "title": "¿Cómo descubriste Tiledesk?",
+          "title": "¿Cómo descubriste GPTMysite?",
           "type": "select",
           "attribute_name": "acquisition_source",
           "labels": {
@@ -61,7 +61,7 @@
       },
       "questions": [
         {
-          "title": "¿Cuál es su objetivo principal con Tiledesk?",
+          "title": "¿Cuál es su objetivo principal con GPTMysite?",
           "type": "button",
           "attribute_name": "use_case",
           "buttons": [

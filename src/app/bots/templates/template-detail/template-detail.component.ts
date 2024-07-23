@@ -248,8 +248,8 @@ export class TemplateDetailComponent extends PricingBaseComponent implements OnI
     // this.logger.log('openTestSiteInPopupWindow TESTSITE_BASE_URL', this.TESTSITE_BASE_URL)
     const testItOutBaseUrl = this.TESTSITE_BASE_URL.substring(0, this.TESTSITE_BASE_URL.lastIndexOf('/'));
     const testItOutUrl = testItOutBaseUrl + '/chatbot-panel.html'
-    // const url = testItOutUrl + '?tiledesk_projectid=' + "635b97cc7d7275001a2ab3e0" + '&tiledesk_participants=bot_' + this.templateid + "&tiledesk_departmentID=635b97cc7d7275001a2ab3e4"
-    const url = testItOutUrl + '?tiledesk_projectid=' + this.templateProjectId + '&tiledesk_participants=bot_' + this.templateid + "&tiledesk_departmentID=" + "63d7911ca7b3d3001a4a9408"
+    // const url = testItOutUrl + '?GPTMysite_projectid=' + "635b97cc7d7275001a2ab3e0" + '&GPTMysite_participants=bot_' + this.templateid + "&GPTMysite_departmentID=635b97cc7d7275001a2ab3e4"
+    const url = testItOutUrl + '?GPTMysite_projectid=' + this.templateProjectId + '&GPTMysite_participants=bot_' + this.templateid + "&GPTMysite_departmentID=" + "63d7911ca7b3d3001a4a9408"
     // this.logger.log('openTestSiteInPopupWindow URL ', url)
     let left = (screen.width - 830) / 2;
     let top = (screen.height - 727) / 4;

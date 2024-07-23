@@ -201,9 +201,9 @@ export class WidgetInstallationComponent implements OnInit {
 
  
   openChatWidget(){
-    if (window && window['tiledesk']) {
-      window['tiledesk'].setParameter({ key: 'startFromHome', value: false });
-      window['tiledesk'].open();
+    if (window && window['GPTMysite']) {
+      window['GPTMysite'].setParameter({ key: 'startFromHome', value: false });
+      window['GPTMysite'].open();
     }
     
     

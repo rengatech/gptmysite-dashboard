@@ -267,7 +267,7 @@ export class UsersService {
       .get<User[]>(url, httpOptions)
   }
 
-  // https://tiledesk-server-pre.herokuapp.com/users_util/5fb3a3c84eff0000345282ef
+  // https://GPTMysite-server-pre.herokuapp.com/users_util/5fb3a3c84eff0000345282ef
 
   // ---------------------------------------------------------
   // Delete user account 

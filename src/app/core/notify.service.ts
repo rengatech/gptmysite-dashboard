@@ -49,7 +49,7 @@ export class NotifyService {
 
   viewCancelSubscriptionModal = 'none';
   displayDataExportNotAvailable = 'none';
-  displayInstallTiledeskModal = 'none';
+  displayInstallGPTMysiteModal = 'none';
 
   displaySuccessCheckModal = 'none';
   successCheckModalTitleText: string;
@@ -356,14 +356,14 @@ export class NotifyService {
   }
 
   // -----------------------------------------------
-  // Install Tiledesk Modal
+  // Install GPTMysite Modal
   // -----------------------------------------------
-  presentModalInstallTiledeskModal() {
-    this.displayInstallTiledeskModal = 'block';
+  presentModalInstallGPTMysiteModal() {
+    this.displayInstallGPTMysiteModal = 'block';
   }
 
-  closeModalInstallTiledeskModal() {
-    this.displayInstallTiledeskModal = 'none';
+  closeModalInstallGPTMysiteModal() {
+    this.displayInstallGPTMysiteModal = 'none';
   }
 
   // -----------------------------------------------
@@ -475,7 +475,7 @@ export class NotifyService {
       },
       template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" style="text-align: left;" role="alert">' +
         '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">TileDesk</span> ' +
+        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">GPTMysite</span> ' +
         // tslint:disable-next-line:max-line-length
         '<span data-notify="icon" style="display: inline;"><i style="vertical-align: middle; padding-right: 5px;" class="material-icons">' + icon + '</i> </span> ' +
         '<span data-notify="message" style="display: inline; vertical-align: middle ">' + message + '</span>' +
@@ -511,7 +511,7 @@ export class NotifyService {
   // }
 
   // '<img data-notify="icon" class="pull-left">' +
-  // icon: 'https://tiledesk.com/wp-content/uploads/2020/08/cropped-tiledesk-logo-512.png',
+  // icon: 'https://GPTMysite.com/wp-content/uploads/2020/08/cropped-GPTMysite-logo-512.png',
   // (click)="openMsgInChat(${link})"
   // icon_type: 'image',
   showForegroungPushNotification(sender: string, msg: string, link: string, requester_avatar_initial: string, requester_avatar_bckgrnd: string) {
@@ -622,7 +622,7 @@ export class NotifyService {
       // tslint:disable-next-line:max-line-length
       template: '<div data-notify="container" class="col-xs-11 col-sm-3  alert alert-{0}" style="text-align: left; padding-top: 8px;padding-bottom: 8px;" role="alert">' +
         '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">TileDesk</span> ' +
+        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">GPTMysite</span> ' +
         // tslint:disable-next-line:max-line-length
         `<span data-notify="icon" style="display: inline;"><i style="vertical-align: middle; padding: 3px;background-color: ${icon_bckgrnd_color}; border-radius: 50%; font-size:16px " class="material-icons">` + icon + '</i> </span> ' +
         '<span data-notify="message" style="display: inline; vertical-align: middle; padding-left:8px">' + message + '</span>' +
@@ -663,7 +663,7 @@ export class NotifyService {
       // tslint:disable-next-line:max-line-length
       template: '<div data-notify="container" class="col-xs-11 col-sm-3  alert alert-{0}" style="text-align: left; padding-top: 8px;padding-bottom: 8px;" role="alert">' +
         '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">TileDesk</span> ' +
+        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">GPTMysite</span> ' +
         // tslint:disable-next-line:max-line-length
         `<span data-notify="icon" style="display: inline;"><i style="vertical-align: middle; padding: 3px;background-color: ${icon_bckgrnd_color}; border-radius: 50%; font-size:16px " class="material-icons">` + icon + '</i> </span> ' +
         '<span data-notify="message" style="display: inline; vertical-align: middle; padding-left:8px">' + message + '</span>' +
@@ -695,7 +695,7 @@ export class NotifyService {
       // col-xs-12 col-sm-8 <- used with from: 'bottom', align: 'center' (toast)
       template: '<div data-notify="container" class="col-xs-11 col-sm-3  alert alert-{0}" style="text-align: left; padding-top: 8px;padding-bottom: 8px; background-color: #131313; color:#a9afbb" role="alert">' +
         '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">TileDesk</span> ' +
+        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">GPTMysite</span> ' +
         // tslint:disable-next-line:max-line-length
         '<span data-notify="icon" style="display: inline;"><i style="vertical-align: middle; padding: 2px;border-radius: 50%; margin-right: 6px;background-color: #3c4858;color: #5bc0de;" class="material-icons">' + icon + '</i> </span> ' +
         '<span data-notify="message" style="display: inline; vertical-align: middle ">' + message + '</span>' +
@@ -725,7 +725,7 @@ export class NotifyService {
       // tslint:disable-next-line:max-line-length
       template: '<div data-notify="container" class="col-xs-12 col-sm-8 alert alert-{0}" style="text-align: center; background-color: rgb(251, 188, 5); color:rgb(66, 77, 87);font-size: 15px;font-weight: 600;" role="alert">' +
         '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">TileDesk</span> ' +
+        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">GPTMysite</span> ' +
         // tslint:disable-next-line:max-line-length
         '<span data-notify="icon" style="display: inline;"><i style="vertical-align: middle; padding-right: 5px; color: #5bc0de;" class="material-icons">' + icon + '</i> </span> ' +
         '<span data-notify="message" style="display: inline; vertical-align: middle ">' + message + '</span>' +
@@ -754,7 +754,7 @@ export class NotifyService {
       // tslint:disable-next-line:max-line-length
       template: '<div data-notify="container" class="col-xs-12 col-sm-8 alert alert-{0}" style="text-align: center; background-color:' + color + '; color:rgb(66, 77, 87);font-size: 15px;font-weight: 600;" role="alert">' +
         '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">TileDesk</span> ' +
+        // '<span data-notify="title" style="max-width: 100%; font-size:1.1em; ">GPTMysite</span> ' +
         // tslint:disable-next-line:max-line-length
         '<span data-notify="icon" style="display: inline;"><i style="vertical-align: middle; padding-right: 5px; color: #fff;" class="material-icons">' + icon + '</i> </span> ' +
         '<span data-notify="message" style="display: inline; vertical-align: middle; color:#fff ">' + message + '</span>' +

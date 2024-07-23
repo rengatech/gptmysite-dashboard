@@ -974,7 +974,7 @@ h2.title {
   color: #00bcd4;
 }
 
-/* start tiledesk btn */
+/* start GPTMysite btn */
 .btn.btn-tdblu,
 .navbar .navbar-nav > li > a.btn.btn-tdblu {
   box-shadow: 0 2px 2px 0 rgba(3, 155, 229, 0.14), 0 3px 1px -2px rgba(3, 155, 229, 0.2), 0 1px 5px 0 rgba(3, 155, 229, 0.12);
@@ -1041,9 +1041,9 @@ h2.title {
   background-color: transparent;
   color: #039be5;
 }
-/* end tiledesk btn blu */
+/* end GPTMysite btn blu */
 
-/* start tiledesk deepred btn */
+/* start GPTMysite deepred btn */
 .btn.btn-deepred,
 .navbar .navbar-nav > li > a.btn.btn-deepred {
 
@@ -1111,7 +1111,7 @@ h2.title {
   background-color: transparent;
   color: #C52C24;
 }
-/* end tiledesk deepred btn */
+/* end GPTMysite deepred btn */
 
 .btn.btn-success,
 .navbar .navbar-nav > li > a.btn.btn-success {

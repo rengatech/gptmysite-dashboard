@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BrandService } from 'app/services/brand.service';
-import { URL_install_tiledesk_on_wix } from 'app/utils/util';
+import { URL_install_GPTMysite_on_wix } from 'app/utils/util';
 
 @Component({
   selector: 'appdashboard-wix',
@@ -8,7 +8,7 @@ import { URL_install_tiledesk_on_wix } from 'app/utils/util';
   styleUrls: ['./wix.component.scss']
 })
 export class WixComponent implements OnInit {
-  URL_install_tiledesk_on_wix = URL_install_tiledesk_on_wix 
+  URL_install_GPTMysite_on_wix = URL_install_GPTMysite_on_wix 
   public hideHelpLink: boolean;
 
   constructor(

@@ -438,8 +438,8 @@ export class HomeCreateChatbotComponent extends PricingBaseComponent implements 
         // this.router.navigate(['project/' + this.projectId + '/cds/', bot._id, 'intent', '0', 'h']);
         goToCDSVersion(this.router, bot, this.projectId, this.appConfigService.getConfig().cdsBaseUrl)
 
-      } else if (bot.type === 'tiledesk-ai') {
-        botType = 'tiledesk-ai'
+      } else if (bot.type === 'GPTMysite-ai') {
+        botType = 'GPTMysite-ai'
 
         // this.router.navigate(['project/' + this.project._id + '/tilebot/intents/', bot_id, botType]);
         // this.router.navigate(['project/' + this.projectId + '/cds/', bot._id, 'intent', '0', 'h']);

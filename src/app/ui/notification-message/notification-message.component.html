@@ -752,8 +752,8 @@
         </button>
 
         <h4 class="modal-title">
-          <!-- tiledesk Log Out -->
-          {{ 'NavBar.TiledeskLogOut' | translate: tparams }}
+          <!-- GPTMysite Log Out -->
+          {{ 'NavBar.GPTMysiteLogOut' | translate: tparams }}
         </h4>
       </div>
 
@@ -790,16 +790,16 @@
 
 <!-- NOT USED
 =================================================================================== 
-===================== INSTALL TILEDESK TO START CHATTING MODAL ==================== 
+===================== INSTALL GPTMysite TO START CHATTING MODAL ==================== 
 =================================================================================== -->
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':notify.displayInstallTiledeskModal}"
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':notify.displayInstallGPTMysiteModal}"
   style="background-color: rgba(90,90,90,0.9);">
   <div class="modal-dialog" role="document">
     <div class="modal-content" style="border-top-left-radius:6px; border-top-right-radius:6px">
       <!-- background-image: url(assets/img/error_outiline_icon.svg);background-size: contain;background-repeat: no-repeat; -->
       <div class="modal-header" style="padding:16px!important; border-bottom:none!important; ">
 
-        <button type="button" class="close" aria-label="Close" (click)="notify.closeModalInstallTiledeskModal()"
+        <button type="button" class="close" aria-label="Close" (click)="notify.closeModalInstallGPTMysiteModal()"
           style="position: absolute; right: 14px;">
           <span aria-hidden="true">
             <svg class="tide-icon " width="24" height="24" viewBox="0 0 24 24">
@@ -813,7 +813,7 @@
         <h2 class="modal-title"
           style="color: #262f3c; text-align: center; font-family: 'Poppins','Roboto', 'Arial', sans-serif; margin-top: 20px; font-size:28px">
           <span style="vertical-align: middle;">
-            {{ 'InstallTiledesk' | translate }}
+            {{ 'InstallGPTMysite' | translate }}
           </span>
         </h2>
       </div>
@@ -825,7 +825,7 @@
           <div class="col-sm-12">
             <!-- margin-top: 8px; margin-bottom: 8px, -->
             <h3 style="text-align: center;  color: #8894ab; font-size: 22px;  margin-bottom: 20px">
-              {{ 'InstallTiledeskNowAndStartChatting' | translate: tparams }}
+              {{ 'InstallGPTMysiteNowAndStartChatting' | translate: tparams }}
 
             </h3>
           </div>
@@ -839,7 +839,7 @@
             ####################################################################################################################################### -->
             <!-- <textarea  name="exampleClipboard" class="textarea" readonly rows="18" value="" type="text" style="opacity: .01;height:0; position:absolute; z-index: -1;">
 &lt;script type=&quot;application/javascript&quot;&gt;
-  window.tiledeskSettings = 
+  window.GPTMysiteSettings = 
     {
     projectid: &quot;{{ projectId }}&quot;
     };
@@ -849,7 +849,7 @@
       js = d.createElement(s); js.id = id; js.async=true;
       js.src = &quot;{{WIDGET_URL}}&quot;;
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, &#39;script&#39;, &#39;tiledesk-jssdk&#39;));
+    }(document, &#39;script&#39;, &#39;GPTMysite-jssdk&#39;));
 &lt;/script&gt;</textarea>  -->
 
             <!-- 
@@ -864,7 +864,7 @@
               <div class="wrap-script" style="margin-top: 10px;"> 
                 <pre style="padding-left:0px; margin-bottom: 0px; height: 100px;">
                   <span>&lt;script type=&quot;application/javascript&quot;&gt;</span>
-                  <span>  window.tiledeskSettings =</span>
+                  <span>  window.GPTMysiteSettings =</span>
                   <span>   {{'{'}}</span>
                   <span>	 projectid: &quot;{{ projectId }}&quot;</span>
                   <span>   {{'};'}}</span>
@@ -874,7 +874,7 @@
                   <span>    js = d.createElement(s); js.id = id; js.async=true;;    </span>
                   <span>    js.src = &quot;{{WIDGET_URL}}&quot;;</span>
                   <span>    fjs.parentNode.insertBefore(js, fjs);</span>
-                  <span>  {{'}'}}(document, &#39;script&#39;, &#39;tiledesk-jssdk&#39;));</span>
+                  <span>  {{'}'}}(document, &#39;script&#39;, &#39;GPTMysite-jssdk&#39;));</span>
                   <span>&lt;/script&gt;</span>	
                 </pre>
     
@@ -899,7 +899,7 @@
       <div class="modal-footer"
         style="margin-top: 0px; background-color: #fff; border-top:none; border-bottom-left-radius:6px; border-bottom-right-radius:6px">
         <div style="text-align: center; margin-bottom: 25px;">
-          <button class="btn btn-default" type="button" (click)="notify.closeModalInstallTiledeskModal()">
+          <button class="btn btn-default" type="button" (click)="notify.closeModalInstallGPTMysiteModal()">
             {{ "Close" | translate }}
           </button>
 

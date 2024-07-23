@@ -803,7 +803,7 @@ export class SidebarUserDetailsComponent implements OnInit {
   }
 
   goToHelpCenter() {
-    const url = "https://gethelp.tiledesk.com/"
+    const url = "https://gethelp.GPTMysite.com/"
     window.open(url, '_blank');
   }
 

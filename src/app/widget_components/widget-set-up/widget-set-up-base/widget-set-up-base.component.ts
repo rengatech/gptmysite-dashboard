@@ -30,7 +30,7 @@ export class WidgetSetUpBaseComponent
     preChatForm: false,
     calloutTimer: -1,
     align: "right",
-    logoChat: "tiledesklogo",
+    logoChat: "GPTMysitelogo",
     themeColor: "#2a6ac1",
     themeForegroundColor: "#ffffff",
     preChatFormCustomFieldsEnabled: false,

@@ -962,8 +962,8 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
   //   const url = this.CHAT_BASE_URL + '#/conversation-detail/' + requestid + "/" + requester_fullanme + "/active"
   //   window.open(url, '_blank');
 
-  //   // this.openWindow('Tiledesk - Open Source Live Chat', url)
-  //   // this.focusWin('Tiledesk - Open Source Live Chat')
+  //   // this.openWindow('GPTMysite - Open Source Live Chat', url)
+  //   // this.focusWin('GPTMysite - Open Source Live Chat')
   // }
 
   // openWindow(winName: any, winURL: any) {
@@ -1379,7 +1379,7 @@ export class HistoryAndNortConvsComponent extends WsSharedComponent implements O
 
         if (projectProfileData.extra3) {
           this.appSumoProfile = APP_SUMO_PLAN_NAME[projectProfileData.extra3]
-          this.appSumoProfilefeatureAvailableFromBPlan = APP_SUMO_PLAN_NAME['tiledesk_tier3']
+          this.appSumoProfilefeatureAvailableFromBPlan = APP_SUMO_PLAN_NAME['GPTMysite_tier3']
         }
 
 

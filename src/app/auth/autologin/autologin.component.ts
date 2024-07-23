@@ -99,7 +99,7 @@ export class AutologinComponent implements OnInit {
         this.logger.log('[AUTOLOGIN] SSO - autologin page stored TOKEN ', storedJWT);
       } else {
 
-        storedJWT = localStorage.getItem('tiledesk_token')
+        storedJWT = localStorage.getItem('GPTMysite_token')
       }
 
       this.logger.log('[AUTOLOGIN] SSO - autologin getConfig firebaseAuth', this.appConfigService.getConfig().firebaseAuth)
@@ -142,10 +142,10 @@ export class AutologinComponent implements OnInit {
     // const chatPrefix = this.appConfigService.getConfig().chatStoragePrefix;
 
     if (JWT !== storedJWT) {
-      this.logger.log('[AUTOLOGIN] SSO - ssoLogin getCurrentAuthenticatedUser stored tiledesk_token is equal to params JWT ');
+      this.logger.log('[AUTOLOGIN] SSO - ssoLogin getCurrentAuthenticatedUser stored GPTMysite_token is equal to params JWT ');
       this.logout();
     } else {
-      this.logger.log('[AUTOLOGIN] SSO - ssoLogin getCurrentAuthenticatedUser stored tiledesk_token is NOT equal to params JWT ');
+      this.logger.log('[AUTOLOGIN] SSO - ssoLogin getCurrentAuthenticatedUser stored GPTMysite_token is NOT equal to params JWT ');
     }
 
     // this.sso.getCurrentAuthenticatedUser(JWT).subscribe(auth_user => {
@@ -161,7 +161,7 @@ export class AutologinComponent implements OnInit {
 
       localStorage.setItem('user', JSON.stringify(user));
 
-      localStorage.setItem('tiledesk_token', token);
+      localStorage.setItem('GPTMysite_token', token);
       this.auth.publishSSOloggedUser();
 
       const routeSegments = route.split('/');
@@ -327,10 +327,10 @@ export class AutologinComponent implements OnInit {
     // -------------
     // const chatPrefix = this.appConfigService.getConfig().chatStoragePrefix;
     if (JWT !== storedJWT) {
-      this.logger.log('[AUTOLOGIN] SSO - ssoLoginWithCustomToken getCurrentAuthenticatedUser stored tiledesk_token is equal to params JWT ');
+      this.logger.log('[AUTOLOGIN] SSO - ssoLoginWithCustomToken getCurrentAuthenticatedUser stored GPTMysite_token is equal to params JWT ');
       this.logout();
     } else {
-      this.logger.log('[AUTOLOGIN] SSO - ssoLoginWithCustomToken getCurrentAuthenticatedUser stored tiledesk_token is NOT equal to params JWT ');
+      this.logger.log('[AUTOLOGIN] SSO - ssoLoginWithCustomToken getCurrentAuthenticatedUser stored GPTMysite_token is NOT equal to params JWT ');
     }
 
     this.sso.chat21CreateFirebaseCustomToken(JWT).subscribe((fbtoken: string) => {
@@ -351,7 +351,7 @@ export class AutologinComponent implements OnInit {
                 const user = { firstname: auth_user['firstname'], lastname: auth_user['lastname'], _id: auth_user['_id'], email: auth_user['email'], emailverified: auth_user['emailverified'], token: JWT }
                 localStorage.setItem('user', JSON.stringify(user));
 
-                localStorage.setItem('tiledesk_token', JWT);
+                localStorage.setItem('GPTMysite_token', JWT);
                 this.auth.publishSSOloggedUser();
 
                 this.router.navigate([route]);

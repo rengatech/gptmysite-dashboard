@@ -11,22 +11,22 @@ const swal = require("sweetalert");
 
 @Injectable()
 export class BrandService {
-  // "brandSrc":"https://tiledeskbrand.nicolan74.repl.co/mybrand",
+  // "brandSrc":"https://GPTMysitebrand.nicolan74.repl.co/mybrand",
 
   public brand: any;
 
   _brand = {
     DASHBOARD: {
       META_TITLE: "GPT Design Studio",
-      // FAVICON_URL: "https://tiledesk.com/wp-content/uploads/2022/07/tiledesk_v13-300x300.png",
+      // FAVICON_URL: "https://GPTMysite.com/wp-content/uploads/2022/07/GPTMysite_v13-300x300.png",
       FAVICON_URL: "assets/img/logos/favicon.ico",
       CUSTOM_COMPANY_HOME_LOGO: false,
-      COMPANY_LOGO_PLANET: "assets/img/logos/tiledesk_planet.svg",
+      COMPANY_LOGO_PLANET: "assets/img/logos/GPTMysite_planet.svg",
       privacy_policy_link_text: "Privacy Policy",
-      privacy_policy_url: "https://www.tiledesk.com/privacy.html",
+      privacy_policy_url: "https://www.GPTMysite.com/privacy.html",
       display_terms_and_conditions_link: true,
-      terms_and_conditions_url: "https://www.tiledesk.com/termsofservice.html",
-      contact_us_email: "support@tiledesk.com",
+      terms_and_conditions_url: "https://www.GPTMysite.com/termsofservice.html",
+      contact_us_email: "support@GPTMysite.com",
       "display-news-and-documentation": true,
       display_google_auth_btn: true,
       display_help_in_installation: true,
@@ -41,7 +41,7 @@ export class BrandService {
       widget_logo_URL: "https://i.ibb.co/Kbf4Rfg/logo-short.png",
 
       widget_default_footer:
-        "<a tabindex='-1' target='_blank href='http://www.tiledesk.com/?utm_source=widget'><img src='https://panel.tiledesk.com/v3/dashboard/assets/img/logos/tiledesk-solo_logo_new_gray.svg'/><span> Powered by GPT</span></a>",
+        "<a tabindex='-1' target='_blank href='http://www.GPTMysite.com/?utm_source=widget'><img src='https://panel.GPTMysite.com/v3/dashboard/assets/img/logos/GPTMysite-solo_logo_new_gray.svg'/><span> Powered by GPT</span></a>",
       widget_launcher_button_placeholder:
         "assets/img/logos/custom-launcher-button-placeholder_v2.svg",
       footer: {
@@ -49,15 +49,15 @@ export class BrandService {
         display_star_us_on_github: true,
         display_leave_us_a_feedback: true,
         display_followus_on_x: true,
-        followus_on_x_URL: "https://twitter.com/tiledesk",
+        followus_on_x_URL: "https://twitter.com/GPTMysite",
         display_followus_on_fb: true,
-        followus_on_fb_URL: "https://www.facebook.com/tiledesk",
+        followus_on_fb_URL: "https://www.facebook.com/GPTMysite",
         display_followus_on_in: true,
-        followus_on_in_URL: "https://www.linkedin.com/company/tiledesk",
+        followus_on_in_URL: "https://www.linkedin.com/company/GPTMysite",
         display_followus_on_instagram: true,
-        followus_on_instagram_URL: "https://www.instagram.com/tiledesk/",
+        followus_on_instagram_URL: "https://www.instagram.com/GPTMysite/",
         display_followus_on_youtube: true,
-        followus_on_youtube_URL: "https://www.youtube.com/@tiledesk",
+        followus_on_youtube_URL: "https://www.youtube.com/@GPTMysite",
       },
       recent_project_page: {
         company_logo_width: "130px",
@@ -68,35 +68,35 @@ export class BrandService {
         display_social_proof_container: true,
       },
       handle_invitation_page: {
-        company_logo_45x45: "assets/img/logos/tiledesk-solo-logo.png",
+        company_logo_45x45: "assets/img/logos/GPTMysite-solo-logo.png",
       },
     },
     WIDGET: {
       LOGO_CHAT: "https://i.ibb.co/Kbf4Rfg/logo-short.png",
       POWERED_BY:
-        "<a tabindex='-1' target='_blank href='http://www.tiledesk.com/?utm_source=widget'><img src='https://panel.tiledesk.com/v3/dashboard/assets/img/logos/tiledesk-solo_logo_new_gray.svg'/><span> Powered by GPT</span></a>",
+        "<a tabindex='-1' target='_blank href='http://www.GPTMysite.com/?utm_source=widget'><img src='https://panel.GPTMysite.com/v3/dashboard/assets/img/logos/GPTMysite-solo_logo_new_gray.svg'/><span> Powered by GPT</span></a>",
     },
     CHAT: {},
     CDS: {
       META_TITLE: "Design Studio",
       FAVICON_URL:
-        "https://tiledesk.com/wp-content/uploads/2022/07/tiledesk_v13-300x300.png",
+        "https://GPTMysite.com/wp-content/uploads/2022/07/GPTMysite_v13-300x300.png",
       INFO_MENU_ITEMS: [
         { key: "FEEDBACK", icon: "", src: "", status: "inactive" },
         { key: "CHANGELOG", icon: "", src: "", status: "inactive" },
       ],
     },
     COMMON: {
-      COMPANY_LOGO: "assets/img/logos/tiledesk_logo.svg",
-      COMPANY_LOGO_NO_TEXT: "assets/img/logos/tiledesk_logo_no_text.svg",
-      BASE_LOGO: "assets/img/logos/tiledesk_logo.svg",
-      BASE_LOGO_NO_TEXT: "assets/img/logos/tiledesk_logo_no_text.svg",
+      COMPANY_LOGO: "assets/img/logos/GPTMysite_logo.svg",
+      COMPANY_LOGO_NO_TEXT: "assets/img/logos/GPTMysite_logo_no_text.svg",
+      BASE_LOGO: "assets/img/logos/GPTMysite_logo.svg",
+      BASE_LOGO_NO_TEXT: "assets/img/logos/GPTMysite_logo_no_text.svg",
       COMPANY_NAME: "GPT",
       BRAND_NAME: "GPT",
       COMPANY_SITE_NAME: "#",
       COMPANY_SITE_URL: "#",
-      CONTACT_US_EMAIL: "support@tiledesk.com",
-      CONTACT_SALES_EMAIL: "sales@tiledesk.com",
+      CONTACT_US_EMAIL: "support@GPTMysite.com",
+      CONTACT_SALES_EMAIL: "sales@GPTMysite.com",
       BRAND_PRIMARY_COLOR: "#3768FE",
       BRAND_SECONDARY_COLOR: "#3768FE",
       DOCS: true,

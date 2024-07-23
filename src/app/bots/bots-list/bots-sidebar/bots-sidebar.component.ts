@@ -100,18 +100,18 @@ export class BotsSidebarComponent implements OnInit, OnChanges {
     const href = window.location.href;
 
     // For test in local host
-    // const href = "https://panel.tiledesk.com/v3/dashboard/#/project/63a075485f117f0013541e32/bots/templates/community"
+    // const href = "https://panel.GPTMysite.com/v3/dashboard/#/project/63a075485f117f0013541e32/bots/templates/community"
 
     this.logger.log('[BOTS-SIDEBAR] href ', href)
 
     const hrefArray = href.split('/#/');
     const dshbrdBaseUrl = hrefArray[0]
-    this.logger.log('[BOTS-SIDEBAR]  dshbrdBaseUrl includes tiledesk.com', dshbrdBaseUrl.includes('tiledesk.com'));
+    this.logger.log('[BOTS-SIDEBAR]  dshbrdBaseUrl includes GPTMysite.com', dshbrdBaseUrl.includes('GPTMysite.com'));
 
-    if (dshbrdBaseUrl.includes('tiledesk.com')) {
+    if (dshbrdBaseUrl.includes('GPTMysite.com')) {
       this.isVisibleKNB = true;
-    } else if (!dshbrdBaseUrl.includes('tiledesk.com')) {
-      this.logger.log('[BOTS-SIDEBAR] dshbrdBaseUrl includes tiledesk.com', dshbrdBaseUrl.includes('tiledesk.com'));
+    } else if (!dshbrdBaseUrl.includes('GPTMysite.com')) {
+      this.logger.log('[BOTS-SIDEBAR] dshbrdBaseUrl includes GPTMysite.com', dshbrdBaseUrl.includes('GPTMysite.com'));
       this.public_Key = this.appConfigService.getConfig().t2y12PruGU9wUtEGzBJfolMIgK;
       if (this.public_Key.includes("KNB")) {
         let parts = this.public_Key.split('-');
@@ -126,12 +126,12 @@ export class BotsSidebarComponent implements OnInit, OnChanges {
 
         if (kbnValue === 'T') {
           this.getProjectPlan()
-          // if (dshbrdBaseUrl.includes('tiledesk.com')) {
+          // if (dshbrdBaseUrl.includes('GPTMysite.com')) {
           //   this.isVisibleKNB = true;
-          //   this.logger.log('[BOTS-SIDEBAR] dshbrdBaseUrl includes tiledesk.com', dshbrdBaseUrl.includes('tiledesk.com'));
+          //   this.logger.log('[BOTS-SIDEBAR] dshbrdBaseUrl includes GPTMysite.com', dshbrdBaseUrl.includes('GPTMysite.com'));
           //   this.logger.log('[BOTS-SIDEBAR] isVisibleKNB from FT', this.isVisibleKNB);
-          // } else if (!dshbrdBaseUrl.includes('tiledesk.com')) {
-          //   this.logger.log('[BOTS-SIDEBAR] dshbrdBaseUrl includes tiledesk.com', dshbrdBaseUrl.includes('tiledesk.com'));
+          // } else if (!dshbrdBaseUrl.includes('GPTMysite.com')) {
+          //   this.logger.log('[BOTS-SIDEBAR] dshbrdBaseUrl includes GPTMysite.com', dshbrdBaseUrl.includes('GPTMysite.com'));
           //   this.getProjectPlan()
           // }
         } else if (kbnValue === 'F') {

@@ -156,8 +156,8 @@ export class FooterComponent implements OnInit {
   }
 
 
-  goToTiledeskGithub() {
-    const url = 'https://github.com/Tiledesk';
+  goToGPTMysiteGithub() {
+    const url = 'https://github.com/GPTMysite';
     window.open(url, '_blank');
   }
 }

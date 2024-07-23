@@ -143,8 +143,8 @@ export class OnboardingContentComponent extends WidgetSetUpBaseComponent impleme
     this.logger.log('[ONBOARDING-CONTENT] ACTUAL WIDTH ', window.innerWidth);
 
     if (window.innerWidth < 452) {
-      if (window && window['Tiledesk']) {
-        window['Tiledesk']('hide')
+      if (window && window['GPTMysite']) {
+        window['GPTMysite']('hide')
       }
     }
     if (window.innerWidth < 371) {
@@ -158,8 +158,8 @@ export class OnboardingContentComponent extends WidgetSetUpBaseComponent impleme
   onResize(event: any) {
     this.logger.log('[ONBOARDING-CONTENT] NEW WIDTH ', window.innerWidth);
     if (window.innerWidth < 452) {
-      if (window && window['Tiledesk']) {
-        window['Tiledesk']('hide')
+      if (window && window['GPTMysite']) {
+        window['GPTMysite']('hide')
       }
     }
 

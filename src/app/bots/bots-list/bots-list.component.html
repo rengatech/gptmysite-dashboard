@@ -164,7 +164,7 @@
 
                         <div class="bot-type-logo-wpr" *ngIf="faqkb.type === 'internal'">
                           <div class="bot-type-logo--img-wpr " style="top: -39px; left: 14px;">
-                            <img class="bot-type-logo" src="assets/img/tiledesk_logo_no_text.png" />
+                            <img class="bot-type-logo" src="assets/img/GPTMysite_logo_no_text.png" />
                           </div>
                         </div>
 
@@ -196,10 +196,10 @@
 
                           <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE"
                             src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{faqkb?._id}}%2Fphoto.jpg?alt=media"
-                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+                            onerror="this.src='assets/img/avatar_bot_GPTMysite.svg'" />
 
                           <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" [src]="faqkb.botImage"
-                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+                            onerror="this.src='assets/img/avatar_bot_GPTMysite.svg'" />
 
                         </div>
 
@@ -481,20 +481,20 @@
                         <span class="tool_tip" (click)='goToBotDtls(faqkb)'>
                           <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" class="bot--img"
                             src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{faqkb?._id}}%2Fphoto.jpg?alt=media"
-                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+                            onerror="this.src='assets/img/avatar_bot_GPTMysite.svg'" />
 
                           <!-- <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="bot--img"
                             src="{{baseUrl}}images?path=uploads%2Fusers%2F{{faqkb?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" /> -->
+                            onerror="this.src='assets/img/avatar_bot_GPTMysite.svg'" /> -->
 
                           <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="bot--img" [src]="faqkb.botImage"
-                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+                            onerror="this.src='assets/img/avatar_bot_GPTMysite.svg'" />
 
 
 
                           <div class="bot-type-logo-wpr" *ngIf="faqkb.type === 'internal'">
                             <div class="bot-type-logo--img-wpr ">
-                              <img class="bot-type-logo" src="assets/img/tiledesk_logo_no_text.png" />
+                              <img class="bot-type-logo" src="assets/img/GPTMysite_logo_no_text.png" />
                             </div>
                           </div>
 
@@ -528,8 +528,8 @@
 
 
 
-                          <!-- <span class="bot-type-logo-wpr"   *ngIf="faqkb.type === 'tiledesk-ai'">
-                            <img src="assets/img/tiledesk-ai-logo.png" />
+                          <!-- <span class="bot-type-logo-wpr"   *ngIf="faqkb.type === 'GPTMysite-ai'">
+                            <img src="assets/img/GPTMysite-ai-logo.png" />
                           </span> -->
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BrandService } from 'app/services/brand.service';
 import {
-  URL_install_tiledesk_on_wordpress
+  URL_install_GPTMysite_on_wordpress
 } from 'app/utils/util';
 
 
@@ -12,7 +12,7 @@ import {
 })
 export class WordpressInstallationComponent implements OnInit {
 
-  URL_install_tiledesk_on_wordpress = URL_install_tiledesk_on_wordpress;
+  URL_install_GPTMysite_on_wordpress = URL_install_GPTMysite_on_wordpress;
   public hideHelpLink: boolean;
 
   constructor(

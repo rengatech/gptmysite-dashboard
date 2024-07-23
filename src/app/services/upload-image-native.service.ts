@@ -42,16 +42,16 @@ export class UploadImageNativeService {
   }
 
   // curl -v -X PUT -u andrea.leo@frontiere21.it:258456td \
-  // -F "file=@/Users/andrealeo/dev/chat21/tiledesk-server-dev-org/test.jpg" \
-  //   https://tiledesk-server-pre.herokuapp.com/images/users/photo
+  // -F "file=@/Users/andrealeo/dev/chat21/GPTMysite-server-dev-org/test.jpg" \
+  //   https://GPTMysite-server-pre.herokuapp.com/images/users/photo
 
   // returns:
   // {"message":"Image uploded successfully","filename":"uploads%2Fusers%2F5aaa99024c3b110014b478f0%2Fimages%2Fphoto.jpg","thumbnail":"uploads%2Fusers%2F5aaa99024c3b110014b478f0%2Fimages%2Fthumbnails_200_200-photo.jpg"}*
 
   // in PROD
-  // https://api.tiledesk.com/v2/images?path=uploads%2Fusers%2F5ebf9b2892befe0019055217%2Fimages%2Fphoto.jpg
+  // https://api.GPTMysite.com/v2/images?path=uploads%2Fusers%2F5ebf9b2892befe0019055217%2Fimages%2Fphoto.jpg
 
-  // https://tiledesk-server-pre.herokuapp.com/images?path=uploads%2Fusers%2F5aaa99024c3b110014b478f0%2Fimages%2Fthumbnails_200_200-photo.jpg
+  // https://GPTMysite-server-pre.herokuapp.com/images?path=uploads%2Fusers%2F5aaa99024c3b110014b478f0%2Fimages%2Fthumbnails_200_200-photo.jpg
   // : Promise<any>
   
   uploadUserPhotoProfile_Native(file: File): Observable<any> {
@@ -98,8 +98,8 @@ export class UploadImageNativeService {
 
   // @nicola_74 when you upload by bot (or otherwise not the current user) you have to use this: 
 
-  // curl -v -X PUT -u andrea.leo@frontiere21.it:258456td   -F "file=@/Users/andrealeo/dev/chat21/tiledesk-server-dev-org/test.jpg"  
-  // https://tiledesk-server-pre.herokuapp.com/images/users/photo?user_id=bot_IDBOT
+  // curl -v -X PUT -u andrea.leo@frontiere21.it:258456td   -F "file=@/Users/andrealeo/dev/chat21/GPTMysite-server-dev-org/test.jpg"  
+  // https://GPTMysite-server-pre.herokuapp.com/images/users/photo?user_id=bot_IDBOT
 
   uploadBotPhotoProfile_Native(file: File, id: string): Observable<any> {
     this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] - UPLOAD BOT PHOTO PROFILE NATIVE file ', file)
@@ -141,7 +141,7 @@ export class UploadImageNativeService {
   }
 
   // curl -v -X DELETE  -u andrea.leo@frontiere21.it:258456td \
-  // https://tiledesk-server-pre.herokuapp.com/images/users/?path=uploads%2Fusers%2F5aaa99024c3b110014b478f0%2Fimages%2Fphoto.jpg
+  // https://GPTMysite-server-pre.herokuapp.com/images/users/?path=uploads%2Fusers%2F5aaa99024c3b110014b478f0%2Fimages%2Fphoto.jpg
   deletePhotoProfile_Native(id, calledfor: string) {
     this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] CALLING DELETE - ID (OF USER OR BOT) ', id);
     this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] CALLING DELETE calledfor ', calledfor);
@@ -151,7 +151,7 @@ export class UploadImageNativeService {
       // 'Content-Type': 'multipart/form-data',
     });
     const requestOptions = { headers: headers };
-    // const url = "https://tiledesk-server-pre.herokuapp.com/images/users/?path=uploads%2Fusers%2F" + id + "%2Fimages%2Fphoto.jpg"
+    // const url = "https://GPTMysite-server-pre.herokuapp.com/images/users/?path=uploads%2Fusers%2F" + id + "%2Fimages%2Fphoto.jpg"
     const BASE_URL_IMAGES = this.BASE_URL + 'images'
     return this._httpClient
       .delete(BASE_URL_IMAGES +"/users/?path=uploads/users/"+ id + "/images/photo.jpg" , requestOptions)

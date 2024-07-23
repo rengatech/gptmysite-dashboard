@@ -1646,8 +1646,8 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
   }
 
   // launchWidget() {
-  //   if (window && window['tiledesk']) {
-  //     window['tiledesk'].open();
+  //   if (window && window['GPTMysite']) {
+  //     window['GPTMysite'].open();
   //   }
   // }
 
@@ -1658,7 +1658,7 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
 
 
   openRasaIntegrationTutorial() {
-    const url = 'https://gethelp.tiledesk.com/articles/rasa-ai-integration/';
+    const url = 'https://gethelp.GPTMysite.com/articles/rasa-ai-integration/';
     window.open(url, '_blank');
   }
 
@@ -1676,14 +1676,14 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
   }
 
   openDocsResolutionBotHandoffToHumanAgent() {
-    // const url = 'https://gethelp.tiledesk.com/articles/handoff-to-human-agents/';
+    // const url = 'https://gethelp.GPTMysite.com/articles/handoff-to-human-agents/';
     const url = URL_handoff_to_human_agents
     window.open(url, '_blank');
   }
 
   openDocsResolutionBotConfigureYourFirstChatbot() {
-    // const url = 'https://docs.tiledesk.com/knowledge-base/create-a-bot/'; (replaced by configure-your-first-chatbot/ )
-    // const url = 'https://gethelp.tiledesk.com/articles/configure-your-first-chatbot/';
+    // const url = 'https://docs.GPTMysite.com/knowledge-base/create-a-bot/'; (replaced by configure-your-first-chatbot/ )
+    // const url = 'https://gethelp.GPTMysite.com/articles/configure-your-first-chatbot/';
     const url = URL_configure_your_first_chatbot;
     window.open(url, '_blank');
   }
@@ -1691,19 +1691,19 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
   // -----------------------------------------------------------------------
   // Dialogflow bot doc link
   // -----------------------------------------------------------------------
-  openDeveloperTiledeskGenerateDFCredentialFile() {
-    const url = 'https://developer.tiledesk.com/external-chatbot/build-your-own-dialogflow-connnector/generate-dialgoflow-google-credentials-file';
+  openDeveloperGPTMysiteGenerateDFCredentialFile() {
+    const url = 'https://developer.GPTMysite.com/external-chatbot/build-your-own-dialogflow-connnector/generate-dialgoflow-google-credentials-file';
     window.open(url, '_blank');
   }
 
-  openDocsTiledeskDialogflowConnector() {
-    // const url = 'https://docs.tiledesk.com/knowledge-base/microlanguage-for-dialogflow-images-videos/'; // NOT FOUND on gethelp
+  openDocsGPTMysiteDialogflowConnector() {
+    // const url = 'https://docs.GPTMysite.com/knowledge-base/microlanguage-for-dialogflow-images-videos/'; // NOT FOUND on gethelp
     const url = URL_microlanguage_for_dialogflow_images_videos // NOT FOUND on gethelp
     window.open(url, '_blank');
   }
 
   openDocsDialogFlowHandoffToHumanAgent() {
-    // https://docs.tiledesk.com/knowledge-base/dialogflow-connector-handoff-to-human-agent-example/ 
+    // https://docs.GPTMysite.com/knowledge-base/dialogflow-connector-handoff-to-human-agent-example/ 
     const url = URL_dialogflow_connector_handoff_to_human_agent_example
     window.open(url, '_blank');
   }
@@ -1717,13 +1717,13 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
   // External bot doc link
   // -----------------------------------------------------------------------
   openExternalBotIntegrationTutorial() {
-    // const url = 'https://developer.tiledesk.com/apis/tutorials/connect-your-own-chatbot';
-    const url = 'https://developer.tiledesk.com/external-chatbot/connect-your-own-chatbot';
+    // const url = 'https://developer.GPTMysite.com/apis/tutorials/connect-your-own-chatbot';
+    const url = 'https://developer.GPTMysite.com/external-chatbot/connect-your-own-chatbot';
     window.open(url, '_blank');
   }
 
   openWebhookRequirementsDoc() {
-    const url = 'https://developer.tiledesk.com/resolution-bot-programming/webhook-data-model';
+    const url = 'https://developer.GPTMysite.com/resolution-bot-programming/webhook-data-model';
     window.open(url, '_blank');
   }
 

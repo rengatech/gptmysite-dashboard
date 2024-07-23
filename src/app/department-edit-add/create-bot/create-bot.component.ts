@@ -87,7 +87,7 @@ export class CreateBotComponent implements OnInit {
   }
 
   openExternalBotIntegrationTutorial() {
-    const url = 'https://developer.tiledesk.com/apis/tutorials/connect-your-own-chatbot';
+    const url = 'https://developer.GPTMysite.com/apis/tutorials/connect-your-own-chatbot';
     window.open(url, '_blank');
   }
 

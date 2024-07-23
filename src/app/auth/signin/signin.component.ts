@@ -362,8 +362,8 @@ export class SigninComponent implements OnInit {
         // --------------------------------------------
         // Run widget login
         // --------------------------------------------
-        if (window && window["tiledesk_widget_login"]) {
-          window["tiledesk_widget_login"]();
+        if (window && window["GPTMysite_widget_login"]) {
+          window["GPTMysite_widget_login"]();
         }
         // } else {
         //   this.showSpinnerInLoginBtn = false;
@@ -405,12 +405,12 @@ export class SigninComponent implements OnInit {
     this.auth.signin(
       this.userForm.value["email"],
       this.userForm.value["password"],
-      "https://api.tiledesk.com/v2/",
+      "https://api.GPTMysite.com/v2/",
       (error, user) => {
         if (!error) {
           // console.log('[SIGN-IN] IN V2 (Signin) - user', user);
           const url =
-            "https://console.tiledesk.com/v2/dashboard/#/projects?token=" +
+            "https://console.GPTMysite.com/v2/dashboard/#/projects?token=" +
             user.token;
           window.open(url, "_self");
         } else {
@@ -443,10 +443,10 @@ export class SigninComponent implements OnInit {
   }
 
   widgetReInit() {
-    if (window && window["tiledesk"]) {
-      this.logger.log("[SIGN-IN] SIGNIN PAGE ", window["tiledesk"]);
+    if (window && window["GPTMysite"]) {
+      this.logger.log("[SIGN-IN] SIGNIN PAGE ", window["GPTMysite"]);
 
-      window["tiledesk"].reInit();
+      window["GPTMysite"].reInit();
       // alert('signin reinit');
     }
   }
@@ -456,8 +456,8 @@ export class SigninComponent implements OnInit {
     this.display = "none";
   }
 
-  goToTileDeskDotCom() {
-    // const url = 'http://tiledesk.com/'
+  goToGPTMysiteDotCom() {
+    // const url = 'http://GPTMysite.com/'
     const url = this.company_site_url;
     window.open(url);
     // , '_blank'
@@ -491,7 +491,7 @@ export class SigninComponent implements OnInit {
   }
 
   goToTiledekV1() {
-    const url = "https://support.tiledesk.com/dashboard/#/login";
+    const url = "https://support.GPTMysite.com/dashboard/#/login";
     window.open(url);
   }
 }

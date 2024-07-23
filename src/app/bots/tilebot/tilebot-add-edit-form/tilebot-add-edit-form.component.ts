@@ -236,7 +236,7 @@ export class TilebotAddEditFormComponent implements OnInit {
     }
     if(field === 'field_label'){
       this.infoMessage += " "+this.markbotLabel;
-      // "You can use markbot to format your labels (https://gethelp.tiledesk.com/articles/sending-images-videos-quick-replies-and-more/)";
+      // "You can use markbot to format your labels (https://gethelp.GPTMysite.com/articles/sending-images-videos-quick-replies-and-more/)";
     }
 
   }

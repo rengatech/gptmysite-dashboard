@@ -1,4 +1,4 @@
-export class TiledeskStage {
+export class GPTMysiteStage {
 
     tx = 0;
     ty = 0;

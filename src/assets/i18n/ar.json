@@ -204,12 +204,12 @@
     "SubscriptionSuccessfullyCanceled": "تم إلغاء الاشتراك بنجاح",
     "AnErrorOccurredWhileCancellingSubscription": "حدث خطأ أثناء إلغاء الاشتراك",
     "Login": "تسجيل الدخول",
-    "SignInToTiledesk": "سجّل الدخول إلى {{BRAND_NAME}}",
+    "SignInToGPTMysite": "سجّل الدخول إلى {{BRAND_NAME}}",
     "SignInTo": "سجّل الدخول إلى",
     "SignIn": "تسجيل الدخول",
     "WelcomeTo": "مرحبًا بك في {{BRAND_NAME}}",
     "IfYouWantToLoginToTheOldVersion": "إذا كنت تريد تسجيل الدخول إلى الإصدار القديم",
-    "LetSetUpYourTiledeskChat": "لنقم بإعداد الدردشة {{BRAND_NAME}}",
+    "LetSetUpYourGPTMysiteChat": "لنقم بإعداد الدردشة {{BRAND_NAME}}",
     "LetSetUpYourChat": "فلنقم بإعداد ملف",
     "Chat": "محادثة",
     "download": "تحميل",
@@ -364,9 +364,9 @@
     "EnterTheSiteName": "أدخل اسم الموقع",
     "SiteName": "اسم الموقع",
     "TheSiteNameIsRequested": "اسم الموقع مطلوب",
-    "InstallTiledesk": "تثبيت القطعة",
-    "InstallTiledeskNow": "تثبيت {{BRAND_NAME}} القطعة على موقع الويب الخاص بك الآن!",
-    "InstallTiledeskNowAndStartChatting": "قم بتثبيت {{BRAND_NAME}} على موقع الويب الخاص بك وابدأ في الدردشة مع عملائك",
+    "InstallGPTMysite": "تثبيت القطعة",
+    "InstallGPTMysiteNow": "تثبيت {{BRAND_NAME}} القطعة على موقع الويب الخاص بك الآن!",
+    "InstallGPTMysiteNowAndStartChatting": "قم بتثبيت {{BRAND_NAME}} على موقع الويب الخاص بك وابدأ في الدردشة مع عملائك",
     "ExperimentalFeature": "تجريبي",
     "ChatWithUs": "دردش معنا",
     "ChatWith": "الدردشة مع",
@@ -386,14 +386,14 @@
     "YouHaveBeenInvitedBy": "لقد تلقيت دعوة من",
     "ToJoinTheProject": "للانضمام إلى المشروع",
     "AndTakeOnTheRoleOf": "وتولي دور",
-    "ToGetStartedYouMustHaveATiledeskAccountWithEmail": " للبدء ، يجب أن يكون لديك {{ BRAND_NAME }} بالبريد الإلكتروني",
+    "ToGetStartedYouMustHaveAGPTMysiteAccountWithEmail": " للبدء ، يجب أن يكون لديك {{ BRAND_NAME }} بالبريد الإلكتروني",
     "TheInviteYouAreUsingIsNoLongerValid": "الدعوة التي تستخدمها لم تعد صالحة ",
     "ImANewUser": "أنا زميل جديد في الفريق",
-    "PleaseClickTheBelowButtonToCreateYourTiledeskAccount": "الرجاء النقر فوق الزر أدناه لإنشاء حساب {{ BRAND_NAME }}",
+    "PleaseClickTheBelowButtonToCreateYourGPTMysiteAccount": "الرجاء النقر فوق الزر أدناه لإنشاء حساب {{ BRAND_NAME }}",
     "AfterRegistrationYouWillBeAbleToJoin": "بعد التسجيل ستتمكن من الانضمام",
     "FromTheRecentPojectPage": "من صفحة المشاريع الأخيرة",
     "IAlreadyHaveAnAccount": "لدي حساب بالفعل",
-    "IfYouAreAlreadyRegisteredOnTiledeskWwithADifferentEmailPleaseContact": "إذا كنت مسجلاً بالفعل على {{ BRAND_NAME }} باستخدام بريد إلكتروني مختلف ، فيرجى الاتصال",
+    "IfYouAreAlreadyRegisteredOnGPTMysiteWwithADifferentEmailPleaseContact": "إذا كنت مسجلاً بالفعل على {{ BRAND_NAME }} باستخدام بريد إلكتروني مختلف ، فيرجى الاتصال",
     "YouHaveAlreadyInvitedThisUserSeeThePendingInvitations": "لقد قمت بالفعل بدعوة هذا العضو في الفريق (انظر الدعوات المعلقة)",
     "Awesome": "مدهش",
     "YourPaymentIsSuccessfullyDone": "تم الدفع الخاص بك بنجاح",
@@ -579,7 +579,7 @@
         "UpgradePlan": "خطة الترقية",
         "UpgradeYourPlan": "قم بترقية خطتك",
         "Your": "لك",
-        "30DaysFreeTrialOfTiledeskProPlan": "نسخة تجريبية مجانية لمدة 14 يومًا من خطة {{plan_name}}",
+        "30DaysFreeTrialOfGPTMysiteProPlan": "نسخة تجريبية مجانية لمدة 14 يومًا من خطة {{plan_name}}",
         "30DaysFreeTrial": "نسخة تجريبية مجانية لمدة 14 يومًا من خطة {{plan_name}}",
         "ChatbotLimitReached": "تم الوصول إلى حد Chatbot لـ {{plan_name}}",
         "ChatbotsNotAvailableWithCurrentPlan": "Chatbots غير متوفرة مع خطتك الحالية",
@@ -691,7 +691,7 @@
         "ToManageTheMessages": "لإدارة الرسائل وتفعيل دفع الإخطارات",
         "OpenTheChatToActivateNotifications": "افتح الدردشة لإدارة الرسائل وتفعيل دفع الإخطارات",
         "ClickHere": "انقر هنا",
-        "TiledeskLogOut": "{{ BRAND_NAME }} تسجيل الخروج",
+        "GPTMysiteLogOut": "{{ BRAND_NAME }} تسجيل الخروج",
         "LogOut": "تسجيل خروج"
     },
     "SideBar": {
@@ -805,7 +805,7 @@
             "SecurityDescription": "يمكنك قصر الوصول إلى {{ BRAND_NAME }} على المستخدمين الموجودين ضمن نطاق من عناوين IP فقط. ",
             "EnableIPRestriction": "تمكين قيود IP",
             "ThisWillAffects": "وهذا سوف يؤثر",
-            "SignInForAllTiledeskProducts": "قم بتسجيل الدخول لجميع منتجات {{ BRAND_NAME }}",
+            "SignInForAllGPTMysiteProducts": "قم بتسجيل الدخول لجميع منتجات {{ BRAND_NAME }}",
             "AllowedIpRanges": "نطاقات IP المسموح بها",
             "AddIpRanges": " أضف نطاقات IP التي تحتاج إلى الوصول إلى {{ BRAND_NAME }}. ",
             "Use": "يستخدم",
@@ -823,11 +823,11 @@
         "ChatSubtitle": "انظر محفوظات الدردشة",
         "AnalyticsSubtitle": "تتبع الدردشات التي تجريها مع العملاء",
         "HistorySubtitle": "رؤية الدردشة المغلقة",
-        "DownloadTiledesk": "قم بتنزيل {{ BRAND_NAME }} تطبيقات دردشة مباشرة لأجهزة Android و iPhone"
+        "DownloadGPTMysite": "قم بتنزيل {{ BRAND_NAME }} تطبيقات دردشة مباشرة لأجهزة Android و iPhone"
     },
     "RoutingPage": {
-        "SettingUpTileDeskRoutingRules": "إعداد قواعد التوجيه لـ \"التوجيه الافتراضي\"",
-        "SettingUpTileDeskRoutingRules_2": "إعداد قواعد التوجيه لـ \"الإدارة الافتراضية\"",
+        "SettingUpGPTMysiteRoutingRules": "إعداد قواعد التوجيه لـ \"التوجيه الافتراضي\"",
+        "SettingUpGPTMysiteRoutingRules_2": "إعداد قواعد التوجيه لـ \"الإدارة الافتراضية\"",
         "TheFollowingRules": "سيتم تجاهل القواعد التالية في حالة وجود قسم آخر على الأقل وتم تعيين حالته على \"مرئي\"",
         "SelectABotThatWill": "حدد روبوتًا يستجيب لمحادثات الزائر قبل التزام الوكيل",
         "ActivateBOT": "تفعيل البوت",
@@ -1085,7 +1085,7 @@
         "DisplayTheButtonWithNameButton_1": "صيغة زر العرض: استخدم \"*\" متبوعة بمسافة واحدة ، ثم نص الزر في سطر جديد من نص الإجابة. انظر المثال",
         "DisplayTheImageWithTheSpecifiedURL": "عرض الصورة مع URL المحدد. انظر المثال",
         "CallTheExternalWebhookToTheSpecifiedEndpoint": "استدعاء خطاف الويب الخارجي إلى نقطة النهاية المحددة",
-        "MoreOnWebhooks": "المزيد على webhooks <a href='https://developer.tiledesk.com/resolution-bot/quickstart/' target='_blank'> هنا </a>",
+        "MoreOnWebhooks": "المزيد على webhooks <a href='https://developer.GPTMysite.com/resolution-bot/quickstart/' target='_blank'> هنا </a>",
         "InfoAnswer": "استجابة chatbot على سؤال المستخدم"
     },
     "FaqTestPage": {
@@ -1535,7 +1535,7 @@
         "CopyScript": "نسخ البرنامج النصي",
         "TestThisCode": "اختبر هذا الرمز!",
         "TestTheWidget": "اختبار القطعة!",
-        "EmbedTheTileDeskChatWidget": "تضمين {{ BRAND_NAME }} القطعة الدردشة",
+        "EmbedTheGPTMysiteChatWidget": "تضمين {{ BRAND_NAME }} القطعة الدردشة",
         "ToChatWithYourVisitors...": "للدردشة مع زوارك يرجى تضمين القطعة في موقع الويب الخاص بك.",
         "CopyTheFollowingScript...": "انسخ النص التالي وأدخله في مصدر HTML لموقع الويب الخاص بك بين ملف ",
         "OrAddItWith...": "أو إضافته مع",
@@ -1626,7 +1626,7 @@
         "AddKb": "إضافة موقع الويب الخاص بك",
         "AddKbInfoFirstText": "قم بتعيين عنوان URL صالح لموقعك على الويب.",
         "AddKbInfoSecondText": "سيبحث {{ BRAND_NAME }} في عنوان URL لموقع الويب الخاص بك عن الإجابات ذات الصلة، وسيتم بعد ذلك تدريب ChatGPT للرد بطريقة تشبه طريقة الإنسان.",
-        "AddKbInfoThirdText": "ملحوظة: يمكنك إضافة 3 عناوين URL كحد أقصى، يتكون كل منها من 200 صفحة كحد أقصى. بالنسبة للمواقع الأكبر حجمًا، يرجى <a href='mailto:sales@tiledesk.com' target='_blank'>اتصل بنا</a>",
+        "AddKbInfoThirdText": "ملحوظة: يمكنك إضافة 3 عناوين URL كحد أقصى، يتكون كل منها من 200 صفحة كحد أقصى. بالنسبة للمواقع الأكبر حجمًا، يرجى <a href='mailto:sales@GPTMysite.com' target='_blank'>اتصل بنا</a>",
         "YouCanAddKBOfUpTo200Pages": "يمكنك إضافة قواعد معارف تصل إلى 200 صفحة",
         "SearchingAnswer": "جاري البحث عن إجابة مناسبة...",
         "Answer": "إجابة",
@@ -1927,7 +1927,7 @@
     "MultilanguageSection": "قسم متعدد اللغات",
     "ToCustomizeTheFollowingFieldsInAnotherLanguage": "للتخصيص بلغة أخرى",
     "ViewServedRequestsMap": "عرض على الخريطة",
-    "TileDeskChatWidgetInstallation": "{{ BRAND_NAME }} تثبيت القطعة الدردشة",
+    "GPTMysiteChatWidgetInstallation": "{{ BRAND_NAME }} تثبيت القطعة الدردشة",
     "CustomizeTheExperience": "تخصيص التجربة",
     "WidgetSetUp": "القطعة تصل",
     "AverageReplyTimeIsCalculatedOverLastFourHours": "يتم حساب متوسط وقت الرد على آخر أربع ساعات من المحادثات",
@@ -2329,8 +2329,8 @@
     "CustomizeTheWidgetLaunchButtonWithYourLogo": "تخصيص زر تشغيل القطعة مع شعارك. يمكن أن يكون تنسيق صورة الشعار بتنسيق PNG أو JPG أو SVG. تعمل الصور (60 × 60 بكسل) ذات الخلفيات الشفافة بشكل أفضل",
     "ConnectYourRASAServer": "قم بتوصيل خادم RASA الخاص بك",
     "ReadMoreOnOurCHANGELOGPage": "اقرأ المزيد على صفحة CHANGELOG الخاصة",
-    "IntegratingRasaWithTiledesk": "يوفر دمج Rasa مع Tiledesk العديد من المزايا ، أولاً وقبل كل شيء إمكانية تحويل محادثات RASA الحالية إلى البشر.",
-    "HereHowIntegratingRasaWithTiledesk": "إليك كيفية دمج Rasa مع Tiledesk",
+    "IntegratingRasaWithGPTMysite": "يوفر دمج Rasa مع GPTMysite العديد من المزايا ، أولاً وقبل كل شيء إمكانية تحويل محادثات RASA الحالية إلى البشر.",
+    "HereHowIntegratingRasaWithGPTMysite": "إليك كيفية دمج Rasa مع GPTMysite",
     "CreateNewApp": "أنشئ تطبيقًا جديدًا",
     "LearnMore": "يتعلم أكثر",
     "Install": "تثشبيت",
@@ -2365,7 +2365,7 @@
     "EnterTheURLOfTheAppIcon": "أدخل عنوان URL لرمز التطبيق",
     "AppName": "اسم التطبيق",
     "ConfigurationURL": "تكوين URL (اختياري)",
-    "UsedToCreateCustomConfigurationPageForYourApp": "يُستخدم لإنشاء صفحة تكوين مخصصة لتطبيقك. يمكن أن يتضمن تطبيقك في الواقع صفحة لإجراء التكوينات المتقدمة ، مثل: 'https://myapp-for-tiledesk/config'. للوصول إلى صفحة التكوين ، انقر فوق الزر 'تكوين' بعد تثبيت التطبيق",
+    "UsedToCreateCustomConfigurationPageForYourApp": "يُستخدم لإنشاء صفحة تكوين مخصصة لتطبيقك. يمكن أن يتضمن تطبيقك في الواقع صفحة لإجراء التكوينات المتقدمة ، مثل: 'https://myapp-for-GPTMysite/config'. للوصول إلى صفحة التكوين ، انقر فوق الزر 'تكوين' بعد تثبيت التطبيق",
     "ConfigurationURL_PH": "تكوين URL",
     "TheEndpointURLMustBeValidHTTPSURL": "يجب أن يكون عنوان URL لنقطة النهاية عنوان HTTPS URL صالحًا",
     "ThisAttributeSpecifiesTheURLOfThePageToEmbedInTheApp": "تحدد هذه السمة عنوان URL للصفحة المراد تضمينها في التطبيق عبر iframe",
@@ -2449,7 +2449,7 @@
         "ChooseATemplateFor":"اختر نموذجًا لـ {{selected_role}}. ابحث عن جميع القوالب في مجتمعنا لاحقًا."
     },
     "AreYouHavingProblems": "هل لديك مشاكل؟",
-    "IntegrationOnMorePlatforms": "يمكن دمج Tiledesk في العديد من الأنظمة الأساسية ، اكتشف المزيد.",
+    "IntegrationOnMorePlatforms": "يمكن دمج GPTMysite في العديد من الأنظمة الأساسية ، اكتشف المزيد.",
     "ShowAllPlatforms": "اعرض جميع المنصات.",
     "SeeDetailsHere": "انظر التفاصيل هنا.",
     "AlternativeMethod": "طريقة بديلة",
@@ -2604,7 +2604,7 @@
         "ConfirmDeleteField": "هل أنت متأكد من أنك تريد حذف الحقل؟",
         "DeleteForm": "حذف النموذج",
         "ConfirmDeleteForm": "هل أنت متأكد من أنك تريد حذف النموذج؟",
-        "MarkbotLabel": "يمكنك استخدام <a href='https://gethelp.tiledesk.com/articles/sending-images-videos-quick-replies-and-more/' target='_blank'> markbot </a> لتنسيق ملصقاتك .",
+        "MarkbotLabel": "يمكنك استخدام <a href='https://gethelp.GPTMysite.com/articles/sending-images-videos-quick-replies-and-more/' target='_blank'> markbot </a> لتنسيق ملصقاتك .",
         "InfoMessages": {
             "field_name": "أعط اسمًا لحقل النموذج (على سبيل المثال: الاسم _ المستخدم). يمكن أن يحتوي الاسم على أرقام أحرف فقط و _",
             "field_type": "حدد نوع المعطى الذي سيتم إدراجه في هذا الحقل (على سبيل المثال: النص).",
@@ -2717,7 +2717,7 @@
         "LABEL_ENTER_MSG": "أدخل رسالة أو اضغط على / للردود الجاهزة",
         "LABEL_ENTER_MSG_SHORT": "أدخل رسالة",
         "LABEL_ENTER_MSG_SHORTER": "يدخل...",
-        "LABEL_MSG_LOGIN_TILEDESK": "اذهب إلى تسجيل الدخول لبدء الدردشة",
+        "LABEL_MSG_LOGIN_GPTMysite": "اذهب إلى تسجيل الدخول لبدء الدردشة",
         "LABEL_ARCHIVED": "مؤرشف",
         "LABEL_INFO_CONVERSATION": "محادثة معلومات",
         "LABEL_INFO_USER": "مستخدم المعلومات",
@@ -2757,7 +2757,7 @@
         "BUTTON_CLOSE_TO_ICON": "تصغير الدردشة",
         "BUTTON_EDIT_PROFILE": "تحديث الملف",
         "RATE_CHAT": "معدل الدردشة",
-        "WELLCOME_TITLE": "مرحبًا ، مرحبًا بك في Tiledesk 👋",
+        "WELLCOME_TITLE": "مرحبًا ، مرحبًا بك في GPTMysite 👋",
         "WELLCOME_MSG": "كيف يمكن أن نساعد؟",
         "WELLCOME": "مرحبا",
         "OPTIONS": "والخيارات",
@@ -2878,10 +2878,10 @@
         "BUTTON_EDIT_PROFILE": "تحديث الملف",
         "BUTTON_DOWNLOAD_TRANSCRIPT": "تنزيل النص",
         "RATE_CHAT": "معدل الدردشة",
-        "WELLCOME_TITLE": "مرحبًا ، مرحبًا بك في Tiledesk 👋",
+        "WELLCOME_TITLE": "مرحبًا ، مرحبًا بك في GPTMysite 👋",
         "WELLCOME_MSG": "كيف يمكن أن نساعد؟",
         "WELLCOME": "أهلا وسهلا",
-        "WELCOME_TITLE": "مرحبًا ، مرحبًا بك في Tiledesk 👋",
+        "WELCOME_TITLE": "مرحبًا ، مرحبًا بك في GPTMysite 👋",
         "WELCOME_MSG": "كيف يمكن أن نساعد؟",
         "WELCOME": "أهلا وسهلا",
         "OPTIONS": "والخيارات",
@@ -2914,7 +2914,7 @@
         "LABEL_PRECHAT_USER_PHONE": "هاتف",
         "LABEL_PRECHAT_USER_PHONE_ERROR": "الهاتف مطلوب",
         "LABEL_PRECHAT_FIRST_MESSAGE": "رسالتك لفريق الدعم",
-        "LABEL_PRECHAT_STATIC_TERMS_PRIVACY": "قبل متابعة المحادثة ، يرجى الموافقة على سياسة الخصوصية الخاصة بشروط <a href='https://tiledesk.com/termsofservice/' target='_blank'></a> و <a href='https://tiledesk.com/privacy.html' target='_blank'></a>",
+        "LABEL_PRECHAT_STATIC_TERMS_PRIVACY": "قبل متابعة المحادثة ، يرجى الموافقة على سياسة الخصوصية الخاصة بشروط <a href='https://GPTMysite.com/termsofservice/' target='_blank'></a> و <a href='https://GPTMysite.com/privacy.html' target='_blank'></a>",
         "LABEL_PRECHAT_ACCEPT_TERMS_PRIVACY": "أنا موافق",
         "PRECHAT_REQUIRED_ERROR": "هذه الخانة مطلوبه"
     }

@@ -20,7 +20,7 @@ export class ProjectService {
   currentUserID: string;
   projectID: string;
 
-  APP_SUMO_API_BASE_URL = "https://tiledesk-sumo.tiledesk.repl.co/"
+  APP_SUMO_API_BASE_URL = "https://GPTMysite-sumo.GPTMysite.repl.co/"
 
   public myAvailabilityCount: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   public hasCreatedNewProject$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -659,7 +659,7 @@ export class ProjectService {
   // -----------------------------------------------------------------
   // GENERATE SHARED SECRET
   // -----------------------------------------------------------------
-  /* https://api.tiledesk.com/v1/PROJECTID/keys/generate */
+  /* https://api.GPTMysite.com/v1/PROJECTID/keys/generate */
   public generateSharedSecret() {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -673,7 +673,7 @@ export class ProjectService {
 
     /** ********* FOR TEST  ********* **/
     // headers.append('Authorization', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsic3RyaWN0TW9kZSI6dHJ1ZSwic2VsZWN0ZWQiOnsiZW1haWwiOjEsImZpcnN0bmFtZSI6MSwibGFzdG5hbWUiOjEsInBhc3N3b3JkIjoxLCJlbWFpbHZlcmlmaWVkIjoxLCJpZCI6MX0sImdldHRlcnMiOnt9LCJfaWQiOiI1YWM3NTIxNzg3ZjZiNTAwMTRlMGI1OTIiLCJ3YXNQb3B1bGF0ZWQiOmZhbHNlLCJhY3RpdmVQYXRocyI6eyJwYXRocyI6eyJwYXNzd29yZCI6ImluaXQiLCJlbWFpbCI6ImluaXQiLCJlbWFpbHZlcmlmaWVkIjoiaW5pdCIsImxhc3RuYW1lIjoiaW5pdCIsImZpcnN0bmFtZSI6ImluaXQiLCJfaWQiOiJpbml0In0sInN0YXRlcyI6eyJpZ25vcmUiOnt9LCJkZWZhdWx0Ijp7fSwiaW5pdCI6eyJlbWFpbHZlcmlmaWVkIjp0cnVlLCJsYXN0bmFtZSI6dHJ1ZSwiZmlyc3RuYW1lIjp0cnVlLCJwYXNzd29yZCI6dHJ1ZSwiZW1haWwiOnRydWUsIl9pZCI6dHJ1ZX0sIm1vZGlmeSI6e30sInJlcXVpcmUiOnt9fSwic3RhdGVOYW1lcyI6WyJyZXF1aXJlIiwibW9kaWZ5IiwiaW5pdCIsImRlZmF1bHQiLCJpZ25vcmUiXX0sInBhdGhzVG9TY29wZXMiOnt9LCJlbWl0dGVyIjp7ImRvbWFpbiI6bnVsbCwiX2V2ZW50cyI6e30sIl9ldmVudHNDb3VudCI6MCwiX21heExpc3RlbmVycyI6MH0sIiRvcHRpb25zIjp0cnVlfSwiaXNOZXciOmZhbHNlLCJfZG9jIjp7ImVtYWlsdmVyaWZpZWQiOnRydWUsImxhc3RuYW1lIjoiTGFuemlsb3R0byIsImZpcnN0bmFtZSI6Ik5pY29sYSIsInBhc3N3b3JkIjoiJDJhJDEwJDEzZlROSnA3OUx5RVYvdzh6NXRrbmVrc3pYRUtuaWFxZm83TnR2aTZpSHdaQ2ZLRUZKd1kuIiwiZW1haWwiOiJuaWNvbGEubGFuemlsb3R0b0Bmcm9udGllcmUyMS5pdCIsIl9pZCI6IjVhYzc1MjE3ODdmNmI1MDAxNGUwYjU5MiJ9LCIkaW5pdCI6dHJ1ZSwiaWF0IjoxNTQwODE5MTUzfQ.af5nAtSYVmmWzmdgGummY6fQnt2dFTR0lCnrfP0vr6I');
-    // const url = 'https://api.tiledesk.com/v1/5b55e806c93dde00143163dd/keys/generate'
+    // const url = 'https://api.GPTMysite.com/v1/5b55e806c93dde00143163dd/keys/generate'
 
     this.logger.log('[PROJECT-SERV] - GENERATE SHARED SECRET - POST URL ', url);
     const body = {};
@@ -1185,9 +1185,9 @@ export class ProjectService {
       })
     };
 
-    const url = "https://tiledesk-sumo.tiledesk.repl.co/notification";
+    const url = "https://GPTMysite-sumo.GPTMysite.repl.co/notification";
 
-    const body = "action=activate&plan_id=tiledesk_tier1&uuid=65b9528a-702d-4326-9b23-3e0c37ce4553&activation_email=padokes502@lieboe.com&invoice_item_uuid=01ae3d93-ec5f-44a8-b4b9-093cbd662164"
+    const body = "action=activate&plan_id=GPTMysite_tier1&uuid=65b9528a-702d-4326-9b23-3e0c37ce4553&activation_email=padokes502@lieboe.com&invoice_item_uuid=01ae3d93-ec5f-44a8-b4b9-093cbd662164"
 
     return this._httpclient
       .post(url, body, httpOptions)
@@ -1203,9 +1203,9 @@ export class ProjectService {
       })
     };
 
-    const url = "https://tiledesk-sumo.tiledesk.repl.co/notification";
+    const url = "https://GPTMysite-sumo.GPTMysite.repl.co/notification";
 
-    const body = "action=enhance_tier&plan_id=tiledesk_tier2&uuid=65b9528a-702d-4326-9b23-3e0c37ce4553&activation_email=padokes502@lieboe.com"
+    const body = "action=enhance_tier&plan_id=GPTMysite_tier2&uuid=65b9528a-702d-4326-9b23-3e0c37ce4553&activation_email=padokes502@lieboe.com"
 
     return this._httpclient
       .post(url, body, httpOptions)
@@ -1221,9 +1221,9 @@ export class ProjectService {
       })
     };
 
-    const url = "https://tiledesk-sumo.tiledesk.repl.co/notification";
+    const url = "https://GPTMysite-sumo.GPTMysite.repl.co/notification";
 
-    const body = "action=reduce_tier&plan_id=tiledesk_tier1&uuid=65b9528a-702d-4326-9b23-3e0c37ce4553&activation_email=padokes502@lieboe.com"
+    const body = "action=reduce_tier&plan_id=GPTMysite_tier1&uuid=65b9528a-702d-4326-9b23-3e0c37ce4553&activation_email=padokes502@lieboe.com"
 
     return this._httpclient
       .post(url, body, httpOptions)
@@ -1239,7 +1239,7 @@ export class ProjectService {
       })
     };
 
-    const url = "https://tiledesk-sumo.tiledesk.repl.co/notification";
+    const url = "https://GPTMysite-sumo.GPTMysite.repl.co/notification";
 
     const body = "action=refund&plan_id=yourproduct_tier1&uuid=65b9528a-702d-4326-9b23-3e0c37ce4553&activation_email=padokes502@lieboe.com&invoice_item_uuid=01ae3d93-ec5f-44a8-b4b9-093cbd662164"
 

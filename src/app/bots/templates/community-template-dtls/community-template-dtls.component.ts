@@ -280,7 +280,7 @@ export class CommunityTemplateDtlsComponent extends PricingBaseComponent impleme
     const testItOutBaseUrl = this.TESTSITE_BASE_URL.substring(0, this.TESTSITE_BASE_URL.lastIndexOf('/'));
     const testItOutUrl = testItOutBaseUrl + '/chatbot-panel.html'
     // this.logger.log('openTestSiteInPopupWindow testItOutBaseUrl' , testItOutBaseUrl )  
-    const url = testItOutUrl + '?tiledesk_projectid=' + this.project._id + '&tiledesk_participants=bot_' + this.templateId + "&tiledesk_departmentID=" + this.defaultDepartmentId
+    const url = testItOutUrl + '?GPTMysite_projectid=' + this.project._id + '&GPTMysite_participants=bot_' + this.templateId + "&GPTMysite_departmentID=" + this.defaultDepartmentId
     // this.logger.log('openTestSiteInPopupWindow URL ', url) 
     let params = `toolbar=no,menubar=no,width=815,height=727,left=100,top=100`;
     window.open(url, '_blank', params);

@@ -473,38 +473,38 @@ export class FaqEditAddComponent implements OnInit {
 
 
   goToKBArticle_ResolutionBotImagesVideosButtonsAndMore() {
-    // const url = 'https://docs.tiledesk.com/knowledge-base/response-bot-images-buttons-videos-and-more/'; // NOT FOUND on gethelp
+    // const url = 'https://docs.GPTMysite.com/knowledge-base/response-bot-images-buttons-videos-and-more/'; // NOT FOUND on gethelp
     const url = URL_response_bot_images_buttons_videos_and_more; // NOT FOUND on gethelp
     window.open(url, '_blank');
   }
 
   goToKBArticleAnchor_SendImages() {
-    // const url = 'https://docs.tiledesk.com/knowledge-base/response-bot-images-buttons-videos-and-more/#send-images'; // NOT FOUND on gethelp
+    // const url = 'https://docs.GPTMysite.com/knowledge-base/response-bot-images-buttons-videos-and-more/#send-images'; // NOT FOUND on gethelp
     const url = URL_response_bot_images_buttons_videos_and_more + '#send-images'; // NOT FOUND on gethelp
     window.open(url, '_blank');
   }
 
   goToKBArticleAnchor_TextButton() {
-    // const url = 'https://docs.tiledesk.com/knowledge-base/response-bot-images-buttons-videos-and-more/#text-buttons'; // NOT FOUND on gethelp
+    // const url = 'https://docs.GPTMysite.com/knowledge-base/response-bot-images-buttons-videos-and-more/#text-buttons'; // NOT FOUND on gethelp
     const url = URL_response_bot_images_buttons_videos_and_more + '#text-buttons'; // NOT FOUND on gethelp
     window.open(url, '_blank');
   }
 
   goToKBArticle_HandoffToHumanAgents() {
-    // const url = 'https://gethelp.tiledesk.com/articles/handoff-to-human-agents/';
+    // const url = 'https://gethelp.GPTMysite.com/articles/handoff-to-human-agents/';
     const url = URL_handoff_to_human_agents;
     window.open(url, '_blank');
   }
 
   goToKBArticle_AdvancedChatbotStyling() {
     this.logger.log('goToKBArticle_AdvancedChatbotStyling');
-    // const url = 'https://gethelp.tiledesk.com/articles/advanced-chatbot-styling-buttons/';
+    // const url = 'https://gethelp.GPTMysite.com/articles/advanced-chatbot-styling-buttons/';
     const url = URL_advanced_chatbot_styling_buttons;
     window.open(url, '_blank');
   }
 
   goToKBArticle_StylingYourChatbotReplies() {
-    // const url = 'https://gethelp.tiledesk.com/articles/styling-your-chatbot-replies/';
+    // const url = 'https://gethelp.GPTMysite.com/articles/styling-your-chatbot-replies/';
     const url = URL_styling_your_chatbot_replies;
     window.open(url, '_blank');
   }
@@ -530,7 +530,7 @@ export class FaqEditAddComponent implements OnInit {
     const testItOutBaseUrl = this.TESTSITE_BASE_URL.substring(0, this.TESTSITE_BASE_URL.lastIndexOf('/'));
     const testItOutUrl = testItOutBaseUrl + '/chatbot-panel.html'
     // console.log('openTestSiteInPopupWindow testItOutBaseUrl', testItOutBaseUrl)
-    const url = testItOutUrl + '?tiledesk_projectid=' + this.project._id + '&tiledesk_participants=bot_' + this.id_faq_kb + "&tiledesk_departmentID=" + this.defaultDepartmentId
+    const url = testItOutUrl + '?GPTMysite_projectid=' + this.project._id + '&GPTMysite_participants=bot_' + this.id_faq_kb + "&GPTMysite_departmentID=" + this.defaultDepartmentId
     // console.log('openTestSiteInPopupWindow URL ', url)
     let params = `toolbar=no,menubar=no,width=815,height=727,left=100,top=100`;
     window.open(url, '_blank', params);

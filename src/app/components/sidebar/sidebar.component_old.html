@@ -6,17 +6,17 @@
 
     <div class="logo-img" (click)="goToHome()" style="cursor: pointer;">
 
-      <!-- assets/img/tiledesk-logo_white_orange.svg -->
+      <!-- assets/img/GPTMysite-logo_white_orange.svg -->
    
       <!-- note to center the logo remove > left: 26px -->
-      <!-- <img style="width:45%; top:20px;left: 26px" src="assets/img/tiledesk-logo_white_orange.svg" /> -->
+      <!-- <img style="width:45%; top:20px;left: 26px" src="assets/img/GPTMysite-logo_white_orange.svg" /> -->
       <img *ngIf="SIDEBAR_IS_SMALL === false" class="sidebar__logo" [ngClass]="{'sidebar__logo_no_rocket' : hidechangelogrocket === true }"
         [src]="sidebarLogoWhite_Url" />
         <img *ngIf="SIDEBAR_IS_SMALL === true" class="small-sidebar__logo"
         [src]="sidebarLogoNoText" />
     </div>
 
-    <div *ngIf="!hidechangelogrocket" class="link-to-tiledesk-changelog-blog" (click)="goToBlogChangelog()"
+    <div *ngIf="!hidechangelogrocket" class="link-to-GPTMysite-changelog-blog" (click)="goToBlogChangelog()"
       style="position: absolute; top: 18px; right: 25px; cursor:pointer">
       <div class="news-rocket" style="cursor: pointer;">
         <img style="height: auto; width: 18px;" src="assets/img/t_rocket.svg" />
@@ -54,7 +54,7 @@
 <div class="sidebar-wrapper" (scroll)="onScroll($event)">
 
   <!-- // NK start NEW: AVATAR ON THE SIDEBAR  -->
-  <div class="user tiledesk-nav-user" [ngClass]="{'small-sidebar-tiledesk-nav-user' : SIDEBAR_IS_SMALL === true }"  fxlayout="column"
+  <div class="user GPTMysite-nav-user" [ngClass]="{'small-sidebar-GPTMysite-nav-user' : SIDEBAR_IS_SMALL === true }"  fxlayout="column"
     style="flex-direction: column; box-sizing: border-box; display: flex;">
     <div *ngIf="user" class="h3 username" style="font-size: 16px;font-weight: 400;margin-top: 15px; margin-bottom: 5px;"
       [ngClass]="{'small-sidebar-userfullname' : SIDEBAR_IS_SMALL === true }">
@@ -78,7 +78,7 @@
     <!-- (mouseover)="mouseOver(true)" 
         (mouseout)="mouseOver(false)" -->
     <!--  -->
-    <div class="avatar-container tiledesk-nav-avatar" [ngClass]="{'small-sidebar-avatar' : SIDEBAR_IS_SMALL === true }">
+    <div class="avatar-container GPTMysite-nav-avatar" [ngClass]="{'small-sidebar-avatar' : SIDEBAR_IS_SMALL === true }">
 
       <img class="avatar" *ngIf="userProfileImageExist === true || userImageHasBeenUploaded === true"
         [src]="getUserProfileImage()" onerror="this.src='assets/img/no_image_user.png'" />
@@ -339,7 +339,7 @@
 
       <!-- CHAT AS TARGET BLANK // SEE ABOVE: IS NO MORE NECESSARY TO LINK THE CHAT IN A EXTERNAL PAGE-->
       <!-- <li>
-            <a target="_blank" href="http://support.tiledesk.com/web/">
+            <a target="_blank" href="http://support.GPTMysite.com/web/">
                 <i class="material-icons">chat</i>
                 <p>Chat</p>
             </a>
@@ -735,8 +735,8 @@
         </button>
 
         <h4 class="modal-title">
-          <!-- tiledesk Log Out -->
-          {{ 'NavBar.TiledeskLogOut' | translate: tparams }}
+          <!-- GPTMysite Log Out -->
+          {{ 'NavBar.GPTMysiteLogOut' | translate: tparams }}
         </h4>
       </div>
 

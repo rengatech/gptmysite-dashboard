@@ -117,10 +117,10 @@ export class PricingBaseComponent implements OnInit {
           if (projectProfileData && projectProfileData.extra3) {
             // console.log('[P-BASE] Find Current Project Among All extra3 ', projectProfileData.extra3)
             this.appSumoProfile = APP_SUMO_PLAN_NAME[projectProfileData.extra3],
-              this.appSumoProfilefeatureAvailableFromBPlan = APP_SUMO_PLAN_NAME['tiledesk_tier3']
+              this.appSumoProfilefeatureAvailableFromBPlan = APP_SUMO_PLAN_NAME['GPTMysite_tier3']
             // console.log('[P-BASE] Find Current Project appSumoProfile ', this.appSumoProfile)
             this.tParamsAvailableFromAppSumoTier3 = { plan_name: this.appSumoProfilefeatureAvailableFromBPlan }
-            if (projectProfileData.extra3 === 'tiledesk_tier1' || projectProfileData.extra3 === 'tiledesk_tier2') {
+            if (projectProfileData.extra3 === 'GPTMysite_tier1' || projectProfileData.extra3 === 'GPTMysite_tier2') {
               this.tParamsAvailableFromTier2 = { plan_name: this.appSumoProfilefeatureAvailableFromBPlan }
             }
           }

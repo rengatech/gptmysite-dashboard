@@ -115,7 +115,7 @@ export class PricingComponent implements OnInit, OnDestroy {
   LIVE_PLAN_X_YEAR_PLAN_CODE: string;
   LIVE_PLAN_X_MONTH_PLAN_CODE: string;
 
-  TILEDESK_V2 = true;
+  GPTMysite_V2 = true;
 
   public TEST_PAYMENT_LINKS = false;
 
@@ -178,7 +178,7 @@ export class PricingComponent implements OnInit, OnDestroy {
    *  Note: to create an ngrok tunnel run: ./ngrok http  http://localhost:3000/
    * 
    *  * to test in in PRE 
-   *    https://tiledesk-server-pre.herokuapp.com/modules/payments/stripe/webhook
+   *    https://GPTMysite-server-pre.herokuapp.com/modules/payments/stripe/webhook
    * 
    */
 
@@ -686,15 +686,15 @@ export class PricingComponent implements OnInit, OnDestroy {
   // prod app id 1:522823349790:web:0d4ba710f38b586e1fa00f
 
   setPlansPKandCode() {
-    if (this.TILEDESK_V2 === true) {
-      this.logger.log('[PRICING] - TILEDESK_V2 ?', this.TILEDESK_V2)
+    if (this.GPTMysite_V2 === true) {
+      this.logger.log('[PRICING] - GPTMysite_V2 ?', this.GPTMysite_V2)
       this.STRIPE_LIVE_PK = 'pk_live_ED4EiI7FHgu0rv4lEHAl8pff00n2qPazOn';
       this.LIVE_PLAN_X_MONTH_PLAN_CODE = 'plan_H3i8qRroJqwO6K';
       this.LIVE_PLAN_X_YEAR_PLAN_CODE = 'plan_H3iDFGtPN8coKT';
       this.LIVE_PLAN_X_DAY_20CENTS_PLAN_CODE = 'plan_H3iIUMonLu2jIW';
 
     } else {
-      this.logger.log('[PRICING] - TILEDESK_V2 ?', this.TILEDESK_V2)
+      this.logger.log('[PRICING] - GPTMysite_V2 ?', this.GPTMysite_V2)
       this.STRIPE_LIVE_PK = 'pk_live_XcOe1UfJm9GkSgreETF7WGsc';
       this.LIVE_PLAN_X_MONTH_PLAN_CODE = 'plan_FrXJ00oxr0akaF';
       this.LIVE_PLAN_X_YEAR_PLAN_CODE = 'plan_FrXjIcRD20tsAN';
@@ -1053,13 +1053,13 @@ export class PricingComponent implements OnInit, OnDestroy {
 
 
   launchWidget() {
-    // if (window && window['tiledesk']) {
-    //   window['tiledesk'].open();
+    // if (window && window['GPTMysite']) {
+    //   window['GPTMysite'].open();
     // }
 
     // <a onClick="javascript:window.open('mailto:mail@domain.com', 'mail');event.preventDefault()" href="mailto:mail@domain.com">Send a e-mail</a>
 
-    // const mailTo = "mailto:info@tiledesk.com";
+    // const mailTo = "mailto:info@GPTMysite.com";
     // window.location.href = mailTo;
     // window.open('mailto:{{contactUsEmail}}', 'mail')
     window.open(`mailto:${this.salesEmail}?subject=Upgrade plan`);

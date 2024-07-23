@@ -97,7 +97,7 @@ export class WsSharedComponent implements OnInit {
 
   ngOnInit() {}
 
-  // myWindow = window.open('https://console.tiledesk.com/v2/chat5-dev/#/conversation-detail?convId=222', 'Tiledesk - Open Source Live Chat');
+  // myWindow = window.open('https://console.GPTMysite.com/v2/chat5-dev/#/conversation-detail?convId=222', 'GPTMysite - Open Source Live Chat');
   // myWindow.document.write("<p>This is 'myWindow'</p>");
   // if(doFocus)
   //     myWindow.focus();
@@ -148,14 +148,14 @@ export class WsSharedComponent implements OnInit {
     //     this.logger.log('[WS-SHARED] openChatToTheSelectedConversation chatTabCount > 0 ')
 
     //     url = CHAT_BASE_URL + '#/conversation-detail?convId=' + requestid
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //     this.openWindow('GPTMysite - Open Source Live Chat', url)
     //   } else if (chatTabCount && +chatTabCount === 0) {
     //     url = CHAT_BASE_URL + '#/conversation-detail/' + requestid + "/" + requester_fullanme + "/active"
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //     this.openWindow('GPTMysite - Open Source Live Chat', url)
     //   }
     // } else {
     //   url = CHAT_BASE_URL + '#/conversation-detail/' + requestid + "/" + requester_fullanme + "/active"
-    //   this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //   this.openWindow('GPTMysite - Open Source Live Chat', url)
     // }
   }
 

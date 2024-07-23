@@ -189,29 +189,29 @@ export class AuthService {
 
       window.addEventListener('load', () => {
         try {
-          this.logger.log('[AUTH-SERV] Calling tiledesk_widget_login ')
-          if (window && window['tiledesk_widget_login']) {
+          this.logger.log('[AUTH-SERV] Calling GPTMysite_widget_login ')
+          if (window && window['GPTMysite_widget_login']) {
             // this.logger.log('window', window)
-            window['tiledesk_widget_login']()
+            window['GPTMysite_widget_login']()
           }
         } catch (err) {
-          this.logger.error('[AUTH-SERV] Calling tiledesk_widget_login err', err)
+          this.logger.error('[AUTH-SERV] Calling GPTMysite_widget_login err', err)
         }
       })
 
       // /**
-      //  * *** WIDGET - pass data to the widget function setTiledeskWidgetUser in index.html ***
+      //  * *** WIDGET - pass data to the widget function setGPTMysiteWidgetUser in index.html ***
       //  */
       // const _storedUser = JSON.parse(storedUser);
-      // this.logger.log('SetTiledeskWidgetUserSignin (AUTH-SERVICE) - storedUser', _storedUser)
+      // this.logger.log('SetGPTMysiteWidgetUserSignin (AUTH-SERVICE) - storedUser', _storedUser)
       // const userFullname = _storedUser['firstname'] + ' ' + _storedUser['lastname'];
-      // this.logger.log('SetTiledeskWidgetUserSignin (AUTH-SERVICE) - userFullname', userFullname);
+      // this.logger.log('SetGPTMysiteWidgetUserSignin (AUTH-SERVICE) - userFullname', userFullname);
       // const userEmail = _storedUser['email']
-      // this.logger.log('SetTiledeskWidgetUserSignin (AUTH-SERVICE) - userEmail', userEmail);
+      // this.logger.log('SetGPTMysiteWidgetUserSignin (AUTH-SERVICE) - userEmail', userEmail);
       // const userId = _storedUser['_id']
-      // this.logger.log('SetTiledeskWidgetUserSignin (AUTH-SERVICE) - userId', userId);
-      // this.logger.log('SetTiledeskWidgetUserSignin (AUTH-SERVICE) - window', window);
-      // // window['setTiledeskWidgetUser'](userFullname, userEmail, userId)
+      // this.logger.log('SetGPTMysiteWidgetUserSignin (AUTH-SERVICE) - userId', userId);
+      // this.logger.log('SetGPTMysiteWidgetUserSignin (AUTH-SERVICE) - window', window);
+      // // window['setGPTMysiteWidgetUser'](userFullname, userEmail, userId)
     }
   }
 
@@ -227,13 +227,13 @@ export class AuthService {
       window.addEventListener('load', () => {
         this.logger.log('[AUTH-SERV] window load - window ', window)
         try {
-          this.logger.log('[AUTH-SERV] Calling tiledesk_widget_autologin ')
-          if (window && window['tiledesk_widget_autologin']) {
+          this.logger.log('[AUTH-SERV] Calling GPTMysite_widget_autologin ')
+          if (window && window['GPTMysite_widget_autologin']) {
             // this.logger.log('window', window)
-            window['tiledesk_widget_autologin']()
+            window['GPTMysite_widget_autologin']()
           }
         } catch (err) {
-          this.logger.error('[AUTH-SERV] Calling tiledesk_widget_autologin err', err)
+          this.logger.error('[AUTH-SERV] Calling GPTMysite_widget_autologin err', err)
         }
       })
     }
@@ -612,7 +612,7 @@ export class AuthService {
 
         // SET USER IN LOCAL STORAGE
         localStorage.setItem('user', JSON.stringify(user))    
-        localStorage.setItem('tiledesk_token', user.token) // x autologin of Chat ionic
+        localStorage.setItem('GPTMysite_token', user.token) // x autologin of Chat ionic
         this.logger.log('[AUTH-SERV] > USER ', user)
 
         ///////////////////
@@ -923,12 +923,12 @@ export class AuthService {
     // this.logger.log('[AUTH-SERV] Signout calledby +++++ ', calledby)
     if (calledby !== 'autologin') {
       try {
-        if (window && window['tiledesk_widget_logout']) {
+        if (window && window['GPTMysite_widget_logout']) {
           // this.logger.log('window', window)
-          window['tiledesk_widget_logout']()
+          window['GPTMysite_widget_logout']()
         }
       } catch (err) {
-        this.logger.error('[AUTH-SERV] tiledesk_widget_logout err ', err)
+        this.logger.error('[AUTH-SERV] GPTMysite_widget_logout err ', err)
       }
     }
 
@@ -1070,10 +1070,10 @@ export class AuthService {
     if (current_url.indexOf('request-for-panel') === -1) {
       this.logger.log('[AUTH-SERV] Signout current url  NOT contains request-for-panel ')
 
-      const stored__tiledeskToken = localStorage.getItem('tiledesk_token')
-      if (stored__tiledeskToken) {
-        localStorage.removeItem('tiledesk_token')
-        this.logger.log('[AUTH-SERV] SIGNOUT - STORED stored__tiledeskToken : ', stored__tiledeskToken)
+      const stored__GPTMysiteToken = localStorage.getItem('GPTMysite_token')
+      if (stored__GPTMysiteToken) {
+        localStorage.removeItem('GPTMysite_token')
+        this.logger.log('[AUTH-SERV] SIGNOUT - STORED stored__GPTMysiteToken : ', stored__GPTMysiteToken)
       }
 
       const stored__lastProject = localStorage.getItem('last_project') 
@@ -1257,10 +1257,10 @@ export class AuthService {
   }
 
   widgetReInit() {
-    if (window && window['tiledesk']) {
-      this.logger.log('[AUTH-SERV] window[tiledesk] ', window['tiledesk'])
+    if (window && window['GPTMysite']) {
+      this.logger.log('[AUTH-SERV] window[GPTMysite] ', window['GPTMysite'])
       try {
-        window['tiledesk'].reInit()
+        window['GPTMysite'].reInit()
       } catch (err) {
         this.logger.error('[AUTH-SERV] widgetReInit error ', err)
       }
@@ -1273,7 +1273,7 @@ export class AuthService {
   public siginWithGoogle() {
     // this.logger.log('[AUTH-SERV] siginWithGoogle HERE YES!!!')
     // const url = this.SERVER_BASE_PATH + "auth/google"
-    const url = "https://eu.rtmv3.tiledesk.com/api/auth/google"
+    const url = "https://eu.rtmv3.GPTMysite.com/api/auth/google"
     window.open(url, '_self');
 
     this.localDbService.setInStorage('swg', 'true')
@@ -1282,7 +1282,7 @@ export class AuthService {
 
   public siginUpWithGoogle() {
 
-    const url = "https://eu.rtmv3.tiledesk.com/api/auth/google?redirect_url=%23%2Fcreate-project-gs"
+    const url = "https://eu.rtmv3.GPTMysite.com/api/auth/google?redirect_url=%23%2Fcreate-project-gs"
 
     // this.logger.log('siginUpWithGoogle ', url)
     window.open(url, '_self');

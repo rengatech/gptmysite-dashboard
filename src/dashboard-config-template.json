@@ -21,7 +21,7 @@
   "cdsBaseUrl": "${CDS_BASE_URL}",
   "promoBannerUrl": "${PROMO_BANNER_URL}",
   "whatsappApiUrl": "${WHATSAPP_API_URL}",
-  "tiledeskPhoneNumber": "${TILEDESK_PHONE_NUMBER}",
+  "GPTMysitePhoneNumber": "${GPTMysite_PHONE_NUMBER}",
   "ticketingEmail": "${TICKETING_EMAIL}", 
   "aiModels":"${AI_MODELS}",
   "firebase": {

@@ -178,18 +178,18 @@ export class CdsDashboardComponent implements OnInit {
 
   private hideShowWidget(status: "hide" | "show") {
     try {
-      if (window && window['tiledesk']) {
-        this.logger.log('[CDS DSHBRD] HIDE WIDGET ', window['tiledesk'])
+      if (window && window['GPTMysite']) {
+        this.logger.log('[CDS DSHBRD] HIDE WIDGET ', window['GPTMysite'])
 
         if (status === 'hide') {
-          window['tiledesk'].hide();
+          window['GPTMysite'].hide();
         } else if (status === 'show') {
-          window['tiledesk'].show();
+          window['GPTMysite'].show();
         }
         // alert('signin reinit');
       }
     } catch (error) {
-      this.logger.error('tiledesk_widget_hide ERROR', error)
+      this.logger.error('GPTMysite_widget_hide ERROR', error)
     }
   }
 
@@ -252,7 +252,7 @@ export class CdsDashboardComponent implements OnInit {
         if (this.selectedChatbot && this.selectedChatbot.attributes && this.selectedChatbot.attributes.variables) {
           variableList.userDefined = this.convertJsonToArray(this.selectedChatbot.attributes.variables);
         }
-        if(this.selectedChatbot.intentsEngine == 'tiledesk-ai'){
+        if(this.selectedChatbot.intentsEngine == 'GPTMysite-ai'){
           // this.wsChatbotService.subsToAITrain_ByBot_id(this.selectedChatbot._id)
         }
         // console.log('variableList.userDefined:: ', this.selectedChatbot.attributes.variables);
@@ -973,14 +973,14 @@ export class CdsDashboardComponent implements OnInit {
     const testItOutBaseUrl = this.TESTSITE_BASE_URL.substring(0, this.TESTSITE_BASE_URL.lastIndexOf('/'));
     const testItOutUrl = testItOutBaseUrl + '/chatbot-panel.html'
 
-    const url = testItOutUrl + '?tiledesk_projectid=' + this.project._id + '&tiledesk_participants=bot_' + this.id_faq_kb + "&tiledesk_departmentID=" + this.defaultDepartmentId + '&td_draft=true'
+    const url = testItOutUrl + '?GPTMysite_projectid=' + this.project._id + '&GPTMysite_participants=bot_' + this.id_faq_kb + "&GPTMysite_departmentID=" + this.defaultDepartmentId + '&td_draft=true'
 
     let params = `toolbar=no,menubar=no,width=815,height=727,left=100,top=100`;
     window.open(url, '_blank', params);
   }
 
   openWhatsappPage() {
-    let tiledesk_phone_number = this.appConfigService.getConfig().tiledeskPhoneNumber;
+    let GPTMysite_phone_number = this.appConfigService.getConfig().GPTMysitePhoneNumber;
 
     let info = {
       project_id: this.projectID,
@@ -993,7 +993,7 @@ export class CdsDashboardComponent implements OnInit {
       this.logger.log("--> testing code from whatsapp: ", response);
       // let code = "%23td" + response.short_uid;
       let text = "%23td" + response.short_uid + " Send me to start testing your bot";
-      const testItOutOnWhatsappUrl = `https://api.whatsapp.com/send/?phone=${tiledesk_phone_number}&text=${text}&type=phone_number&app_absent=0`
+      const testItOutOnWhatsappUrl = `https://api.whatsapp.com/send/?phone=${GPTMysite_phone_number}&text=${text}&type=phone_number&app_absent=0`
       window.open(testItOutOnWhatsappUrl, 'blank');
     }).catch((err) => {
       this.logger.error("--> error getting testing code from whatsapp: ", err);
@@ -1027,7 +1027,7 @@ export class CdsDashboardComponent implements OnInit {
 
   onGoToCommunity(){
     // console.log('2 onGoToCommunity:: ', EXTERNAL_URL.getchatbotinfo+this.selectedChatbot._id);
-    let url = EXTERNAL_URL.getchatbotinfo+this.selectedChatbot._id; //"https://tiledesk.com/community/getchatbotinfo/chatbotId/63e284400856170019a908e6";
+    let url = EXTERNAL_URL.getchatbotinfo+this.selectedChatbot._id; //"https://GPTMysite.com/community/getchatbotinfo/chatbotId/63e284400856170019a908e6";
     window.open(url, "_blank");
   }
 

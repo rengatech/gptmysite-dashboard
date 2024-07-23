@@ -563,8 +563,8 @@ export class InstallTemplateComponent extends PricingBaseComponent implements On
     // this.logger.log('openTestSiteInPopupWindow TESTSITE_BASE_URL', this.TESTSITE_BASE_URL)
     const testItOutBaseUrl = this.TESTSITE_BASE_URL.substring(0, this.TESTSITE_BASE_URL.lastIndexOf('/'));
     const testItOutUrl = testItOutBaseUrl + '/chatbot-panel.html'
-    // const url = testItOutUrl + '?tiledesk_projectid=' + "635b97cc7d7275001a2ab3e0" + '&tiledesk_participants=bot_' + this.templateid + "&tiledesk_departmentID=635b97cc7d7275001a2ab3e4"
-    const url = testItOutUrl + '?tiledesk_projectid=' + this.templates.id_project + '&tiledesk_participants=bot_' + this.templates._id + "&tiledesk_departmentID=" + "63d7911ca7b3d3001a4a9408"
+    // const url = testItOutUrl + '?GPTMysite_projectid=' + "635b97cc7d7275001a2ab3e0" + '&GPTMysite_participants=bot_' + this.templateid + "&GPTMysite_departmentID=635b97cc7d7275001a2ab3e4"
+    const url = testItOutUrl + '?GPTMysite_projectid=' + this.templates.id_project + '&GPTMysite_participants=bot_' + this.templates._id + "&GPTMysite_departmentID=" + "63d7911ca7b3d3001a4a9408"
     // this.logger.log('openTestSiteInPopupWindow URL ', url)
 
 

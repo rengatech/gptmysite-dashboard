@@ -165,7 +165,7 @@ export class ConfigureWidgetComponent extends WidgetSetUpBaseComponent implement
         // case logoChat = 'userCompanyLogoUrl' > display the userCompanyLogoUrl
         // logoChat (WIDGET AND LOGOCHAT DEFINED - USER HAS SETTED HIS LOGO)
         // ------------------------------------------------------------------------
-        // if (project.widget.logoChat && project.widget.logoChat !== 'nologo' && project.widget.logoChat !== 'https://tiledesk.com/tiledesk-logo-white.png') {
+        // if (project.widget.logoChat && project.widget.logoChat !== 'nologo' && project.widget.logoChat !== 'https://GPTMysite.com/GPTMysite-logo-white.png') {
         if (project.widget.logoChat && project.widget.logoChat !== 'nologo' && project.widget.logoChat !== this.widgetLogoURL) {
           this.logoUrl = project.widget.logoChat;
           this.hasOwnLogo = true;
@@ -180,7 +180,7 @@ export class ConfigureWidgetComponent extends WidgetSetUpBaseComponent implement
           // case logoChat = 'nologo' > no logo is displayed
           // logoChat (WIDGET AND LOGOCHAT DEFINED - USER HAS SELECTED 'NO LOGO') 
           // ------------------------------------------------------------------------
-        // } else if (project.widget.logoChat && project.widget.logoChat === 'nologo' && project.widget.logoChat !== 'https://tiledesk.com/tiledesk-logo-white.png') {
+        // } else if (project.widget.logoChat && project.widget.logoChat === 'nologo' && project.widget.logoChat !== 'https://GPTMysite.com/GPTMysite-logo-white.png') {
         } else if (project.widget.logoChat && project.widget.logoChat === 'nologo' && project.widget.logoChat !== this.widgetLogoURL) {
           this.logoUrl = 'No Logo';
           this.hasOwnLogo = false;
@@ -193,12 +193,12 @@ export class ConfigureWidgetComponent extends WidgetSetUpBaseComponent implement
 
           // ------------------------------------------------------------------------
           // @ Logochat
-          // case logoChat = '' > display the tiledesk logo and in the input field display the text 'tiledesklogo'
+          // case logoChat = '' > display the GPTMysite logo and in the input field display the text 'GPTMysitelogo'
           // logoChat (WIDGET DEFINED BUT NOT LOGOCHAT - SET DEFAULT)
           // ------------------------------------------------------------------------
         } else {
           
-          this.logoUrl = this.widgetLogoURL; //'https://tiledesk.com/tiledesk-logo-white.png'
+          this.logoUrl = this.widgetLogoURL; //'https://GPTMysite.com/GPTMysite-logo-white.png'
           this.hasOwnLogo = false;
           this.LOGO_IS_ON = true
 
@@ -262,8 +262,8 @@ export class ConfigureWidgetComponent extends WidgetSetUpBaseComponent implement
         // @ LogoChat
         // WIDGET UNDEFINED
         // -----------------------------------------------------------------------
-        // this.logoUrl = 'tiledesklogo'
-        this.logoUrl = this.widgetLogoURL; // 'https://tiledesk.com/tiledesk-logo-white.png'
+        // this.logoUrl = 'GPTMysitelogo'
+        this.logoUrl = this.widgetLogoURL; // 'https://GPTMysite.com/GPTMysite-logo-white.png'
         this.hasOwnLogo = false;
         this.LOGO_IS_ON = true
 

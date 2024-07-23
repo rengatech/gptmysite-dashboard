@@ -1,4 +1,4 @@
-# tiledesk-dashboard
+# GPTMysite-dashboard
 
 ### 2.6.43
 - Deploys in production
@@ -104,7 +104,7 @@
 
 ### 2.6.21
 - Deploys in production
-- Adds, on the Installation page, instructions to install the Tiledesk Live Chat Widget on BigCommerce, WIX and Magento websites
+- Adds, on the Installation page, instructions to install the GPTMysite Live Chat Widget on BigCommerce, WIX and Magento websites
 
 ### 2.6.20
 - Deploys in production
@@ -415,11 +415,11 @@
 
 ### 2.4.94-rc1
 - Deploys in pre
-- Adds the ability to access the design studio for the "tiledesk-ai" chatbot type
+- Adds the ability to access the design studio for the "GPTMysite-ai" chatbot type
 
 ### 2.4.94
 - Deploys in production
-- Adds the ability to access the design studio for the "tiledesk-ai" chatbot type
+- Adds the ability to access the design studio for the "GPTMysite-ai" chatbot type
 
 ### 2.4.93
 - Deploys in production
@@ -1374,7 +1374,7 @@
 - Adds the ability to send a message as Open, Pending or Resolved on the conversation detail page
 
 ### 2.2.51-rc4
-- Changes the Tiledesk default logo in the widget settings page
+- Changes the GPTMysite default logo in the widget settings page
 
 ### 2.2.51-rc3
 - Replaces the "Resolution" bot type with the "Tilebot" bot type
@@ -1553,7 +1553,7 @@
 ### 2.2.43.1
 - Fixes the bug: when the user clicks on a foreground notification in the chat, the project displayed in the item showing the count of unassigned conversations is not always correct
 - Fixes the bug: foreground notification appears in the chat sidebar of unassigned conversations when a teammate joins a conversation
-- Replaces all Tiledesk logos with new ones
+- Replaces all GPTMysite logos with new ones
 
 ### 2.2.43
 - Deploys in production
@@ -1681,7 +1681,7 @@
 
 ### 2.2.37-rc1
 - Adds the ability to change the credit card for the subscription projects
-- Adds Security tab in Settings > Project Settings from which the end-user can restrict access to Tiledesk to only those users within a range of IP addresses
+- Adds Security tab in Settings > Project Settings from which the end-user can restrict access to GPTMysite to only those users within a range of IP addresses
 - Adds the ability on the history page and non-real-time conversations page to filter the conversations by Ticket ID and Conversation Type
 - Adds the ability to tag a teammate on their details page
 - Adds the Serbian language
@@ -1764,7 +1764,7 @@
 ### 2.2.33-rc7
 - Adds the ticket id in the non-real time conversations table and in the archived conversations table
 - Removes from the login page the link to the old version of the dashbaord
-- Replaces all Tiledesk logos bearing the version number "v2" with Tiledesk logos without version number
+- Replaces all GPTMysite logos bearing the version number "v2" with GPTMysite logos without version number
 
 ### 2.2.33-rc6
 - Adds the "Beta" badge to the "Security" tab available in Project Settings
@@ -1912,7 +1912,7 @@
 - Removes the borders of the "Reassign request" and "Add teammate" modals when the right sidebar of the conversation detail is displayed in the chat
 - Changes the endpoint of the link "Understanding predefined roles" and centralize the modal window that show the link to "Understanding predefined roles" in the notification service
 - Changes the "Beta" text of the Trigger menu item of the "Settings sidebar" to a "Badge"
-- Changes endpoints of links to documentation with domain "docs.tiledesk.com" with endpoints with domain "gethelp.tiledesk.com"
+- Changes endpoints of links to documentation with domain "docs.GPTMysite.com" with endpoints with domain "gethelp.GPTMysite.com"
 - Outsources endpoints to documentation in "utils"
 - Adds a modal window to confirm the deletion of a language on the "multilanguage" page
 - Adds the ability to open and close the "user detail sidebar" by clicking on the avatar of the logged teammate present on the sidebar
@@ -1949,7 +1949,7 @@
 
 ### 2.2.31.1
 - Fixes the bug: the "widget login" does not run after registering a new teammates
-- Fixes the bug: the method "tiledesk_widget_login" does not run after registering a new teammates
+- Fixes the bug: the method "GPTMysite_widget_login" does not run after registering a new teammates
 
 ### 2.2.31
 - Deploys in production
@@ -2011,9 +2011,9 @@
 - Implements translations of missing trigger labels in it.json and de.json files
 - Adds animation to home page "shortcut" buttons on hover
 - Improve the usability of the buttons on the home page: "View teammates", "View Bot", "Adjust operating hours" and "Go to changelog"
-- Adds in the signin.component the tiledesk_widget_login() function
+- Adds in the signin.component the GPTMysite_widget_login() function
 - Adds in index.html the new widget script
-- Adds in the signOut() method of the auth.service the tiledesk_widget_logout() function
+- Adds in the signOut() method of the auth.service the GPTMysite_widget_logout() function
 - Adds for the trigger "When a visitor requests a chat" the action "Launch bot"
 - Renames the trigger "Participant join conversation" in "Add an agent or a bot to the conversation"
 - Renames the trigger "Participant leave conversation" in "Remove an agent or bot from the conversation"
@@ -2199,10 +2199,10 @@
 - Fixes the bug: in analytics the string 'Tutto' is not translated
 
 ### 2.2.7-rc.7
-- Fixes the bug: the keys stored in the local memory "chat_sv5__tiledeskToken" and "chat_sv5__currentUser" are removed when loading right panel 'conversation info' of the chat
+- Fixes the bug: the keys stored in the local memory "chat_sv5__GPTMysiteToken" and "chat_sv5__currentUser" are removed when loading right panel 'conversation info' of the chat
 
 ### 2.2.6-rc.6
-- Fixes the bug: the stored key "chat_sv5__tiledeskToken" is not refreshed at the autologin
+- Fixes the bug: the stored key "chat_sv5__GPTMysiteToken" is not refreshed at the autologin
 
 ### 2.2.5
 - Removes the implemented "Avoids (on Chrome browser) the opening of multiple chat tabs if it is already open"
@@ -2365,7 +2365,7 @@
 
 ### 2.1.53
 - Adds the "upload-image-native" service
-- Saves in local storage the token with the key "chat_sv5__tiledeskToken"
+- Saves in local storage the token with the key "chat_sv5__GPTMysiteToken"
 - Adds the "firebaseAuth" key in the environments and conditions signInWithCustomToken based on how it is valued (true or false)
 - Adds the "uploadEngine" key in the environments and conditions the service to be used to upload and delete user and bot profile picture based on how it is valued (native or firebase)
 - Adds the "pushEngine" key in the environments and conditions whether to use Firebase or another service to manage push notifications based on how it is valued (firebase or none)
@@ -2936,7 +2936,7 @@
 
 ### 1.0.38
 - Changes the url of the widget live test page
-- Adds in the sidebar the link to "Tiledesk changelog" blog
+- Adds in the sidebar the link to "GPTMysite changelog" blog
 
 
 ### 1.0.37
@@ -3023,7 +3023,7 @@
 
 ### 1.0.12
 - Adds the notifications for the requests assigned to the logged agent
-- Adds in the footer the the ability to send an email to info@tiledesk.com
+- Adds in the footer the the ability to send an email to info@GPTMysite.com
 - Adds in history the requester name
 
 ### 1.0.11

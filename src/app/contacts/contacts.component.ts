@@ -340,7 +340,7 @@ export class ContactsComponent implements OnInit, OnDestroy, AfterViewInit {
         // this.buildPlanName(projectProfileData.profile_name, this.browserLang, this.prjct_profile_type);
         if (projectProfileData.extra3) {
           this.appSumoProfile = APP_SUMO_PLAN_NAME[projectProfileData.extra3]
-          this.appSumoProfilefeatureAvailableFromBPlan = APP_SUMO_PLAN_NAME['tiledesk_tier3']
+          this.appSumoProfilefeatureAvailableFromBPlan = APP_SUMO_PLAN_NAME['GPTMysite_tier3']
         }
       }
     }, error => {

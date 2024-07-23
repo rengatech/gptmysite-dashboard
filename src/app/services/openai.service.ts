@@ -32,8 +32,8 @@ export class OpenaiService {
     });
     this.getCurrentProject();
     this.getAppConfig();
-    //this.GPT_API_URL = "http://tiledesk-backend.h8dahhe4edc7cahh.francecentral.azurecontainer.io:8000/api";
-    this.GPT_API_URL = "https://tiledesk-dev.blackwave-d2bf4ee1.westus2.azurecontainerapps.io/api";
+    //this.GPT_API_URL = "http://GPTMysite-backend.h8dahhe4edc7cahh.francecentral.azurecontainer.io:8000/api";
+    this.GPT_API_URL = "https://GPTMysite-dev.blackwave-d2bf4ee1.westus2.azurecontainerapps.io/api";
     this.OPENAI_API_URL = "https://api.openai.com/v1";
 
   }

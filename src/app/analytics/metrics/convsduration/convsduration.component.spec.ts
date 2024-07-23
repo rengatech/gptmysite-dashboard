@@ -92,13 +92,13 @@ describe('DurataconvComponent', () => {
 //     //   // expect(res).toEqual(dummyMedianConversationLength);
 //     //   done();
 //     // })
-//     // const baseUrl ="https://tiledesk-server-pre.herokuapp.com/" 
+//     // const baseUrl ="https://GPTMysite-server-pre.herokuapp.com/" 
 
 //     // const baseUrl = "http://localhost:3000/"
 //     // const medianConversationLengthReq = httpMock.expectOne(baseUrl + "60ffe291f725db00347661ef/analytics/requests/duration/");
 
 //     let formatedURL = encodeURI(
-//       'https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration');
+//       'https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration');
 
 //       analyticsService.getDurationConversationTimeDataCLOCK().subscribe((retuenType: any) => {
 //         expect(retuenType).not.toBe(null);
@@ -110,7 +110,7 @@ describe('DurataconvComponent', () => {
 //         return true;
 //     });
 //       const testRequest: TestRequest = httpMock.expectOne((req) => true);
-// expect(testRequest.request.url).toEqual('https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration');
+// expect(testRequest.request.url).toEqual('https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration');
 // expect(testRequest.request.method).toEqual('GET');
 //     // const medianConversationLengthReq = httpMock.expectOne(req => req.method === 'GET' && req.url ===  formatedURL);
 
@@ -135,7 +135,7 @@ describe('DurataconvComponent', () => {
   //   httpMock.verify();
   // });
 
-  // https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=7&department_id=&participant=
+  // https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=7&department_id=&participant=
   // [{"_id":{"day":10,"month":8,"year":2021},"duration_avg":149746.33333333334},{"_id":{"day":6,"month":8,"year":2021},"duration_avg":null}]
   // ,{"_id":{"day":6,"month":8,"year":2021},"duration_avg":null}
 
@@ -159,7 +159,7 @@ describe('DurataconvComponent', () => {
   //       expect(medianConversationLength).toEqual(dummyMedianConversationLength);
   //     });
 
-  //     const req = httpMock.expectOne("https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration");
+  //     const req = httpMock.expectOne("https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration");
   //     expect(req.request.method).toBe("GET");
   //     req.flush(dummyMedianConversationLength);
   //   });
@@ -170,11 +170,11 @@ describe('DurataconvComponent', () => {
   //   const dummyUsers =  [{"_id":{"day":10,"month":8,"year":2021},"duration_avg":149746.33333333334}];
 
   //   component.durationConversationTimeCHART(7, null, null);
-  //   // const req = httpMock.expectOne('https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=7');
-  //   const req = httpMock.match('https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=7');
+  //   // const req = httpMock.expectOne('https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=7');
+  //   const req = httpMock.match('https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=7');
 
   //   // backend.match()
-  //   // const req = httpMock.expectNone('https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=7');
+  //   // const req = httpMock.expectNone('https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=7');
   //   // req.flush(dummyUsers);
 
   //   // expect(req.request.method).toBe('GET');
@@ -205,9 +205,9 @@ describe('DurataconvComponent', () => {
   //     done();
   //   }, fail);
 
-  //   // const req = httpMock.expectOne(`https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=${lastdays}&department_id=${depID}&participant=${participantId}`);
+  //   // const req = httpMock.expectOne(`https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day?lastdays=${lastdays}&department_id=${depID}&participant=${participantId}`);
 
-  //   const requestMatch: RequestMatch = { url: `https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day` };
+  //   const requestMatch: RequestMatch = { url: `https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/analytics/requests/duration/day` };
   //   const testRequest: TestRequest = httpMock.expectOne(requestMatch);
   //   expect(testRequest.request.method).toBe('GET');
   //   expect(testRequest.request.params.get('lastdays')).toBe('7');

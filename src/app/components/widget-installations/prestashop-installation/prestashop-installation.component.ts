@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BrandService } from 'app/services/brand.service';
 import {
-  URL_install_tiledesk_on_prestashop
+  URL_install_GPTMysite_on_prestashop
 } from 'app/utils/util';
 @Component({
   selector: 'appdashboard-prestashop-installation',
@@ -9,7 +9,7 @@ import {
   styleUrls: ['./prestashop-installation.component.scss']
 })
 export class PrestashopInstallationComponent implements OnInit {
-  URL_install_tiledesk_on_prestashop = URL_install_tiledesk_on_prestashop;
+  URL_install_GPTMysite_on_prestashop = URL_install_GPTMysite_on_prestashop;
   public hideHelpLink: boolean;
   constructor(
     public brandService: BrandService

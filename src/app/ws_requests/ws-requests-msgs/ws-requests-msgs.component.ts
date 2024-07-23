@@ -465,8 +465,8 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
   ) {
     super(botLocalDbService, usersLocalDbService, router, wsRequestsService, faqKbService, usersService, notify, logger, translate)
     this.jira_issue_types = [
-      { id: 10002, name: 'Task', avatar: 'https://tiledesk.atlassian.net/secure/viewavatar?size=medium&avatarId=10318&avatarType=issuetype' },
-      { id: 10004, name: 'Bug', avatar: 'https://tiledesk.atlassian.net/secure/viewavatar?size=medium&avatarId=10303&avatarType=issuetype' },
+      { id: 10002, name: 'Task', avatar: 'https://GPTMysite.atlassian.net/secure/viewavatar?size=medium&avatarId=10318&avatarType=issuetype' },
+      { id: 10004, name: 'Bug', avatar: 'https://GPTMysite.atlassian.net/secure/viewavatar?size=medium&avatarId=10303&avatarType=issuetype' },
     ];
 
     const brand = brandService.getBrand();
@@ -592,7 +592,7 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
 
         if (projectProfileData.extra3) {
           this.appSumoProfile = APP_SUMO_PLAN_NAME[projectProfileData.extra3]
-          this.appSumoProfilefeatureAvailableFromBPlan = APP_SUMO_PLAN_NAME['tiledesk_tier3']
+          this.appSumoProfilefeatureAvailableFromBPlan = APP_SUMO_PLAN_NAME['GPTMysite_tier3']
         }
 
 
@@ -1235,7 +1235,7 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
     this.isMobile = /Android|iPhone/i.test(window.navigator.userAgent);
     this.logger.log('[WS-REQUESTS-MSGS] - IS MOBILE ', this.isMobile);
 
-    // CUSTOMIZE CARDS AND NAVBAR IF TILEDESK DASHBOARD IS RUNNED ON MOBILE
+    // CUSTOMIZE CARDS AND NAVBAR IF GPTMysite DASHBOARD IS RUNNED ON MOBILE
     if (this.isMobile) {
       const elemMainContent = <HTMLElement>document.querySelector('.main-content');
       elemMainContent.setAttribute('style', 'padding-right: 0px; padding-left: 0px; padding-top: 0px');
@@ -1335,7 +1335,7 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
 
   createJiraTicket() {
     const transcript_url = this.SERVER_BASE_PATH + 'public/requests/' + this.id_request + '/messages.html'
-    const url = `https://tiledesk.atlassian.net/secure/CreateIssueDetails!init.jspa?summary=${this.request.first_text}&description=${this.request.first_text}` + "%0A" + `${transcript_url}&pid=10000&issuetype=${this.selectedJiraType}&reporter=5e21d01f010b260ca87b14ba`;
+    const url = `https://GPTMysite.atlassian.net/secure/CreateIssueDetails!init.jspa?summary=${this.request.first_text}&description=${this.request.first_text}` + "%0A" + `${transcript_url}&pid=10000&issuetype=${this.selectedJiraType}&reporter=5e21d01f010b260ca87b14ba`;
     window.open(url, '_blank');
   }
 
@@ -4634,8 +4634,8 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
   //   const url = this.CHAT_BASE_URL + '#/conversation-detail/' + this.id_request + "/" + this.request.lead.fullname + "/active"
   //   this.logger.log('[WS-REQUESTS-MSGS] openChatInNewWindow url ', url);
   //   window.open(url, '_blank');
-  //   // this.openWindow('Tiledesk - Open Source Live Chat', url)
-  //   // this.focusWin('Tiledesk - Open Source Live Chat')
+  //   // this.openWindow('GPTMysite - Open Source Live Chat', url)
+  //   // this.focusWin('GPTMysite - Open Source Live Chat')
   // }
 
   openWindow(winName: any, winURL: any) {
@@ -4661,8 +4661,8 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
   chatWithAgent(agentId, agentFirstname, agentLastname) {
     this.logger.log('[WS-REQUESTS-MSGS] - CHAT WITH AGENT - agentId: ', agentId, ' - agentFirstname: ', agentFirstname, ' - agentLastname: ', agentLastname);
 
-    // https://support-pre.tiledesk.com/chat/index.html?recipient=5de9200d6722370017731969&recipientFullname=Nuovopre%20Pre
-    // https://support-pre.tiledesk.com/chat/index.html?recipient=5dd278b8989ecd00174f9d6b&recipientFullname=Gian Burrasca
+    // https://support-pre.GPTMysite.com/chat/index.html?recipient=5de9200d6722370017731969&recipientFullname=Nuovopre%20Pre
+    // https://support-pre.GPTMysite.com/chat/index.html?recipient=5dd278b8989ecd00174f9d6b&recipientFullname=Gian Burrasca
 
     // let _agentLastName = ''
     // if (agentLastname) {
@@ -4685,7 +4685,7 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
     localStorage.setItem('last_project', JSON.stringify(this.current_selected_prjct))
     let baseUrl = this.CHAT_BASE_URL + '#/conversation-detail/'
     let url = baseUrl + agentId + '/' + agentFullname + '/new'
-    const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
+    const myWindow = window.open(url, '_self', 'GPTMysite - Open Source Live Chat');
     myWindow.focus();
 
 
@@ -4696,15 +4696,15 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
     //   if (+chatTabCount > 0) {
     //     this.logger.log('[WS-REQUESTS-MSGS]  chatWithAgent chatTabCount > 0 ')
     //     url = this.CHAT_BASE_URL + '#/conversation-detail?contact_id=' + agentId + '&contact_fullname=' + agentFullname
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //     this.openWindow('GPTMysite - Open Source Live Chat', url)
     //   } else if (chatTabCount && +chatTabCount === 0) {
     //     this.logger.log('[WS-REQUESTS-MSGS]  chatWithAgent chatTabCount = 0 ')
     //     url = this.CHAT_BASE_URL + '#/conversation-detail/' + agentId + '/' + agentFullname + '/new'
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //     this.openWindow('GPTMysite - Open Source Live Chat', url)
     //   }
     // } else {
     //   url = this.CHAT_BASE_URL + '#/conversation-detail/' + agentId + '/' + agentFullname + '/new'
-    //   this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //   this.openWindow('GPTMysite - Open Source Live Chat', url)
     // }
 
   }
@@ -4746,8 +4746,8 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
             // this.router.navigate(['project/' + this.id_project + '/tilebot/intents/', id_bot, botType]);
             goToCDSVersion(this.router, bot, this.id_project, this.appConfigService.getConfig().cdsBaseUrl)
           }
-        } else if (bot.type === 'tiledesk-ai') {
-          botType = 'tiledesk-ai'
+        } else if (bot.type === 'GPTMysite-ai') {
+          botType = 'GPTMysite-ai'
           if (this.CURRENT_USER_ROLE !== 'agent') {
             goToCDSVersion(this.router, bot, this.id_project, this.appConfigService.getConfig().cdsBaseUrl)
           }

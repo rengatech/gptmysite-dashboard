@@ -1472,27 +1472,27 @@ export class ProjectEditAddComponent implements OnInit, OnDestroy {
           }
 
           if (
-            projectProfileData.extra3 === "tiledesk_tier1" ||
-            projectProfileData.extra3 === "tiledesk_tier2"
+            projectProfileData.extra3 === "GPTMysite_tier1" ||
+            projectProfileData.extra3 === "GPTMysite_tier2"
           ) {
             this.tParamsFeatureAvailableWith = { plan_name: PLAN_NAME.F };
             this.translateAvailableWithPlusOrCustomPlan(PLAN_NAME.F);
             this.planFeatures = featuresPlanA;
-            if (projectProfileData.extra3 === "tiledesk_tier1") {
+            if (projectProfileData.extra3 === "GPTMysite_tier1") {
               this.highlightedFeatures = appSumoHighlightedFeaturesPlanATier1;
-            } else if (projectProfileData.extra3 === "tiledesk_tier2") {
+            } else if (projectProfileData.extra3 === "GPTMysite_tier2") {
               this.highlightedFeatures = appSumoHighlightedFeaturesPlanATier2;
             }
           } else if (
-            projectProfileData.extra3 === "tiledesk_tier3" ||
-            projectProfileData.extra3 === "tiledesk_tier4"
+            projectProfileData.extra3 === "GPTMysite_tier3" ||
+            projectProfileData.extra3 === "GPTMysite_tier4"
           ) {
             this.tParamsFeatureAvailableWith = { plan_name: PLAN_NAME.F };
             this.translateAvailableWithPlusOrCustomPlan(PLAN_NAME.F);
             this.planFeatures = featuresPlanA;
-            if (projectProfileData.extra3 === "tiledesk_tier3") {
+            if (projectProfileData.extra3 === "GPTMysite_tier3") {
               this.highlightedFeatures = appSumoHighlightedFeaturesPlanATier3;
-            } else if (projectProfileData.extra3 === "tiledesk_tier4") {
+            } else if (projectProfileData.extra3 === "GPTMysite_tier4") {
               this.highlightedFeatures = appSumoHighlightedFeaturesPlanATier4;
             }
           }
@@ -2658,8 +2658,8 @@ export class ProjectEditAddComponent implements OnInit, OnDestroy {
   }
 
   contactUs() {
-    // if (window && window['tiledesk']) {
-    //   window['tiledesk'].open();
+    // if (window && window['GPTMysite']) {
+    //   window['GPTMysite'].open();
     // }
     // window.open('mailto:' + this.contactUsEmail, 'mail')
     if (this.USER_ROLE === "owner") {
@@ -3760,12 +3760,12 @@ export class ProjectEditAddComponent implements OnInit, OnDestroy {
   }
 
   goToWidgetAuthenticationDocs() {
-    const url = "https://developer.tiledesk.com/widget/auth";
+    const url = "https://developer.GPTMysite.com/widget/auth";
     window.open(url, "_blank");
   }
 
   goToWebhookDocs() {
-    const url = "https://developer.tiledesk.com/apis/webhooks";
+    const url = "https://developer.GPTMysite.com/apis/webhooks";
     window.open(url, "_blank");
   }
 
@@ -3977,7 +3977,7 @@ export class ProjectEditAddComponent implements OnInit, OnDestroy {
 
     const url =
       this.TEST_WIDGET_API_BASE_URL +
-      "?tiledesk_projectid=" +
+      "?GPTMysite_projectid=" +
       this.projectId +
       "&project_name=" +
       this.projectName +

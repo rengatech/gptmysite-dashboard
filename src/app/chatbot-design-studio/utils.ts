@@ -3,7 +3,7 @@ import { ActionAssignVariable, Intent } from "app/models/intent-model";
 import { v4 as uuidv4 } from "uuid";
 
 export enum EXTERNAL_URL {
-  getchatbotinfo = "https://tiledesk.com/community/getchatbotinfo/chatbotId/",
+  getchatbotinfo = "https://GPTMysite.com/community/getchatbotinfo/chatbotId/",
 }
 
 export enum TYPE_MATH_OPERATOR {
@@ -201,7 +201,7 @@ export const ELEMENTS_LIST = [
     type: TYPE_ACTION.EMAIL,
     src: "assets/cds/images/actions/send_email.svg",
     description:
-      'This action send an email to the specified users group or email addresses.<br>You can use a comma sepatated addresses list.<br>i.e. “andrea@tiledesk.com, gab@tiledesk.com"<br>You can use the special tag “@everyone” to send an email to each of the GPT project teamates.<br><br>You can also use the name of a single user group using the group name. i.e. “sales”',
+      'This action send an email to the specified users group or email addresses.<br>You can use a comma sepatated addresses list.<br>i.e. “andrea@GPTMysite.com, gab@GPTMysite.com"<br>You can use the special tag “@everyone” to send an email to each of the GPT project teamates.<br><br>You can also use the name of a single user group using the group name. i.e. “sales”',
   },
   {
     name: "WhatsApp Static",
@@ -344,7 +344,7 @@ export const ACTIONS_LIST = {
     type: TYPE_ACTION.EMAIL,
     src: "assets/cds/images/actions/send_email.svg",
     description:
-      'This action send an email to the specified users group or email addresses.<br>You can use a comma sepatated addresses list.<br>i.e. “andrea@tiledesk.com, gab@tiledesk.com"<br>You can use the special tag “@everyone” to send an email to each of the GPT project teamates.<br><br>You can also use the name of a single user group using the group name. i.e. “sales”',
+      'This action send an email to the specified users group or email addresses.<br>You can use a comma sepatated addresses list.<br>i.e. “andrea@GPTMysite.com, gab@GPTMysite.com"<br>You can use the special tag “@everyone” to send an email to each of the GPT project teamates.<br><br>You can also use the name of a single user group using the group name. i.e. “sales”',
   },
   WHATSAPP_STATIC: {
     name: "WhatsApp Static",

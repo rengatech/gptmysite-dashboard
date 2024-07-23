@@ -275,7 +275,7 @@ describe('SatisfactionComponent', () => {
   //       );
 
   //       // HeroService should have made one request to GET heroes from expected URL
-  //       const req = httpMock.expectOne("https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/departments/allstatus");
+  //       const req = httpMock.expectOne("https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/departments/allstatus");
   //       expect(req.request.method).toEqual('GET');
 
   //       // Respond with the mock heroes
@@ -288,7 +288,7 @@ describe('SatisfactionComponent', () => {
   //         fail
   //       );
 
-  //       const req = httpMock.expectOne("https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/departments/allstatus");
+  //       const req = httpMock.expectOne("https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/departments/allstatus");
   //       req.flush([]); // Respond with no heroes
   //     });
 
@@ -299,7 +299,7 @@ describe('SatisfactionComponent', () => {
   //         error => expect(error.message).toContain(msg)
   //       );
 
-  //       const req = httpMock.expectOne("https://tiledesk-server-pre.herokuapp.com/60ffe291f725db00347661ef/departments/allstatus");
+  //       const req = httpMock.expectOne("https://GPTMysite-server-pre.herokuapp.com/60ffe291f725db00347661ef/departments/allstatus");
 
   //       // respond with a 404 and the error message in the body
   //       req.flush(msg, { status: 404, statusText: 'Not Found' });

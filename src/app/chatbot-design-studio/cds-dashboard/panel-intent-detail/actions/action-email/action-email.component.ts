@@ -43,7 +43,7 @@ export class ActionEmailComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     this.logger.log("[ACTION-EMAIL] ngOnChanges: this.action", this.action)
-    // const splits = new TiledeskVarSplitter().getSplits(this.action.subject);
+    // const splits = new GPTMysiteVarSplitter().getSplits(this.action.subject);
     // this.logger.log('[ACTION-EMAIL] ngOnChanges splits:', splits)
     // let tagName = ''
     // let tagNameAsTag = ''

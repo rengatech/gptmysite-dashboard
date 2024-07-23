@@ -252,7 +252,7 @@ export class AnalyticsComponent implements OnInit, OnDestroy {
 
  
 
-    /* ----------==========   TILEDESK ANALYTICS   ==========---------- */
+    /* ----------==========   GPTMysite ANALYTICS   ==========---------- */
     this.getCurrentProject();
     this.getStorageBucket();
     // this.getCountOfRequestForAgent()

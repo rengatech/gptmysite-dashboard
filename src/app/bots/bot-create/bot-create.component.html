@@ -85,13 +85,13 @@
           </span>
 
           <span *ngIf="botType === 'dialogflow'" class="link-to-doc-in-header"
-            (click)="openDeveloperTiledeskGenerateDFCredentialFile()">
+            (click)="openDeveloperGPTMysiteGenerateDFCredentialFile()">
             {{'HowToGenerateDialogflowGoogleCredentialsFile' | translate}}
           </span>
 
           <!-- <span *ngIf="botType === 'dialogflow'"
             style="margin-left: 8px;vertical-align: middle;color: #0f62ff; font-size: 14px;font-weight: 400; cursor: pointer; text-decoration: underline;"
-            (click)="openDocsTiledeskDialogflowConnector()">
+            (click)="openDocsGPTMysiteDialogflowConnector()">
             {{'HowHandlingImagesVideosButtonsAndMore' | translate}}
           </span>
 
@@ -599,7 +599,7 @@
 
               <p style="color:#7695a5">
                 {{'YouNeedAServiceAccountPrivateKeyFileToConnectTheDialogflowAgent' | translate: tparams}}.
-                <span class="link-in-right-sidebar" (click)="openDeveloperTiledeskGenerateDFCredentialFile()">
+                <span class="link-in-right-sidebar" (click)="openDeveloperGPTMysiteGenerateDFCredentialFile()">
                   {{'FollowThisGuideToFindOutHowToCreateThisFile' | translate }}.
                 </span>
               </p>
@@ -624,11 +624,11 @@
 
               <p style="color:#7695a5">
                 {{'DoYouWantToSendImagesVideosButtonsAndMore' | translate }}
-                <span class="link-in-right-sidebar" (click)="openDocsTiledeskDialogflowConnector()">
+                <span class="link-in-right-sidebar" (click)="openDocsGPTMysiteDialogflowConnector()">
                   {{'FollowTheMicrolanguageGuide' | translate }}.
                 </span>
               </p>
-              <div (click)="openDocsTiledeskDialogflowConnector()" style="cursor: pointer;">
+              <div (click)="openDocsGPTMysiteDialogflowConnector()" style="cursor: pointer;">
                 <img src="assets/img/Dialogflow-Microlanguage-v2.png">
               </div>
 

@@ -1,4 +1,4 @@
-export class TiledeskConnectors {
+export class GPTMysiteConnectors {
 
   constructor(drawerId, classes, connectors) {
     //this.connectors = [];
@@ -475,7 +475,7 @@ export class TiledeskConnectors {
     if (el && el.classList && el.classList.contains(keyClass)) {
       return el;
     }
-    // console.log('[TILEDESK-CONNECTORS] searchClassInParents ->', keyClass);
+    // console.log('[GPTMysite-CONNECTORS] searchClassInParents ->', keyClass);
     let parent = el.parentElement;
     while (parent !== null) {
       if (parent && parent.classList && parent.classList.contains(keyClass)) {

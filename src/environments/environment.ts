@@ -22,7 +22,7 @@ export const environment = {
   promoBannerUrl: 'CHANGEIT',
   whatsappApiUrl: "CHANGEIT",
   ticketingEmail: "CHANGEIT",
-  tiledeskPhoneNumber: "CHANGEIT",
+  GPTMysitePhoneNumber: "CHANGEIT",
   firebase: {
       apiKey: 'CHANGEIT',
       authDomain: 'CHANGEIT',

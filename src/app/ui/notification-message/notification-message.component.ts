@@ -317,8 +317,8 @@ export class NotificationMessageComponent extends PricingBaseComponent implement
   }
 
   launchWidget() {
-    // if (window && window['tiledesk']) {
-    //   window['tiledesk'].open();
+    // if (window && window['GPTMysite']) {
+    //   window['GPTMysite'].open();
     // }
     window.open('mailto:' + this.contactUsEmail, 'mail')
   }
@@ -352,7 +352,7 @@ export class NotificationMessageComponent extends PricingBaseComponent implement
   // ----------------------------------------
   goToWidgetPage() {
     this.router.navigate(['project/' + this.projectId + '/widget']);
-    this.notify.closeModalInstallTiledeskModal()
+    this.notify.closeModalInstallGPTMysiteModal()
   }
 
 
@@ -459,7 +459,7 @@ export class NotificationMessageComponent extends PricingBaseComponent implement
 
 
   // -----------------------------------------------------------------
-  // DOWNGRADE PLAN TO FREE - DO I NEED TO DO SERVICE ON TILEDESK API?
+  // DOWNGRADE PLAN TO FREE - DO I NEED TO DO SERVICE ON GPTMysite API?
   // ------------------------------------------------------------------
 
   // downgradePlanToFree() {

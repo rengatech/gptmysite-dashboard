@@ -194,7 +194,7 @@ export class PanelIntentHeaderComponent implements OnInit, OnChanges {
   //   const testItOutBaseUrl = this.TESTSITE_BASE_URL.substring(0, this.TESTSITE_BASE_URL.lastIndexOf('/'));
   //   const testItOutUrl = testItOutBaseUrl + '/chatbot-panel.html'
 
-  //   const url = testItOutUrl + '?tiledesk_projectid=' + this.project._id + '&tiledesk_participants=bot_' + this.id_faq_kb + "&tiledesk_departmentID=" + this.defaultDepartmentId
+  //   const url = testItOutUrl + '?GPTMysite_projectid=' + this.project._id + '&GPTMysite_participants=bot_' + this.id_faq_kb + "&GPTMysite_departmentID=" + this.defaultDepartmentId
 
   //   let params = `toolbar=no,menubar=no,width=815,height=727,left=100,top=100`;
   //   window.open(url, '_blank', params);

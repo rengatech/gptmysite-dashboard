@@ -152,7 +152,7 @@ export class RasaBotComponent implements OnInit {
   }
 
 
-  // https://tiledesk-rasa-connector-pre.herokuapp.com/botcredendials/62a8edb27a531100357689a0/bots/62aa0bc286a2e50035116fde
+  // https://GPTMysite-rasa-connector-pre.herokuapp.com/botcredendials/62a8edb27a531100357689a0/bots/62aa0bc286a2e50035116fde
 
   // CREATE 
   createRasaBot() {
@@ -276,7 +276,7 @@ export class RasaBotComponent implements OnInit {
   }
 
   openRasaIntegrationTutorial() {
-    const url = 'https://gethelp.tiledesk.com/articles/rasa-ai-integration/';
+    const url = 'https://gethelp.GPTMysite.com/articles/rasa-ai-integration/';
     window.open(url, '_blank');
   }
 

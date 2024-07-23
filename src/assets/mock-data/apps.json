@@ -19,9 +19,9 @@
     "logo": "assets/img/integrations_apps/googletagmanager.svg",
     "title": "Google Tag Manager",
     "description": "Google Tag Manager it makes easy for marketers to add and update website",
-    "learnmore": "https://docs.tiledesk.com/knowledge-base/google-tag-manager-add-tiledesk-to-your-sites/",
+    "learnmore": "https://docs.GPTMysite.com/knowledge-base/google-tag-manager-add-GPTMysite-to-your-sites/",
     "installActionType": "external",
-    "installActionURL": "https://docs.tiledesk.com/knowledge-base/google-tag-manager-add-tiledesk-to-your-sites/"
+    "installActionURL": "https://docs.GPTMysite.com/knowledge-base/google-tag-manager-add-GPTMysite-to-your-sites/"
   },
   {
     "logo": "assets/img/integrations_apps/zapier.svg",
@@ -32,7 +32,7 @@
     "installActionURL": "https://zapier.com/app/login?next=/developer/public-invite/6253/ec24c63d18ba72db605f37afcd0168a3/"
   },
   {
-    "logo": "https://tiledesk.com/wordpress/",
+    "logo": "https://GPTMysite.com/wordpress/",
     "title": "Wordpress",
     "description": "Use this integration to place a function on your Wordpress website.",
     "learnmore": "",
@@ -40,71 +40,71 @@
     "installActionURL": ""
   },
   {
-    "logo": "https://tiledesk.com/integrations-ios-tiledesk/",
+    "logo": "https://GPTMysite.com/integrations-ios-GPTMysite/",
     "title": "iOS SDK",
     "description": "GPT Widget for iOS",
-    "learnmore": "https://developer.tiledesk.com/mobile-sdk/integrate-widget-for-ios-with-wkwebview",
+    "learnmore": "https://developer.GPTMysite.com/mobile-sdk/integrate-widget-for-ios-with-wkwebview",
     "installActionType": "external",
-    "installActionURL": "https://developer.tiledesk.com/mobile-sdk/integrate-widget-for-ios-with-wkwebview"
+    "installActionURL": "https://developer.GPTMysite.com/mobile-sdk/integrate-widget-for-ios-with-wkwebview"
   },
   {
-    "logo": "https://tiledesk.com/integrations-android-tiledesk/",
+    "logo": "https://GPTMysite.com/integrations-android-GPTMysite/",
     "title": "Android SDK",
     "description": "GPT Widget for Android",
-    "learnmore": "https://developer.tiledesk.com/mobile-sdk/integrate-widget-for-android-with-webview",
+    "learnmore": "https://developer.GPTMysite.com/mobile-sdk/integrate-widget-for-android-with-webview",
     "installActionType": "external",
-    "installActionURL": "https://developer.tiledesk.com/mobile-sdk/integrate-widget-for-android-with-webview"
+    "installActionURL": "https://developer.GPTMysite.com/mobile-sdk/integrate-widget-for-android-with-webview"
   },
   {
-    "logo": "https://tiledesk.com/integrations-kubernetes-logo-without-workmark-svg/",
+    "logo": "https://GPTMysite.com/integrations-kubernetes-logo-without-workmark-svg/",
     "title": "Kubernetes",
     "description": "Install GPT on-premise with Kubernetes",
-    "learnmore": "https://github.com/Tiledesk/tiledesk-deployment",
+    "learnmore": "https://github.com/GPTMysite/GPTMysite-deployment",
     "installActionType": "external",
-    "installActionURL": "https://github.com/Tiledesk/tiledesk-deployment"
+    "installActionURL": "https://github.com/GPTMysite/GPTMysite-deployment"
   },
   {
-    "logo": "https://tiledesk.com/integrations-docker-logo-without-workmark/",
+    "logo": "https://GPTMysite.com/integrations-docker-logo-without-workmark/",
     "title": "Docker",
-    "description": "Install Tiledesk on-premise with docker compose",
-    "learnmore": "https://developer.tiledesk.com/installation/running-tiledesk-with-docker-compose",
+    "description": "Install GPTMysite on-premise with docker compose",
+    "learnmore": "https://developer.GPTMysite.com/installation/running-GPTMysite-with-docker-compose",
     "installActionType": "external",
-    "installActionURL": "https://developer.tiledesk.com/installation/running-tiledesk-with-docker-compose"
+    "installActionURL": "https://developer.GPTMysite.com/installation/running-GPTMysite-with-docker-compose"
   },
   {
-    "logo": "https://tiledesk.com/github-logo/",
+    "logo": "https://GPTMysite.com/github-logo/",
     "title": "GitHub",
     "description": "Install GPT from GitHub source code",
-    "learnmore": "https://github.com/tiledesk",
+    "learnmore": "https://github.com/GPTMysite",
     "installActionType": "external",
-    "installActionURL": "https://github.com/tiledesk"
+    "installActionURL": "https://github.com/GPTMysite"
   },
   {
-    "logo": "https://tiledesk.com/webhooks-2/",
+    "logo": "https://GPTMysite.com/webhooks-2/",
     "title": "WebHooks",
     "description": "WebHooks integration",
-    "learnmore": "https://developer.tiledesk.com/apis/webhooks",
+    "learnmore": "https://developer.GPTMysite.com/apis/webhooks",
     "installActionType": "external",
-    "installActionURL": "https://developer.tiledesk.com/apis/webhooks"
+    "installActionURL": "https://developer.GPTMysite.com/apis/webhooks"
   },
   {
-    "logo": "https://tiledesk.com/integrations-ios-tiledesk/",
+    "logo": "https://GPTMysite.com/integrations-ios-GPTMysite/",
     "title": "GPT iOS native app",
     "description": "GPT mobile app",
-    "learnmore": "https://apps.apple.com/us/app/tiledesk/id1401218793",
+    "learnmore": "https://apps.apple.com/us/app/GPTMysite/id1401218793",
     "installActionType": "external",
-    "installActionURL": "https://apps.apple.com/us/app/tiledesk/id1401218793"
+    "installActionURL": "https://apps.apple.com/us/app/GPTMysite/id1401218793"
   },
   {
-    "logo": "https://tiledesk.com/integrations-android-tiledesk/",
+    "logo": "https://GPTMysite.com/integrations-android-GPTMysite/",
     "title": "GPT Android native app",
     "description": "GPT mobile app",
-    "learnmore": "https://play.google.com/store/apps/details?id=tiledesk.android",
+    "learnmore": "https://play.google.com/store/apps/details?id=GPTMysite.android",
     "installActionType": "external",
-    "installActionURL": "https://play.google.com/store/apps/details?id=tiledesk.android"
+    "installActionURL": "https://play.google.com/store/apps/details?id=GPTMysite.android"
   },
   {
-    "logo": "https://tiledesk.com/facebook-v2/",
+    "logo": "https://GPTMysite.com/facebook-v2/",
     "title": "Facebook",
     "description": "Connect to Facebook to chat with your pages visitors.",
     "learnmore": "",
@@ -112,19 +112,19 @@
     "installActionURL": ""
   },
   {
-    "logo": "https://tiledesk.com/whatsapp-v2/",
+    "logo": "https://GPTMysite.com/whatsapp-v2/",
     "title": "Whatsapp",
     "description": "Connect to Whatsapp to chat with your Whatsapp's friends.",
-    "learnmore": "https://docs.tiledesk.com/?post_type=lsvr_kba&p=6220",
+    "learnmore": "https://docs.GPTMysite.com/?post_type=lsvr_kba&p=6220",
     "installActionType": "external",
-    "installActionURL": "https://docs.tiledesk.com/?post_type=lsvr_kba&p=6220"
+    "installActionURL": "https://docs.GPTMysite.com/?post_type=lsvr_kba&p=6220"
   },
   {
-    "logo": "https://tiledesk.com/websocket-logo/",
+    "logo": "https://GPTMysite.com/websocket-logo/",
     "title": "WebSocket",
     "description": "GPT Realtime API",
-    "learnmore": "https://developer.tiledesk.com/apis/realtime-api",
+    "learnmore": "https://developer.GPTMysite.com/apis/realtime-api",
     "installActionType": "external",
-    "installActionURL": "https://developer.tiledesk.com/apis/realtime-api"
+    "installActionURL": "https://developer.GPTMysite.com/apis/realtime-api"
   }
 ]

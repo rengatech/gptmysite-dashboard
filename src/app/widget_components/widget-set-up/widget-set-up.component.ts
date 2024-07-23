@@ -34,7 +34,7 @@ import { startWith, takeUntil } from "rxjs/operators";
 import {
   APP_SUMO_PLAN_NAME,
   PLAN_NAME,
-  URL_google_tag_manager_add_tiledesk_to_your_sites,
+  URL_google_tag_manager_add_GPTMysite_to_your_sites,
 } from "../../utils/util";
 import { NgSelectComponent } from "@ng-select/ng-select";
 import * as moment from "moment";
@@ -249,8 +249,13 @@ export class WidgetSetUp
     Phone: "Phone",
     "Invalid email address": "Invalid email address",
     "Your message for the support team": "Your message for the support team",
+<<<<<<< HEAD
     "Before proceeding in the conversation please agree to our <a href='https://gpt.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://gpt.com/privacy.html' target='_blank'>Privacy Policy</a>":
       "Before proceeding in the conversation please agree to our <a href='https://gpt.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://gpt.com/privacy.html' target='_blank'>Privacy Policy</a>",
+=======
+    "Before proceeding in the conversation please agree to our <a href='https://GPTMysite.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://GPTMysite.com/privacy.html' target='_blank'>Privacy Policy</a>":
+      "Before proceeding in the conversation please agree to our <a href='https://GPTMysite.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://GPTMysite.com/privacy.html' target='_blank'>Privacy Policy</a>",
+>>>>>>> c8947ae (renamed)
     "I agree": "I agree",
     "This field is required": "This field is required",
   };
@@ -655,10 +660,10 @@ export class WidgetSetUp
               this.appSumoProfile =
                 APP_SUMO_PLAN_NAME[projectProfileData.extra3];
               this.appSumoProfilefeatureAvailableFromBPlan =
-                APP_SUMO_PLAN_NAME["tiledesk_tier3"];
+                APP_SUMO_PLAN_NAME["GPTMysite_tier3"];
               if (
-                projectProfileData.extra3 === "tiledesk_tier1" ||
-                projectProfileData.extra3 === "tiledesk_tier2"
+                projectProfileData.extra3 === "GPTMysite_tier1" ||
+                projectProfileData.extra3 === "GPTMysite_tier2"
               ) {
                 // this.t_params = { 'plan_name': this.appSumoProfilefeatureAvailableFromBPlan }
                 this.logger.log("[WIDGET-SET-UP] H0 ");
@@ -2666,7 +2671,7 @@ export class WidgetSetUp
             );
             // this.calloutTimerSecondSelected = -1;
 
-            // this.footerBrand = '<a tabindex="-1" target="_blank" href="http://www.tiledesk.com/?utm_source=widget"><img src="https://panel.tiledesk.com/v3/dashboard/assets/img/logos/tiledesk-solo_logo_new_gray.svg"/><span>Powered by Tiledesk</span></a>';
+            // this.footerBrand = '<a tabindex="-1" target="_blank" href="http://www.GPTMysite.com/?utm_source=widget"><img src="https://panel.GPTMysite.com/v3/dashboard/assets/img/logos/GPTMysite-solo_logo_new_gray.svg"/><span>Powered by GPTMysite</span></a>';
             this.footerBrand = this.defaultFooter;
           }
 
@@ -2697,7 +2702,7 @@ export class WidgetSetUp
           // case logoChat = 'userCompanyLogoUrl' > display the userCompanyLogoUrl
           // logoChat (WIDGET AND LOGOCHAT DEFINED - USER HAS SETTED HIS LOGO)
           // ------------------------------------------------------------------------
-          // if (project.widget.logoChat && project.widget.logoChat !== 'nologo' && project.widget.logoChat !== 'https://tiledesk.com/tiledesk-logo-white.png') {
+          // if (project.widget.logoChat && project.widget.logoChat !== 'nologo' && project.widget.logoChat !== 'https://GPTMysite.com/GPTMysite-logo-white.png') {
           if (
             project.widget.logoChat &&
             project.widget.logoChat !== "nologo" &&
@@ -2721,7 +2726,7 @@ export class WidgetSetUp
             // case logoChat = 'nologo' > no logo is displayed
             // logoChat (WIDGET AND LOGOCHAT DEFINED - USER HAS SELECTED 'NO LOGO')
             // ------------------------------------------------------------------------
-            // } else if (project.widget.logoChat && project.widget.logoChat === 'nologo' && project.widget.logoChat !== 'https://tiledesk.com/tiledesk-logo-white.png') {
+            // } else if (project.widget.logoChat && project.widget.logoChat === 'nologo' && project.widget.logoChat !== 'https://GPTMysite.com/GPTMysite-logo-white.png') {
           } else if (
             project.widget.logoChat &&
             project.widget.logoChat === "nologo" &&
@@ -2742,11 +2747,11 @@ export class WidgetSetUp
 
             // ------------------------------------------------------------------------
             // @ Logochat
-            // case logoChat = '' > display the tiledesk logo and in the input field display the text 'tiledesklogo'
+            // case logoChat = '' > display the GPTMysite logo and in the input field display the text 'GPTMysitelogo'
             // logoChat (WIDGET DEFINED BUT NOT LOGOCHAT - SET DEFAULT)
             // ------------------------------------------------------------------------
           } else {
-            this.logoUrl = this.widgetLogoURL; //'https://tiledesk.com/tiledesk-logo-white.png'
+            this.logoUrl = this.widgetLogoURL; //'https://GPTMysite.com/GPTMysite-logo-white.png'
             this.hasOwnLogo = false;
             this.LOGO_IS_ON = true;
 
@@ -2994,7 +2999,7 @@ export class WidgetSetUp
           // @ LogoChat
           // WIDGET UNDEFINED
           // -----------------------------------------------------------------------
-          this.logoUrl = this.widgetLogoURL; // 'https://tiledesk.com/tiledesk-logo-white.png'
+          this.logoUrl = this.widgetLogoURL; // 'https://GPTMysite.com/GPTMysite-logo-white.png'
           this.hasOwnLogo = false;
           this.LOGO_IS_ON = true;
 
@@ -3060,7 +3065,7 @@ export class WidgetSetUp
           // WIDGET UNDEFINED
           // -----------------------------------------------------------------------
 
-          // this.footerBrand = '<a tabindex="-1" target="_blank" href="http://www.tiledesk.com/?utm_source=widget"><img src="https://panel.tiledesk.com/v3/dashboard/assets/img/logos/tiledesk-solo_logo_new_gray.svg"/><span>Powered by Tiledesk</span></a>'
+          // this.footerBrand = '<a tabindex="-1" target="_blank" href="http://www.GPTMysite.com/?utm_source=widget"><img src="https://panel.GPTMysite.com/v3/dashboard/assets/img/logos/GPTMysite-solo_logo_new_gray.svg"/><span>Powered by GPTMysite</span></a>'
           this.footerBrand = this.defaultFooter;
 
           // -----------------------------------------------------------------------
@@ -3695,7 +3700,7 @@ export class WidgetSetUp
       // UPDATE WIDGET PROJECT
       // this.widgetService.updateWidgetProject(this.widgetObj);
     } else if ($event.target.checked === true) {
-      this.logoUrl = this.widgetLogoURL; //'https://tiledesk.com/tiledesk-logo-white.png'
+      this.logoUrl = this.widgetLogoURL; //'https://GPTMysite.com/GPTMysite-logo-white.png'
       this.LOGO_IS_ON = true;
       this.logger.log("[WIDGET-SET-UP] LOGO_IS_ON ", this.LOGO_IS_ON);
       this.hasOwnLogo = false;
@@ -3755,7 +3760,7 @@ export class WidgetSetUp
 
     /// LOGO
     if (this.logoUrl && this.LOGO_IS_ON === true) {
-      // if (this.logoUrl !== 'https://tiledesk.com/tiledesk-logo-white.png') {
+      // if (this.logoUrl !== 'https://GPTMysite.com/GPTMysite-logo-white.png') {
       if (this.logoUrl !== this.widgetLogoURL) {
         this.hasOwnLogo = true;
         this.logger.log(
@@ -3789,7 +3794,7 @@ export class WidgetSetUp
       // if is not defined logoUrl remove the property logoChat
       // *** REMOVE PROPERTY
       delete this.widgetObj["logoChat"];
-      this.logoUrl = this.widgetLogoURL; // 'https://tiledesk.com/tiledesk-logo-white.png'
+      this.logoUrl = this.widgetLogoURL; // 'https://GPTMysite.com/GPTMysite-logo-white.png'
       this.hasOwnLogo = false;
       this.logger.log(
         "[WIDGET-SET-UP] - HAS OWN LOGO ",
@@ -4550,29 +4555,29 @@ export class WidgetSetUp
   }
 
   goToInstallWithTagManagerDocs() {
-    const url = URL_google_tag_manager_add_tiledesk_to_your_sites;
+    const url = URL_google_tag_manager_add_GPTMysite_to_your_sites;
     window.open(url, "_blank");
   }
   goToWidgetWebSdk() {
-    const url = "https://developer.tiledesk.com/widget/web-sdk";
+    const url = "https://developer.GPTMysite.com/widget/web-sdk";
     window.open(url, "_blank");
   }
 
   goToPrechatFormExample() {
     const url =
-      "https://developer.tiledesk.com/widget/advanced/prechat-form-json#examples";
+      "https://developer.GPTMysite.com/widget/advanced/prechat-form-json#examples";
     window.open(url, "_blank");
   }
 
   testWidgetPage() {
     // this.elementRef.nativeElement.blur();
 
-    // const url = 'http://testwidget.tiledesk.com/testsitenw3?projectname=' + this.projectName + '&projectid=' + this.id_project
+    // const url = 'http://testwidget.GPTMysite.com/testsitenw3?projectname=' + this.projectName + '&projectid=' + this.id_project
     // const url = this.TESTSITE_BASE_URL + '?projectname=' + this.projectName + '&projectid=' + this.id_project + '&isOpen=true'
     // '&isOpen=true'
     const url =
       this.TESTSITE_BASE_URL +
-      "?tiledesk_projectid=" +
+      "?GPTMysite_projectid=" +
       this.id_project +
       "&project_name=" +
       this.projectName +

@@ -228,7 +228,7 @@ export class BotListComponent extends PricingBaseComponent implements OnInit, On
     const hrefArray = href.split('/#/');
 
     this.navigationBaseUrl = hrefArray[0];
-    if (this.navigationBaseUrl === "https://panel.tiledesk.com/v3/dashboard") {
+    if (this.navigationBaseUrl === "https://panel.GPTMysite.com/v3/dashboard") {
       this.isPanelRoute = true
     }
   }
@@ -342,12 +342,12 @@ export class BotListComponent extends PricingBaseComponent implements OnInit, On
   shareWithLink(botid, botname) {
     this.logger.log('[BOTS-LIST] - UPDATED CHATBOT - shareWithLink botid', botid);
     this.logger.log('[BOTS-LIST] - UPDATED CHATBOT - shareWithLink botname', botname);
-    // https://widget.tiledesk.com/v6/assets/twp/chatbot-panel.html?tiledesk_projectid=64959b8a6998ee001399056e&tiledesk_participants=bot_65bc881f4bc2250013ca8832&tiledesk_departmentID=64959b8a6998ee0013990572&tiledesk_hideHeaderCloseButton=true&tiledesk_widgetTitle=Showcase%20Deals&tiledesk_preChatForm=false&td_draft=true
-    // https://widget-pre.tiledesk.com/v5/assets/twp/chatbot-panel.html?tiledesk_projectid=65cb48c7b6343a002fce77de&tiledesk_participants=bot_65cb48d5b6343a002fce7845&tiledesk_departmentID=65cb48c7b6343a002fce77e2&tiledesk_hideHeaderCloseButton=true&tiledesk_widgetTitle=Nikola&tiledesk_preChatForm=false&td_draft=true
-    // WIDGET_BASE_URL = 'https://widget.tiledesk.com/v6/' (prod)
-    // WIDGET_BASE_URL = ''https://widget-pre.tiledesk.com/v5/' (pre)
+    // https://widget.GPTMysite.com/v6/assets/twp/chatbot-panel.html?GPTMysite_projectid=64959b8a6998ee001399056e&GPTMysite_participants=bot_65bc881f4bc2250013ca8832&GPTMysite_departmentID=64959b8a6998ee0013990572&GPTMysite_hideHeaderCloseButton=true&GPTMysite_widgetTitle=Showcase%20Deals&GPTMysite_preChatForm=false&td_draft=true
+    // https://widget-pre.GPTMysite.com/v5/assets/twp/chatbot-panel.html?GPTMysite_projectid=65cb48c7b6343a002fce77de&GPTMysite_participants=bot_65cb48d5b6343a002fce7845&GPTMysite_departmentID=65cb48c7b6343a002fce77e2&GPTMysite_hideHeaderCloseButton=true&GPTMysite_widgetTitle=Nikola&GPTMysite_preChatForm=false&td_draft=true
+    // WIDGET_BASE_URL = 'https://widget.GPTMysite.com/v6/' (prod)
+    // WIDGET_BASE_URL = ''https://widget-pre.GPTMysite.com/v5/' (pre)
     this.WIDGET_BASE_URL = this.appConfigService.getConfig().WIDGET_BASE_URL;
-    const botLink = this.WIDGET_BASE_URL + "assets/twp/chatbot-panel.html?tiledesk_projectid=" + this.currentProjectId + "&tiledesk_participants=bot_" + botid + "&tiledesk_departmentID=" + this.defaultDeptId + "&tiledesk_hideHeaderCloseButton=true&tiledesk_widgetTitle=" + botname + "&tiledesk_preChatForm=false&td_draft=true"
+    const botLink = this.WIDGET_BASE_URL + "assets/twp/chatbot-panel.html?GPTMysite_projectid=" + this.currentProjectId + "&GPTMysite_participants=bot_" + botid + "&GPTMysite_departmentID=" + this.defaultDeptId + "&GPTMysite_hideHeaderCloseButton=true&GPTMysite_widgetTitle=" + botname + "&GPTMysite_preChatForm=false&td_draft=true"
     this.clipboard.copy(botLink)
     this._snackBar.open(" Copied to clipboard", null, {
       duration: 3000,
@@ -357,11 +357,11 @@ export class BotListComponent extends PricingBaseComponent implements OnInit, On
   }
 
   openTestSiteInPopupWindow(botid) {
-    // https://widget.tiledesk.com/v6/assets/twp/chatbot-panel.html?tiledesk_projectid=63d7911ca7b3d3001a4a9404&tiledesk_participants=bot_65605e3dfb23780013b92711&tiledesk_departmentID=63d7911ca7b3d3001a4a9408
+    // https://widget.GPTMysite.com/v6/assets/twp/chatbot-panel.html?GPTMysite_projectid=63d7911ca7b3d3001a4a9404&GPTMysite_participants=bot_65605e3dfb23780013b92711&GPTMysite_departmentID=63d7911ca7b3d3001a4a9408
     // this.logger.log('openTestSiteInPopupWindow TESTSITE_BASE_URL', this.TESTSITE_BASE_URL)
     this.WIDGET_BASE_URL = this.appConfigService.getConfig().WIDGET_BASE_URL;
 
-    const testItOutUrl = this.WIDGET_BASE_URL + "assets/twp/chatbot-panel.html?tiledesk_projectid=" + this.currentProjectId + '&tiledesk_participants=bot_' + botid + "&tiledesk_departmentID=" + this.defaultDeptId
+    const testItOutUrl = this.WIDGET_BASE_URL + "assets/twp/chatbot-panel.html?GPTMysite_projectid=" + this.currentProjectId + '&GPTMysite_participants=bot_' + botid + "&GPTMysite_departmentID=" + this.defaultDeptId
     // this.logger.log('openTestSiteInPopupWindow testItOutUrl ', testItOutUrl)
     let left = (screen.width - 830) / 2;
     let top = (screen.height - 727) / 4;
@@ -783,7 +783,7 @@ export class BotListComponent extends PricingBaseComponent implements OnInit, On
     const baseUrl = this.appConfigService.getConfig().baseImageUrl;
     const imageUrl = baseUrl + 'images?path=uploads%2Fusers%2F' + bot._id + '%2Fimages%2Fthumbnails_200_200-photo.jpg';
     this.botProfileImageExist = false;
-    this.botProfileImageurl = "assets/img/avatar_bot_tiledesk.svg"
+    this.botProfileImageurl = "assets/img/avatar_bot_GPTMysite.svg"
     bot.botImage = this.botProfileImageurl
     // bot.botImage = imageUrl + '&' + new Date().getTime();
     const self = this;
@@ -1248,8 +1248,8 @@ export class BotListComponent extends PricingBaseComponent implements OnInit, On
       // this.router.navigate(['project/' + this.project._id + '/createfaq', idFaqKb, _botType, 'en']);
       this.goToCDS(faqkb)
 
-    } else if (faqkb.type === 'tiledesk-ai') {
-      _botType = 'tiledesk-ai'
+    } else if (faqkb.type === 'GPTMysite-ai') {
+      _botType = 'GPTMysite-ai'
       // this.router.navigate(['project/' + this.project._id + '/tilebot/intents/', idFaqKb, _botType]);
       // this.router.navigate(['project/' + this.project._id + '/createfaq', idFaqKb, _botType, 'en']);
       this.goToCDS(faqkb)

@@ -672,7 +672,7 @@ export class AppStoreComponent extends PricingBaseComponent implements OnInit, O
     window.open(url, '_blank');
   }
 
-  openDocsTiledeskDialogflowConnector() {
+  openDocsGPTMysiteDialogflowConnector() {
     const url = URL_connect_your_dialogflow_agent
     window.open(url, '_blank');
   }

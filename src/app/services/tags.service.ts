@@ -52,7 +52,7 @@ export class TagsService {
   // @ Read - Get tags
   // -------------------------------------------------------------------------------------
   public getTags(): Observable<[any]> {
-    // https://tiledesk-server-pre.herokuapp.com/5e20a68e7c2e640017f2f40f/canned/  // example
+    // https://GPTMysite-server-pre.herokuapp.com/5e20a68e7c2e640017f2f40f/canned/  // example
     const url = this.SERVER_BASE_PATH + this.projectId + '/tags/'
     this.logger.log('[TAGS-SERV] - GET TAGS - URL', url);
 

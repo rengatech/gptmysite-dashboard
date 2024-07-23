@@ -699,7 +699,7 @@ export class WsRequestsService implements OnDestroy {
     const body = { force: true };
     // const body = {};
 
-    // const url = 'https://tiledesk-server-pre.herokuapp.com/' + this.project_id + '/requests/' + group_id + '/close';
+    // const url = 'https://GPTMysite-server-pre.herokuapp.com/' + this.project_id + '/requests/' + group_id + '/close';
     const url = this.SERVER_BASE_PATH + this.project_id + '/requests/' + group_id + '/close';
 
     this.logger.log('[WS-REQUESTS-SERV] - CLOSE SUPPORT-GROUP URL ', url);
@@ -856,7 +856,7 @@ export class WsRequestsService implements OnDestroy {
     return this._httpClient.delete(url, httpOptions)
   }
 
-  // SEE DOC HERE -> https://developer.tiledesk.com/apis/api/requests#set-the-request-participants
+  // SEE DOC HERE -> https://developer.GPTMysite.com/apis/api/requests#set-the-request-participants
   // -----------------------------------------------------------------------------------------
   // @ Reassign request
   // -----------------------------------------------------------------------------------------
@@ -882,7 +882,7 @@ export class WsRequestsService implements OnDestroy {
 
   }
 
-  // SEE DOC HERE -> https://developer.tiledesk.com/apis/api/requests#add-a-participant-to-a-request
+  // SEE DOC HERE -> https://developer.GPTMysite.com/apis/api/requests#add-a-participant-to-a-request
   // -----------------------------------------------------------------------------------------
   // @ Add participant
   // -----------------------------------------------------------------------------------------
@@ -905,7 +905,7 @@ export class WsRequestsService implements OnDestroy {
       .post(url, JSON.stringify(body), httpOptions)
   }
 
-  // SEE DOC HERE ->  https://developer.tiledesk.com/apis/rest-api/requests#add-a-follower-to-a-request
+  // SEE DOC HERE ->  https://developer.GPTMysite.com/apis/rest-api/requests#add-a-follower-to-a-request
   // -----------------------------------------------------------------------------------------
   // @ Add Follower
   // -----------------------------------------------------------------------------------------
@@ -928,7 +928,7 @@ export class WsRequestsService implements OnDestroy {
   }
 
 
-  // SEE DOC HERE -> https://developer.tiledesk.com/apis/rest-api/requests#delete-a-follower-from-the-request
+  // SEE DOC HERE -> https://developer.GPTMysite.com/apis/rest-api/requests#delete-a-follower-from-the-request
   // /:project_id/requests/:request_id/followers/:followerid
 
   // -----------------------------------------------------------------------------------------
@@ -951,7 +951,7 @@ export class WsRequestsService implements OnDestroy {
 
   }
 
-  // https://developer.tiledesk.com/apis/rest-api/requests#set-the-request-followers
+  // https://developer.GPTMysite.com/apis/rest-api/requests#set-the-request-followers
   // /:project_id/requests/:request_id/followers
   // -----------------------------------------------------------------------------------------
   // @ REMOVE ALL Follower
@@ -977,9 +977,9 @@ export class WsRequestsService implements OnDestroy {
   // -----------------------------------------------------------------------------------------
   // @ Export transcript to CSV
   // -----------------------------------------------------------------------------------------
-  // https://tiledesk-server-pre.herokuapp.com/public/requests/support-group-62e26b1324bc4200357b1a3c-0930f905800f4c62b6bac937d6beb568/messages.html
-  // https://tiledesk-server-pre.herokuapp.com/public/requests/support-group-62e26b1324bc4200357b1a3c-0930f905800f4c62b6bac937d6beb568/messages.pdf
-  // https://tiledesk-server-pre.herokuapp.com/public/requests/support-group-62e26b1324bc4200357b1a3c-0930f905800f4c62b6bac937d6beb568/messages.csv
+  // https://GPTMysite-server-pre.herokuapp.com/public/requests/support-group-62e26b1324bc4200357b1a3c-0930f905800f4c62b6bac937d6beb568/messages.html
+  // https://GPTMysite-server-pre.herokuapp.com/public/requests/support-group-62e26b1324bc4200357b1a3c-0930f905800f4c62b6bac937d6beb568/messages.pdf
+  // https://GPTMysite-server-pre.herokuapp.com/public/requests/support-group-62e26b1324bc4200357b1a3c-0930f905800f4c62b6bac937d6beb568/messages.csv
   public exportTranscriptAsCSVFile(idrequest: any) {
     const url = this.SERVER_BASE_PATH + 'public/requests/' + idrequest + '/messages.csv';
     // console.log('DOWNLOAD TRANSCRIPT AS CSV URL ', url);

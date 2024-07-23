@@ -712,15 +712,15 @@ export class SignupComponent extends WidgetSetUpBaseComponent implements OnInit,
         // --------------------------------------------
         // Run widget login
         // --------------------------------------------
-        if (window && window['tiledesk_widget_login']) {
-          window['tiledesk_widget_login']();
+        if (window && window['GPTMysite_widget_login']) {
+          window['GPTMysite_widget_login']();
         }
         // self.widgetReInit();
         // --------------------------------------------
         // Run widget login
         // --------------------------------------------
-        if (window && window['tiledesk_widget_login']) {
-          window['tiledesk_widget_login']();
+        if (window && window['GPTMysite_widget_login']) {
+          window['GPTMysite_widget_login']();
         }
 
         // this.logger.log('[SIGN-UP] autoSignin storedRoute ', self.storedRoute)
@@ -996,10 +996,10 @@ export class SignupComponent extends WidgetSetUpBaseComponent implements OnInit,
   }
 
   widgetReInit() {
-    if (window && window['tiledesk']) {
-      this.logger.log('[SIGN-UP] widgetReInit ', window['tiledesk'])
+    if (window && window['GPTMysite']) {
+      this.logger.log('[SIGN-UP] widgetReInit ', window['GPTMysite'])
 
-      window['tiledesk'].reInit();
+      window['GPTMysite'].reInit();
       // alert('signin reinit');
     }
   }
@@ -1011,8 +1011,8 @@ export class SignupComponent extends WidgetSetUpBaseComponent implements OnInit,
     this.display = 'none';
   }
 
-  goToTileDeskDotCom() {
-    // const url = 'http://tiledesk.com/'
+  goToGPTMysiteDotCom() {
+    // const url = 'http://GPTMysite.com/'
     const url = this.company_site_url;
     window.open(url);
     // , '_blank'

@@ -10,22 +10,22 @@
                     <!-- </a> -->
                 </li>
                 <li>
-                    <!-- <a target="_blank" href="http://www.tiledesk.com" style="text-transform: none"> -->
+                    <!-- <a target="_blank" href="http://www.GPTMysite.com" style="text-transform: none"> -->
                     <a target="_blank" [href]="companySiteUrl" style="text-transform: none">
-                        <!-- tiledesk.com -->
+                        <!-- GPTMysite.com -->
                         {{ companySiteName }}
                     </a>
                 </li>
 
                 <li>
-                    <!-- <a target="_blank" href="http://www.tiledesk.com/privacy.html" style="text-transform: none"> -->
+                    <!-- <a target="_blank" href="http://www.GPTMysite.com/privacy.html" style="text-transform: none"> -->
                     <a target="_blank" [href]="privacyPolicyUrl" style="text-transform: none">
                         {{ privacyPolicyLinkName }}
                     </a>
                 </li>
 
                 <li *ngIf="displayTermsAndConditionsLink">
-                    <!-- <a target="_blank" href="http://www.tiledesk.com/termsofservice.html" style="text-transform: none"> -->
+                    <!-- <a target="_blank" href="http://www.GPTMysite.com/termsofservice.html" style="text-transform: none"> -->
                     <a target="_blank" [href]="termsAndConditionsUrl" style="text-transform: none">
                         {{ "TermsAndConditions" | translate }}
                     </a>
@@ -42,13 +42,13 @@
                     </span>
                 </li>
                 <li *ngIf="display_leave_us_a_feedback">
-                    <!-- https://tiledesk.sleekplan.app/feedback  -->
-                    <a target="_blank" href="https://feedback.tiledesk.com/" style="text-transform: none">
+                    <!-- https://GPTMysite.sleekplan.app/feedback  -->
+                    <a target="_blank" href="https://feedback.GPTMysite.com/" style="text-transform: none">
                         Leave us feedback
                     </a>
                 </li>
                 <li *ngIf="display_star_us_on_github">
-                    <span class="star-us-on-github-text" (click)="goToTiledeskGithub()">
+                    <span class="star-us-on-github-text" (click)="goToGPTMysiteGithub()">
                         <span class="github-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" fill="rgb(60, 72, 88)"
                                 style="position: relative;top: 2px;" viewBox="0 0 496 512">
@@ -108,7 +108,7 @@
         </nav>
         <!-- &copy; {{test | date: 'yyyy'}} <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web -->
         <!-- <p class="copyright pull-right" style="font-size:12px; font-weight:500; margin-right: 45px ">
-           &copy; {{test | date: 'yyyy'}} tiledesk ver 1.0.11
+           &copy; {{test | date: 'yyyy'}} GPTMysite ver 1.0.11
         </p> -->
     </div>
 </footer>

@@ -791,12 +791,12 @@ export class ProjectsComponent implements OnInit, AfterContentInit, OnDestroy {
     elemAppSidebar.setAttribute('style', 'display:block;');
 
     try {
-      if (window && window['tiledesk_widget_hide']) {
+      if (window && window['GPTMysite_widget_hide']) {
         this.logger.log('[PROJECTS] - HIDE WIDGET - HERE 1')
-        window['tiledesk_widget_hide']();
+        window['GPTMysite_widget_hide']();
       }
     } catch (e) {
-      this.logger.error('tiledesk_widget_hide ERROR', e)
+      this.logger.error('GPTMysite_widget_hide ERROR', e)
     }
 
   };
@@ -810,12 +810,12 @@ export class ProjectsComponent implements OnInit, AfterContentInit, OnDestroy {
     elemAppSidebar.setAttribute('style', 'display:none;');
 
     try {
-      if (window && window['tiledesk_widget_show']) {
+      if (window && window['GPTMysite_widget_show']) {
         this.logger.log('[PROJECTS] - SHOW WIDGET - HERE 1')
-        window['tiledesk_widget_show']();
+        window['GPTMysite_widget_show']();
       }
     } catch (e) {
-      this.logger.error('tiledesk_widget_show ERROR', e)
+      this.logger.error('GPTMysite_widget_show ERROR', e)
     }
   };
   sidebarToggle() {

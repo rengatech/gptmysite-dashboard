@@ -315,7 +315,7 @@ export class AppCreateComponent implements OnInit {
     }
   }
 
-  // http://tiledesk-helloworld-webchat-example-app.nicolan74.repl.co
+  // http://GPTMysite-helloworld-webchat-example-app.nicolan74.repl.co
   onChangeRunUrl($event) {
     this.logger.log('onChangeRunUrl $event', $event)
     if ($event.length > 4) {
@@ -356,7 +356,7 @@ export class AppCreateComponent implements OnInit {
 
 
   goToCreateNewAppDocs() {
-    const url = "https://developer.tiledesk.com/apps/create-app-quick-start"
+    const url = "https://developer.GPTMysite.com/apps/create-app-quick-start"
     window.open(url, '_blank');
   }
 

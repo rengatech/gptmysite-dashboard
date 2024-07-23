@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { SatPopover } from '@ncstate/sat-popover';
-import { TiledeskVarSplitter } from 'app/chatbot-design-studio/TiledeskVarSplitter';
+import { GPTMysiteVarSplitter } from 'app/chatbot-design-studio/GPTMysiteVarSplitter';
 import { LoggerService } from 'app/services/logger/logger.service';
 import { calculatingRemainingCharacters, TEXT_CHARS_LIMIT } from '../../utils';
 
@@ -200,7 +200,7 @@ export class TextEditableDivComponent implements OnInit, OnChanges {
 
 
   private splitText(text) {
-    const splits = new TiledeskVarSplitter().getSplits(text);
+    const splits = new GPTMysiteVarSplitter().getSplits(text);
     this.logger.log('[TEXT-EDITABLE-DIV] ngOnChanges splits:', splits)
     let tagName = ''
     let tagNameAsTag = ''

@@ -94,8 +94,8 @@
                       <h4 style="text-transform: none; color: rgba(0,0,0,.54);
                     font-size: 20px;margin-top:0px">
 
-                        <!-- {{ "RoutingPage.SettingUpTileDeskRoutingRules" | translate }} -->
-                        {{ "RoutingPage.SettingUpTileDeskRoutingRules_2" | translate }}
+                        <!-- {{ "RoutingPage.SettingUpGPTMysiteRoutingRules" | translate }} -->
+                        {{ "RoutingPage.SettingUpGPTMysiteRoutingRules_2" | translate }}
                       </h4>
                     </div>
                   </div>
@@ -730,17 +730,17 @@
                           <!-- --------------------------------------------------------------------- -->
                           <img *ngIf="selectedId && UPLOAD_ENGINE_IS_FIREBASE" class="bot-img-dept-edit-add"
                             src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{selectedId}}%2Fphoto.jpg?alt=media"
-                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+                            onerror="this.src='assets/img/avatar_bot_GPTMysite.svg'" />
 
                           <!-- --------------------------------------------------------------------- -->
                           <!-- Bot profile photo usecase uploadEngine Native -->
                           <!-- --------------------------------------------------------------------- -->
                           <img *ngIf="selectedId && !UPLOAD_ENGINE_IS_FIREBASE" class="bot-img-dept-edit-add"
                             src="{{baseUrl}}images?path=uploads%2Fusers%2F{{selectedId}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
+                            onerror="this.src='assets/img/avatar_bot_GPTMysite.svg'" />
 
                           <span *ngIf="bot_type === 'internal'">
-                            <img class="dept_bot-type-logo" src="assets/img/tiledesk_logo_no_text.png" />
+                            <img class="dept_bot-type-logo" src="assets/img/GPTMysite_logo_no_text.png" />
                           </span>
 
                           <span *ngIf="bot_type === 'external'">
