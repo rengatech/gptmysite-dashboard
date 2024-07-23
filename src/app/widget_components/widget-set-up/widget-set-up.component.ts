@@ -249,13 +249,8 @@ export class WidgetSetUp
     Phone: "Phone",
     "Invalid email address": "Invalid email address",
     "Your message for the support team": "Your message for the support team",
-<<<<<<< HEAD
-    "Before proceeding in the conversation please agree to our <a href='https://gpt.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://gpt.com/privacy.html' target='_blank'>Privacy Policy</a>":
-      "Before proceeding in the conversation please agree to our <a href='https://gpt.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://gpt.com/privacy.html' target='_blank'>Privacy Policy</a>",
-=======
     "Before proceeding in the conversation please agree to our <a href='https://GPTMysite.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://GPTMysite.com/privacy.html' target='_blank'>Privacy Policy</a>":
       "Before proceeding in the conversation please agree to our <a href='https://GPTMysite.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://GPTMysite.com/privacy.html' target='_blank'>Privacy Policy</a>",
->>>>>>> c8947ae (renamed)
     "I agree": "I agree",
     "This field is required": "This field is required",
   };
